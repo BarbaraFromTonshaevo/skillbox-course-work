@@ -518,6 +518,7 @@ html{
     
 }
 .events-item{
+    display: none;
     width: 500px;
     height: 700px;
     border: 1px solid #CACACA;
@@ -530,19 +531,19 @@ html{
 .events-item:not(:nth-child(3n)){
     margin-right: 50px;
 }
-.events-1{
+.event-1{
     background-image: url(../img/Events-1.jpg);
 }
-.events-2{
+.event-2{
     background-image: url(../img/Events-2.jpg);
 }
-.events-3{
+.event-3{
     background-image: url(../img/Events-3.jpg);
 }
-.events-4{
+.event-4{
     background-image: url(../img/Events-4.jpg);
 }
-.events-5{
+.event-5{
     background-image: url(../img/Events-5.jpg);
 }
 .events-location-data{
@@ -592,6 +593,9 @@ html{
     border-radius: 100px;
     margin-right: auto;
     margin-left: auto;
+}
+.visible-event{
+    display: block;
 }
 /* Editions */
 .editions-section{
@@ -782,21 +786,70 @@ html{
 .projects-section{
     margin-bottom: 80px;
 }
+.projects-container{
+    position: relative;
+}
 .projects-description{
     width: 1080px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 16px;
     line-height: 32px;
     color: var(--black);
 }
-.info{
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    background-image: url(../img/i.svg);
-    background-size: cover;
+
+.tooltip {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-image: url(../img/i.svg);
+  background-size: cover;
+  position: relative;
 }
+.tooltip:hover:after{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #cacaca;
+  content: attr(title);
+  font-size: 16px;
+  width: 220px;
+  position: absolute;
+  bottom: 25px;
+
+  color: #fff;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+}
+.tooltip:hover:before{
+  border: solid;
+  border-color: #cacaca transparent;
+  border-width: 12px 6px 0 6px;
+  content: "";
+  bottom: 15px;
+  position: absolute;
+}
+.tlt-1:hover:after{
+    width: 264px;
+    height: 55px;
+    left: -126px;
+}
+.tlt-2:hover:after{
+    width: 264px;
+    height: 70px;
+    left: -126px;
+}
+.tlt-3:hover:after{
+    width: 232px;
+    height: 48px;
+    left: -110px;
+}
+
+
 .link{
     color: var(--purple);
 }

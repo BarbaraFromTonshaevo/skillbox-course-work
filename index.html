@@ -9,6 +9,9 @@
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <script src="./script/script.js"></script>
+
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
@@ -248,49 +251,49 @@
             <div class="container events-container">
                 <h2 class="section-heading events-heading">События</h2>
                 <ul class="events-list">
-                    <li class="events-item events-1">
+                    <li class="events-item event-1 visible-event" data-path="events-1">
                         <p class="events-location-data">Музей им. Щусева <br>
                             с 20 марта по 30 апреля</p>
                         <h3 class="events-info-heading">Книжная гравюра в живом восприятии</h3>
                         <p class="events-info-description">Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо.</p>
                         <a href="" class="more-details">Подробнее</a>
                     </li>
-                    <li class="events-item events-2">
+                    <li class="events-item event-2 visible-event" data-path="events-2">
                         <p class="events-location-data">ММОМА <br>
                             24 марта 19:00</p>
                         <h3 class="events-info-heading">«Открытая дискуссия». Дмитрий Петров и Сергей Ильин.</h3>
                         <p class="events-info-description">Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта.</p>
                         <a href="" class="more-details">Подробнее</a>
-
+    
                     </li>
-                    <li class="events-item  events-3">
+                    <li class="events-item  event-3 visible-event" data-path="events-3">
                         <p class="events-location-data">Еврейский музей <br>
                             с 31 марта по 21 апреля</p>
                         <h3 class="events-info-heading">Выставка «Формация 2020»</h3>
                         <p class="events-info-description">Идейные соображения высшего порядка, а также современная методология разработки играет важную роль в формировании глубокомысленных рассуждений.</p>
                         <a href="" class="more-details">Подробнее</a>
-
+    
                     </li>
-                    <li class="events-item  events-4">
+                    <li class="events-item  event-4" data-path="events-4">
                         <p class="events-location-data">Третьяковка на Крымском валу <br>
                             с 30 марта по 30 апреля</p>
                         <h3 class="events-info-heading">XXIV Международная биеннале молодого искусства</h3>
                         <p class="events-info-description">Внезапно, реплицированные с зарубежных источников, современные исследования.</p>
                         <a href="" class="more-details">Подробнее</a>
-
+    
                     </li>
-                    <li class="events-item  events-5">
+                    <li class="events-item  event-5" data-path="events-5">
                         <p class="events-location-data">ММАМ <br>
                             с 8 апреля по 20 мая</p>
                         <h3 class="events-info-heading">Джон Винзор. Фотографии из серии «Метафора серебра»</h3>
                         <p class="events-info-description">Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо.</p>
                         <a href="" class="more-details">Подробнее</a>
-
+    
                     </li>
                 </ul>
-                <button class="btn-all-events">Все события</button>
+                <button class="btn-all-events" id="see-all-events">Все события</button>
             </div>
-
+    
         </section>
         <section class="editions-section" id="editions">
             <div class="container editions-container">
@@ -468,7 +471,7 @@
         <section class="projects-section" id="projects">
             <div class="container projects-container">
                 <h2 class="section-heading projects-heading">Проекты</h2>
-                <p class="projects-description">Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А ещё независимые государства смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Прежде всего, постоянное информационно-пропагандистское <span class="info"></span> обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И нет сомнений, что действия представителей оппозиции могут быть рассмотрены <span class="info"></span> исключительно в разрезе маркетинговых и финансовых <span class="info"></span> предпосылок. Банальные, но неопровержимые выводы, а также представители современных социальных резервов призывают нас к новым свершениям, которые, в свою очередь, должны быть смешаны с не уникальными данными до степени совершенной неузнаваемости. Подробнее: <a href="blanchard-art.ru/projects/about" class="link">blanchard-art.ru/projects/about</a> </p>
+                <p class="projects-description">Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А ещё независимые государства смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Прежде всего, постоянное информационно-пропагандистское <span title="Пример современных тенденций - современная методология разработки" class="tooltip tlt-1"></span> обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И нет сомнений, что действия представителей оппозиции могут быть рассмотрены <span href="#" title="Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции" class="tooltip tlt-2"></span> исключительно в разрезе маркетинговых и финансовых <span href="#" title="В стремлении повысить качество " class="tooltip tlt-3"></span> предпосылок. Банальные, но неопровержимые выводы, а также представители современных социальных резервов призывают нас к новым свершениям, которые, в свою очередь, должны быть смешаны с не уникальными данными до степени совершенной неузнаваемости. Подробнее: <a href="blanchard-art.ru/projects/about" class="link">blanchard-art.ru/projects/about</a> </p>
                 <h3 class="partner-heading">Партнеры проектов:</h3>
                 <div class="partner-slider">
                     <button class="partner-slider-btn partner-slider-left"></button>
