@@ -6,6 +6,19 @@ window.addEventListener('DOMContentLoaded', function(){
     document.querySelector('#burger-close').addEventListener('click',function(){
         document.querySelector('#burger-menu').classList.remove('is-open')
     })
+    document.querySelector('#search').addEventListener('click',function(){
+        document.querySelector('.nav-search-form').classList.add('is-open')
+        if(document.body.clientWidth < 1024 ){
+            document.querySelector('.burger').classList.add('is-hidden')
+            document.querySelector('.logo-link').classList.add('is-hidden')
+        }
+
+    })
+    document.querySelector('.close-search').addEventListener('click',function(){
+        document.querySelector('.nav-search-form').classList.remove('is-open')
+        document.querySelector('.burger').classList.remove('is-hidden')
+        document.querySelector('.logo-link').classList.remove('is-hidden')
+    })
     
     document.querySelector('.btn-all-events').addEventListener('click',function(){
         document.querySelectorAll('.events-item').forEach(function(EventContent){

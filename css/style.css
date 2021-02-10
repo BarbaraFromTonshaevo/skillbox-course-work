@@ -301,6 +301,8 @@ html{
     background-image: url(../img/Search.svg);
     background-color: transparent;
     background-repeat: no-repeat;
+    background-size: contain;
+    padding: 0;
 }
 .nav-search-input{
     width: 218px;
@@ -312,6 +314,9 @@ html{
 }
 .nav-search-input::placeholder{
     color: white;
+}
+.close-search{
+    display: none;
 }
 /* HERO */
 .hero-section{
@@ -1210,6 +1215,7 @@ html{
         height: auto;
     }
     .burger{
+        min-width: 36px;
         margin-right: 332px;
     }
     .logo{
@@ -1221,9 +1227,32 @@ html{
         height: 30px;
     }
     .is-open.nav-search-form{
-        
-    }
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 261px;
+        height: 36px;
+        background-color: #18171B;
+        padding: 2px 0px 6px 2px;
 
+    }
+    .is-open.nav-search-form > .nav-search-btn{
+        width: 29.45px;
+        height: 28.82px;
+        display: block;
+        margin-right: 10px;
+        margin-top: 6px;
+        padding: 0;
+        background-size: cover;
+    }
+    .is-open.nav-search-form > .nav-search-input{
+        display: block;
+        width: 218px;
+        border-bottom: 1px solid white;
+    }
+    .is-open.nav-search-form > .nav-search-input::placeholder{
+        color:transparent;
+    }
 
     .is-open.open-burger-block{
         position: absolute;
@@ -1445,7 +1474,46 @@ html{
         padding: 0;
         margin: 0;
     }
-    .is-open{
+    .is-hidden{
+        display: none;
+    }
+    .is-open.nav-search-form{
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 668px;
+        height: 100%;
+
+    }
+    .is-open.nav-search-form > .nav-search-btn{
+        width: 29.45px;
+        height: 28.82px;
+        display: block;
+        margin-right: 10px;
+        margin-top: 6px;
+        padding: 0;
+        background-size: cover;
+    }
+    .is-open.nav-search-form > .nav-search-input{
+        display: block;
+        width: 576px;
+        border-bottom: 1px solid white;
+    }
+    .is-open.nav-search-form > .nav-search-input::placeholder{
+        color:transparent;
+    }
+    .is-open.nav-search-form > .close-search{
+        display: block;
+        width: 29px;
+        height: 29px;
+        background-image: url(../img/X.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        border: none;
+    }
+
+    .is-open.open-burger-block{
         position: absolute;
         z-index: 2;
         top: 0;
@@ -1722,7 +1790,7 @@ html{
         padding: 0;
         margin: 0;
     }
-    .is-open{
+    .is-open.open-burger-block{
         position: absolute;
         top: 0;
         left: 0;
@@ -1771,6 +1839,51 @@ html{
     }
     .customScroll{
         display: none;
+    }
+    .is-hidden{
+        display: none;
+    }
+    .is-open.nav-search-form{
+        display: flex;
+        position: fixed;
+        left: 0;
+        top: 0;
+        align-items: flex-end;
+        justify-content: center;
+        width: 100vw;
+        height: 75px;
+        background-color: rgba(0,0,0,0.4);
+        padding-bottom: 19px;
+
+    }
+    .is-open.nav-search-form > .nav-search-btn{
+        width: 16px;
+        height: 16px;
+        display: block;
+        margin-right: 10px;
+        margin-top: 6px;
+        padding: 0;
+        background-size: contain;
+    }
+    .is-open.nav-search-form > .nav-search-input{
+        display: block;
+        width: 180px;
+        border-bottom: 1px solid white;
+        margin-right: 34px;
+    }
+    .is-open.nav-search-form > .nav-search-input::placeholder{
+        color:transparent;
+    }
+    .is-open.nav-search-form > .close-search{
+        display: block;
+        width: 15px;
+        height: 15px;
+        background-image: url(../img/X.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        border: none;
+        margin-bottom: 24px;
     }
     /* HERO */
     .hero-section{
