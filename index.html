@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/normalize.css">
 
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css"/>
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+
     <link rel="stylesheet" href="./css/choices.min.css">
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -45,10 +48,9 @@
 <body>
     <header class="header">
         <div class="header-container container">
-            <div class="header-top-block">
-                <button class="burger"></button>
-                <img src="./img/logo.svg" alt="logo" class="logo">
-
+            <div class="header-top-block ">
+                <button class="burger" id="burger"></button>
+                <a href="#start" class="logo-link"><img src="./img/logo.svg" alt="logo" class="logo"></a>                
                 <nav class="nav">
                     <ul class="nav-list">
                         <li class="nav-item"><a href="#about-us" class="nav-link">О нас</a></li>
@@ -60,15 +62,68 @@
                         <li class="nav-item"><a href="#contacts" class="nav-link">Контакты</a></li>
                     </ul>
                 </nav>
-                <button class="btn btn-enter">Войти</button>
+                <button class="btn btn-enter">Войти</button>                
             </div>
             <div class="header-bottom-block">
-                <ul class="paiting-list">
-                    <li class="paiting-item">Реализм</li>
-                    <li class="paiting-item">Импрессионизм</li>
-                    <li class="paiting-item">Постимпрессионизм</li>
-                    <li class="paiting-item">Авангард</li>
-                    <li class="paiting-item">Футуризм</li>
+                <ul class="painting-list">
+                    <li class="painting-item">
+                        <span class="painting-heading" data-path="one">Реализм</span>
+                        <div class="customScroll" data-simplebar data-target="one">
+                            <ul class="painting-style-list painting-style-list-1">
+                                <li class="painting-style-item">Тинторетто</li>
+                                <li class="painting-style-item">Фридрих</li>
+                                <li class="painting-style-item">Леонардо</li>
+                                <li class="painting-style-item">Верроккьо</li>
+                                <li class="painting-style-item">Тинторетто</li>
+                                <li class="painting-style-item">Фридрих</li>
+                                <li class="painting-style-item">Леонардо</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="painting-item">
+                        <span class="painting-heading" data-path="two">Импрессионизм</span>
+                        <div class="customScroll" data-simplebar data-target="two">
+                            <ul class="painting-style-list painting-style-list-2 ">
+                                <li class="painting-style-item">Моне</li>
+                                <li class="painting-style-item">Сислей</li>
+                                <li class="painting-style-item">Мане</li>
+                                <li class="painting-style-item">Ренуар</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="painting-item">
+                        <span class="painting-heading" data-path="three">Постимпрессионизм</span>
+                        <div class="customScroll" data-simplebar data-target="three">
+                            <ul class="painting-style-list painting-style-list-3">
+                                <li class="painting-style-item">Ван Гог</li>
+                                <li class="painting-style-item">Сезанн</li>
+                                <li class="painting-style-item">Гоген</li>
+                                <li class="painting-style-item">Сёра</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="painting-item">
+                        <span class="painting-heading" data-path="four">Авангард</span>
+                        <div class="customScroll" data-simplebar data-target="four">
+                            <ul class="painting-style-list painting-style-list-4">
+                                <li class="painting-style-item">Кандинский</li>
+                                <li class="painting-style-item">Маринетти</li>
+                                <li class="painting-style-item">Малевич</li>
+                                <li class="painting-style-item">Пикассо</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="painting-item">
+                        <span class="painting-heading" data-path="five">Футуризм</span>
+                        <div class="customScroll" data-simplebar data-target="five">
+                            <ul class="painting-style-list painting-style-list-5">
+                                <li class="painting-style-item">Карра</li>
+                                <li class="painting-style-item">Прателла</li>
+                                <li class="painting-style-item">Северини</li>
+                                <li class="painting-style-item">Балла</li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
                 <form class="nav-search-form">
                     <button class="nav-search-btn"></button>
@@ -77,7 +132,25 @@
             </div>
         </div>
     </header>
-    <main class="main">
+    <section class="open-burger-block" id="burger-menu">
+        <button class="close-burger" id="burger-close"></button>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#about-us" class="nav-link">О нас</a></li>
+                <li class="nav-item"><a href="#gallary" class="nav-link">Галерея</a></li>
+                <li class="nav-item"><a href="#catalog" class="nav-link">Каталог</a></li>
+                <li class="nav-item"><a href="#events" class="nav-link">События</a></li>
+                <li class="nav-item"><a href="#editions" class="nav-link">Издания</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Проекты</a></li>
+                <li class="nav-item"><a href="#contacts" class="nav-link">Контакты</a></li>
+            </ul>
+        </nav>
+        <button class="btn btn-enter">Войти</button>
+        <div >
+
+        </div>
+    </section>
+    <main class="main"  id="start">
         <section class="hero-section">
             <div class="container hero-container">
                 <h1 class="hero-heading">Прикоснитесь к прекрасному</h1>
@@ -506,22 +579,18 @@
                 </div>
                 <div class="map contacts-map" id="map"></div>
             </div>
-
-            
-            
-
         </section>
-        <footer class="footer">
-            <div class="container footer-container">
-                <img src="./img/logo.svg" alt="" class="footer-logo">
-                <div class="footer-social">
-                    <a href="" class="footer-social-link social-vk"></a>
-                    <a href="" class="footer-social-link social-ig"></a>
-                    <a href="" class="footer-social-link social-fb"></a>
-                </div>
-            </div>
-        </footer>
     </main>
+    <footer class="footer">
+        <div class="container footer-container">
+            <a href class="logo-link"><img src="./img/logo.svg" alt="" class="footer-logo"></a>
+            <div class="footer-social">
+                <a href="" class="footer-social-link social-vk"></a>
+                <a href="" class="footer-social-link social-ig"></a>
+                <a href="" class="footer-social-link social-fb"></a>
+            </div>
+        </div>
+    </footer>
     <script src="./script/choices.min.js"></script>
     <script>
         const element = document.querySelector('select');

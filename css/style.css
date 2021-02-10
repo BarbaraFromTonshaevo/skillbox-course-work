@@ -84,7 +84,7 @@ html{
 .header-top-block,
 .nav-list,
 .header-bottom-block,
-.paiting-list,
+.painting-list,
 .nav-search-form{
     display: flex;
 }
@@ -93,6 +93,7 @@ html{
     align-items: center;
 }
 .header-top-block{
+    position: static;
     align-items: center;
     height: 100px;
 }
@@ -108,9 +109,23 @@ html{
     background-color: transparent;
     border: none;
 }
+.close-burger{
+    display: none;
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/X.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+}
 .logo{
     width: 173px;
     margin-right: 179px;
+}
+.open-burger-block{
+    display: flex;
 }
 .nav-item:not(:last-child){    
     margin-right: 62px;
@@ -143,7 +158,10 @@ html{
     background-position: 0 5px;
     align-self: center;
 }
-.paiting-item{
+.painting-item{
+    position: relative;
+}
+.painting-item{
     display: inline-block;
     font-weight: normal;
     font-size: 18px;
@@ -151,11 +169,129 @@ html{
     text-align: center;
     color: white;
 }
-.paiting-item:not(:last-child){
+.painting-item:not(:last-child){
     margin-right: 111px;
 }
-.paiting-list{
+.painting-list{
     margin-right: 331px;
+}
+.painting-style-list{
+    display: none;
+}
+.customScroll{
+    display: none;
+}
+.is-open.customScroll{
+    display: block;
+    position: absolute;
+    top: 47px;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(0,0,0,0.6);
+    padding: 40px 0px 40px 40px;
+}
+
+.painting-style-list{
+    display: flex;
+    flex-direction: column;
+}
+.painting-style-list > .painting-style-item{
+    display: flex;
+    align-items: center;
+    padding-left: 14px;
+    width: 220px;
+    height: 40px;
+    background-size: cover;
+}
+.painting-style-list > .painting-style-item:not(:last-child){
+    margin-bottom: 20px;
+}
+.simplebar-track.simplebar-vertical{
+    width: 5px;
+    right: 19px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    background-color: black;
+}
+.simplebar-scrollbar{
+    background-color: white;
+}
+
+
+.painting-style-list-1 > .painting-style-item:first-child{
+    background-image: url(../img/Rectangle\ 1-1.jpg);
+}
+.painting-style-list-1 > .painting-style-item:nth-child(2){
+    background-image: url(../img/Rectangle\ 1-2.jpg);
+}
+.painting-style-list-1 > .painting-style-item:nth-child(3){
+    background-image: url(../img/Rectangle\ 1-3.jpg);
+}
+.painting-style-list-1 > .painting-style-item:nth-child(4){
+    background-image: url(../img/Rectangle\ 1-4.jpg);
+}
+.painting-style-list-1 > .painting-style-item:nth-child(5){
+    background-image: url(../img/Rectangle\ 1-2.jpg);
+}
+.painting-style-list-1 > .painting-style-item:nth-child(6){
+    background-image: url(../img/Rectangle\ 1-3.jpg);
+}
+.painting-style-list-1 > .painting-style-item:nth-child(7){
+    background-image: url(../img/Rectangle\ 1-4.jpg);
+}
+
+
+
+.painting-style-list-2 > .painting-style-item:first-child{
+    background-image: url(../img/Rectangle\ 2-1.jpg);
+}
+.painting-style-list-2 > .painting-style-item:nth-child(2){
+    background-image: url(../img/Rectangle\ 2-2.jpg);
+}
+.painting-style-list-2 > .painting-style-item:nth-child(3){
+    background-image: url(../img/Rectangle\ 2-3.jpg);
+}
+.painting-style-list-2 > .painting-style-item:nth-child(4){
+    background-image: url(../img/Rectangle\ 2-4.jpg);
+}
+
+.painting-style-list-3 > .painting-style-item:first-child{
+    background-image: url(../img/Rectangle\ 3-1.jpg);
+}
+.painting-style-list-3 > .painting-style-item:nth-child(2){
+    background-image: url(../img/Rectangle\ 3-2.jpg);
+}
+.painting-style-list-3 > .painting-style-item:nth-child(3){
+    background-image: url(../img/Rectangle\ 3-3.jpg);
+}
+.painting-style-list-3 > .painting-style-item:nth-child(4){
+    background-image: url(../img/Rectangle\ 3-4.jpg);
+}
+
+.painting-style-list-4 > .painting-style-item:first-child{
+    background-image: url(../img/Rectangle\ 4-1.jpg);
+}
+.painting-style-list-4 > .painting-style-item:nth-child(2){
+    background-image: url(../img/Rectangle\ 4-2.jpg);
+}
+.painting-style-list-4 > .painting-style-item:nth-child(3){
+    background-image: url(../img/Rectangle\ 4-3.jpg);
+}
+.painting-style-list-4 > .painting-style-item:nth-child(4){
+    background-image: url(../img/Rectangle\ 4-4.jpg);
+}
+
+.painting-style-list-5 > .painting-style-item:first-child{
+    background-image: url(../img/Rectangle\ 5-1.jpg);
+}
+.painting-style-list-5 > .painting-style-item:nth-child(2){
+    background-image: url(../img/Rectangle\ 5-2.jpg);
+}
+.painting-style-list-5 > .painting-style-item:nth-child(3){
+    background-image: url(../img/Rectangle\ 5-3.jpg);
+}
+.painting-style-list-5 > .painting-style-item:nth-child(4){
+    background-image: url(../img/Rectangle\ 5-4.jpg);
 }
 .nav-search-btn{
     width: 22px;
@@ -1052,6 +1188,7 @@ html{
     .container{
         width: 924px;
     }
+    /* HEADER */
     .header{
         height: 100px;
         background-color: black;
@@ -1063,7 +1200,7 @@ html{
     }
     .nav,
     .btn-enter,
-    .paiting-list,
+    .painting-list,
     .nav-search-input
     {
         display: none;
@@ -1083,6 +1220,65 @@ html{
         width: 30px;
         height: 30px;
     }
+    .is-open.nav-search-form{
+        
+    }
+
+
+    .is-open.open-burger-block{
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        width: 100vw;
+        height: 768px;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 96px 0px 51px 48px;
+    }
+    .is-open .close-burger{
+        display: block;
+        margin-bottom: 30px;
+    }
+    .is-open > nav{
+        display: block;
+        height: 224px;
+    }
+    .is-open > nav > .nav-list{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .is-open > nav > .nav-list > .nav-item{
+        line-height: 64px;
+        font-weight: 300;
+        margin: 0;
+    }
+    .is-open > .btn-enter{
+        margin-top: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-left: 15px;
+
+        width: 257px;
+        height: 60px;
+
+        border: 2px solid var(--purple);
+        border-radius: 100px;
+        align-self: flex-start;
+        background-position: 90px 21px;
+    }
+    .customScroll{
+        display: none;
+    }
+
+
+
     /* HERO */
     .hero-section{
         height: 768px;
@@ -1227,7 +1423,7 @@ html{
     }
     .nav,
     .btn-enter,
-    .paiting-list,
+    .painting-list,
     .nav-search-input
     {
         display: none;
@@ -1249,6 +1445,57 @@ html{
         padding: 0;
         margin: 0;
     }
+    .is-open{
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        width: 100vw;
+        height: 768px;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 96px 0px 51px 48px;
+    }
+    .is-open .close-burger{
+        display: block;
+        margin-bottom: 30px;
+    }
+    .is-open > nav{
+        display: block;
+        height: 224px;
+    }
+    .is-open > nav > .nav-list{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .is-open > nav > .nav-list > .nav-item{
+        line-height: 64px;
+        font-weight: 300;
+        margin: 0;
+    }
+    .is-open > .btn-enter{
+        margin-top: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-left: 15px;
+
+        width: 257px;
+        height: 60px;
+
+        border: 2px solid var(--purple);
+        border-radius: 100px;
+        align-self: flex-start;
+        background-position: 90px 21px;
+    }
+    .customScroll{
+        display: none;
+    }
     /* HERO */
     .hero-section{
         height: 768px;
@@ -1265,6 +1512,7 @@ html{
         line-height: 30px;
         margin-bottom: 107px;
     }
+
         /* Gallary */
     .gallary-section{
         height: 1209px;
@@ -1443,7 +1691,7 @@ html{
     }
     .nav,
     .btn-enter,
-    .paiting-list,
+    .painting-list,
     .nav-search-input
     {
         display: none;
@@ -1473,6 +1721,56 @@ html{
         background-size: cover;
         padding: 0;
         margin: 0;
+    }
+    .is-open{
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        width: 100vw;
+        height: 355px;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 15px 0px 27px 15px;
+        z-index: 2;
+    }
+    .is-open .close-burger{
+        display: block;
+        margin-bottom: 30px;
+    }
+    .is-open > nav{
+        display: block;
+    }
+    .is-open > nav > .nav-list{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .is-open > nav > .nav-list > .nav-item{
+        line-height: 32px;
+        font-weight: 300;
+        margin: 0;
+    }
+    .is-open > .btn-enter{
+        margin-top: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-left: 15px;
+
+        width: 115px;
+        height: 40px;
+
+        border: 2px solid var(--purple);
+        border-radius: 100px;
+        align-self: flex-start;
+        background-position: 20px 12px;
+    }
+    .customScroll{
+        display: none;
     }
     /* HERO */
     .hero-section{
