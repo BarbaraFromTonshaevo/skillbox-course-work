@@ -126,9 +126,9 @@
                     </li>
                 </ul>
                 <form class="nav-search-form">
-                    <button class="nav-search-btn" id="search"></button>
+                    <div class="nav-search-btn" id="search"></div>
                     <input class="nav-search-input" placeholder="Поиск по сайту"/>
-                    <button class="close-search"></button>
+                    <div class="close-search"></div>
                 </form>
             </div>
         </div>
@@ -158,7 +158,6 @@
                 <p class="hero-description">Мы вынуждены отталкиваться от того, что реализация намеченных плановых заданий создаёт предпосылки для новых предложений.</p>
                 <a href="#map" class="btn-sub">Подписаться на рассылку</a>
             </div>
-
         </section>
         <section class="about-us-section" id="about-us">
             <div class="container">
@@ -324,7 +323,7 @@
         <section class="events-section" id="events">
             <div class="container events-container">
                 <h2 class="section-heading events-heading">События</h2>
-                <ul class="events-list">
+                <ul class="events-list desctop">
                     <li class="events-item event-1 visible-event" data-path="events-1">
                         <p class="events-location-data">Музей им. Щусева <br>
                             с 20 марта по 30 апреля</p>
@@ -365,9 +364,47 @@
     
                     </li>
                 </ul>
+                <div class="mobile-slider">
+                    <ul class="events-list slider">
+                        <li class="events-item event-1 visible-event" data-path="events-1">
+                            <p class="events-location-data">Музей им. Щусева <br>
+                                с 20 марта по 30 апреля</p>
+                            <h3 class="events-info-heading">Книжная гравюра в живом восприятии</h3>
+                            <p class="events-info-description">Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо.</p>
+                            <a href="" class="more-details">Подробнее</a>
+                        </li>
+                        <li class="events-item event-2 visible-event" data-path="events-2">
+                            <p class="events-location-data">ММОМА <br>
+                                24 марта 19:00</p>
+                            <h3 class="events-info-heading">«Открытая дискуссия». Дмитрий Петров и Сергей Ильин.</h3>
+                            <p class="events-info-description">Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта.</p>
+                            <a href="" class="more-details">Подробнее</a>
+                        </li>
+                        <li class="events-item  event-3 visible-event" data-path="events-3">
+                            <p class="events-location-data">Еврейский музей <br>
+                                с 31 марта по 21 апреля</p>
+                            <h3 class="events-info-heading">Выставка «Формация 2020»</h3>
+                            <p class="events-info-description">Идейные соображения высшего порядка, а также современная методология разработки играет важную роль в формировании глубокомысленных рассуждений.</p>
+                            <a href="" class="more-details">Подробнее</a>
+                        </li>
+                        <li class="events-item  event-4" data-path="events-4">
+                            <p class="events-location-data">Третьяковка на Крымском валу <br>
+                                с 30 марта по 30 апреля</p>
+                            <h3 class="events-info-heading">XXIV Международная биеннале молодого искусства</h3>
+                            <p class="events-info-description">Внезапно, реплицированные с зарубежных источников, современные исследования.</p>
+                            <a href="" class="more-details">Подробнее</a>
+                        </li>
+                        <li class="events-item  event-5" data-path="events-5">
+                            <p class="events-location-data">ММАМ <br>
+                                с 8 апреля по 20 мая</p>
+                            <h3 class="events-info-heading">Джон Винзор. Фотографии из серии «Метафора серебра»</h3>
+                            <p class="events-info-description">Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо.</p>
+                            <a href="" class="more-details">Подробнее</a>
+                        </li>
+                    </ul>
+                </div>
                 <button class="btn-all-events" id="see-all-events">Все события</button>
-            </div>
-    
+            </div>    
         </section>
         <section class="editions-section" id="editions">
             <div class="container editions-container">
@@ -592,6 +629,7 @@
             </div>
         </div>
     </footer>
+
     <script src="./script/choices.min.js"></script>
     <script>
         const element = document.querySelector('select');
@@ -600,5 +638,15 @@
             itemSelectText: ""
         });
     </script>
+
+    <!-- Подключаем JQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Подключаем слайдер Slick -->
+    <script src="./script/slick.min.js"></script>
+    <!-- Подключаем файл скриптов -->
+    <script src="./script/slick-script.js"></script>
+    
+    
+
 </body>
 </html>

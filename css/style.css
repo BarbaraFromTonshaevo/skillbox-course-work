@@ -322,9 +322,23 @@ html{
 .hero-section{
     height: 800px;
     padding-top: 233px;
-    background-image: url(../img/hero-1920-1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    animation: anim-background 10s ease infinite;
+}
+@keyframes anim-background{
+    0%{
+        background-image: url(../img/hero-1920-1.jpg);
+    }
+    33%{
+        background-image: url(../img/hero-1920-2.jpg);
+    }
+    66%{
+        background-image: url(../img/hero-1920-3.jpg);
+    }
+    100%{
+        background-image: url(../img/hero-1920-1.jpg);
+    }
 }
 .hero-heading{
     width: 570px;
@@ -722,7 +736,7 @@ html{
     bottom: 48px;
     border-bottom: 1px solid var(--purple);
 }
-.btn-all-events{
+#see-all-events{
     width: 188px;
     height: 59px;
     border: 2px solid var(--purple);
@@ -737,6 +751,9 @@ html{
 }
 .visible-event{
     display: block;
+}
+.mobile-slider{
+    display: none;
 }
 /* Editions */
 .editions-section{
@@ -1194,6 +1211,9 @@ html{
         width: 924px;
     }
     /* HEADER */
+    .is-hidden{
+        display: initial;
+    }
     .header{
         height: 100px;
         background-color: black;
@@ -1323,6 +1343,20 @@ html{
         font-size: 18px;
         line-height: 30px;
         margin-bottom: 107px;
+    }
+    @keyframes anim-background{
+        0%{
+            background-image: url(../img/hero-1024-1.jpg);
+        }
+        33%{
+            background-image: url(../img/hero-1024-2.jpg);
+        }
+        66%{
+            background-image: url(../img/hero-1024-3.jpg);
+        }
+        100%{
+            background-image: url(../img/hero-1024-1.jpg);
+        }
     }
     /* Gallary */
     .gallary-section{
@@ -1567,7 +1601,6 @@ html{
     /* HERO */
     .hero-section{
         height: 768px;
-        background-image: url(../img/hero-1024-1.jpg);
         padding-top: 205px;
     }
     .hero-heading{
@@ -1580,7 +1613,20 @@ html{
         line-height: 30px;
         margin-bottom: 107px;
     }
-
+    @keyframes anim-background{
+        0%{
+            background-image: url(../img/hero-768-1.jpg);
+        }
+        33%{
+            background-image: url(../img/hero-768-2.jpg);
+        }
+        66%{
+            background-image: url(../img/hero-768-3.jpg);
+        }
+        100%{
+            background-image: url(../img/hero-768-1.jpg);
+        }
+    }
         /* Gallary */
     .gallary-section{
         height: 1209px;
@@ -1770,17 +1816,15 @@ html{
     }
     .burger{
         display: block;
-        width: 50px;
+        width: 20px;
         height: 15px;
         background-image: url(../img/Burger.svg);
         background-size: contain;
-        margin-right: auto;
         padding: 0;
         margin-right: 77px;
     }
     .logo{
         width: 96px;
-        margin-right: auto;
         margin-right: 80px;
     }
     .nav-search-btn{
@@ -1888,7 +1932,6 @@ html{
     /* HERO */
     .hero-section{
         height: 355px;
-        background-image: url(../img/hero-1024-1.jpg);
         padding-top: 75px;
     }
     .hero-heading{
@@ -1914,6 +1957,20 @@ html{
         height: 40px;
         font-size: 12px;
         line-height: 16px;
+    }
+    @keyframes anim-background{
+        0%{
+            background-image: url(../img/hero-320-1.jpg);
+        }
+        33%{
+            background-image: url(../img/hero-320-2.jpg);
+        }
+        66%{
+            background-image: url(../img/hero-320-3.jpg);
+        }
+        100%{
+            background-image: url(../img/hero-320-1.jpg);
+        }
     }
             /* Gallary */
     .gallary-section{
@@ -2009,19 +2066,64 @@ html{
         padding-bottom: 22px;
     }
     /* Events */
-    .events-item{
+    .events-list.desctop, #see-all-events{
         display: none;
     }
-    .events-item{
+    .mobile-slider{
+        display: block;
+        width: 292px;
+        height: 760px;
+    }
+    /* Слайдер */
+    .slick-slider{
         width: 290px;
         height: 683px;
-        padding: 214px 11px 0px 29px;
-        background-size: 290px 200px;
+    }
+    /* Ограничивающая оболочка */
+    .slick-list{overflow: hidden;}
+    /* Лента слайдов */
+    .slick-track{display: flex;}
+    /* Слайд */
+    .slick-slide{
+        width: 290px;
+        height: 683px;
+        background-color: #fff;
+    }
+    /* Стрелка */
+    .slick-arrow{display: none !important;}
+
+    .events-item{
+        display: block;
+        border: 1px solid #CACACA;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: relative;
+        padding: 214px 18px 56px 35px; 
+    }
+    .events-location-data{
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .events-info-heading{
+        font-size: 24px;
+        line-height: 33px;
+        margin-bottom: 10px;
+        margin-top: 5px;
     }
     .events-info-description{
-        width: 235px;
+        width: 230px;
+        font-size: 16px;
+        line-height: 32px;
     }
-            /* Editions */
+    .more-details{
+        font-size: 16px;
+        line-height: 32px;
+        bottom: 48px;
+    }
+    .events-item:not(:nth-child(3n)) {
+        margin-right: 0px;
+    }
+    /* Editions */
     .editions-section{
         height: initial;
         background-size: cover;
