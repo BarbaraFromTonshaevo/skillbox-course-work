@@ -56,104 +56,182 @@ window.addEventListener('DOMContentLoaded', function(){
     })
     // Выплывающий список художников
     document.querySelectorAll('.painting-heading').forEach(function(TabsBtn){
-        console.log(TabsBtn)
+        // console.log(TabsBtn)
         TabsBtn.addEventListener('click',function(event){
             var path = event.currentTarget.dataset.path
             var element = document.querySelector('.is-open')
-
-
+            
             if(!element){          
                 document.querySelector(`[data-target="${path}"]`).classList.add('is-open')
+                TabsBtn.classList.add('is-active')
             } 
             else {
                 if(path == element.dataset.target){
+                    console.log("Clickclick")
                     document.querySelector(`[data-target="${path}"]`).classList.remove('is-open')
+                    TabsBtn.classList.remove('is-active')
                 }
                 else{
                     document.querySelectorAll('.customScroll').forEach(function(TabContent){
                         TabContent.classList.remove('is-open')
                     })
                     document.querySelector(`[data-target="${path}"]`).classList.add('is-open')
+                    TabsBtn.classList.add('is-active')
                 }
             }
         })
     })
-
-    const max_images_6 = 6
-    const max_block_6 = 5
-
-    const max_images_4 = 4
-    const max_block_4 = 14 
-
-    var curr_block_6 = 1
-    var curr_block_4 = 1
-
-    var curr_img_6 = 6
-    var curr_img_4 = 4 
-
-    var img_src = './img/Gallary-'
-
-
-    document.querySelector('.right-slider-6').addEventListener('click', function(){
-        if(curr_block_6 < max_block_6 ){
-            document.querySelectorAll('.picture-item-6').forEach(function(ImgItem){
-                curr_img_6++
-                var full_src =  img_src + curr_img_6 + '.jpg'
-                var full_url = 'url(' + full_src + ')'
-                ImgItem.style.backgroundImage = full_url
+    // Gallary
+    if((document.body.clientWidth < 1920)&&(document.body.clientWidth > 768)){
+        document.querySelector('.num-slider-gl').textContent = 1 + "/14"
+    }
+    if(document.body.clientWidth < 768){
+        document.querySelector('.btn-slider-gl').style.display = "none"
+    }
+    window.addEventListener('resize',function(){
+        if(document.body.clientWidth > 1920 ){
+            document.querySelector('.btn-slider-gl').style.display = "flex"
+            document.querySelector('.mobile-gallary-slider').style.display = "none"
+            if(curr_gl > 5){
+                curr_gl = 5
+            }
+            var iter = 1
+            document.querySelectorAll('.picture-item').forEach(function(Pis){
+                var curr_start = (curr_gl-1)*6+1
+                if(( iter >= curr_start)&&(iter <= curr_start+5)){
+                    Pis.style.display = "block"
+                }
+                else{
+                    Pis.style.display = "none"
+                }
+                iter++
             })
-            curr_block_6++
-            var text_content = curr_block_6 + '/5'
-            // console.log(curr_block_6)
-            document.querySelector('.num-slider-6').textContent = text_content
+            document.querySelector('.num-slider-gl').textContent = curr_gl + "/5"
+        }
+        else if(document.body.clientWidth < 768){
+            document.querySelector('.btn-slider-gl').style.display = "none"
+            document.querySelector('.mobile-gallary-slider').style.display = "block"
+        }
+        else{
+            document.querySelector('.btn-slider-gl').style.display = "flex"
+            document.querySelector('.mobile-gallary-slider').style.display = "none"
+            var iter = 1
+            document.querySelectorAll('.picture-item').forEach(function(Pis){
+                var curr_start = curr_gl*2-1
+                if(( iter >= curr_start)&&(iter <= curr_start+3)){
+                    Pis.style.display = "block"
+                }
+                else{
+                    Pis.style.display = "none"
+                }
+                iter++
+            })
+            document.querySelector('.num-slider-gl').textContent = curr_gl + "/14"
         }
     })
-    document.querySelector('.left-slider-6').addEventListener('click', function(){
-        if(curr_block_6 > 1){
-            curr_img_6 = curr_img_6 - max_images_6*2
-            // console.log(curr_img_6)
-            document.querySelectorAll('.picture-item-6').forEach(function(ImgItem){
-                curr_img_6++
-                var full_src =  img_src + curr_img_6 + '.jpg'
-                var full_url = 'url(' + full_src + ')'
-                ImgItem.style.backgroundImage = full_url
+    var curr_gl = 1
+    document.querySelector('.right-slider-gl').addEventListener('click',function(){
+        if((document.body.clientWidth > 1920) && (curr_gl < 5)){ //проверить не вышел ли за пределы
+            console.log("CLICK")
+            curr_gl++
+            var iter = 1
+            document.querySelectorAll('.picture-item').forEach(function(Pis){
+                var curr_start = (curr_gl-1)*6+1
+                if(( iter >= curr_start)&&(iter <= curr_start+5)){
+                    Pis.style.display = "block"
+                }
+                else{
+                    Pis.style.display = "none"
+                }
+                iter++
             })
-            curr_block_6--
-            var text_content = curr_block_6 + '/5'
-            // console.log(curr_block_6)
-            document.querySelector('.num-slider-6').textContent = text_content
+            document.querySelector('.num-slider-gl').textContent = curr_gl + "/5"
+        }
+        if((document.body.clientWidth < 1920) && (curr_gl < 14)){ //проверить не вышел ли за пределы
+            console.log("CLICK")
+            curr_gl++
+            var iter = 1
+            document.querySelectorAll('.picture-item').forEach(function(Pis){
+                var curr_start = curr_gl*2-1
+                if(( iter >= curr_start)&&(iter <= curr_start+3)){
+                    Pis.style.display = "block"
+                }
+                else{
+                    Pis.style.display = "none"
+                }
+                iter++
+            })
+            document.querySelector('.num-slider-gl').textContent = curr_gl + "/14"
         }
     })
-    document.querySelector('.right-slider-4').addEventListener('click', function(){
-        if(curr_block_4 < max_block_4 ){
-            curr_img_4 = curr_img_4 - 2
-            document.querySelectorAll('.picture-item-4').forEach(function(ImgItem){
-                curr_img_4++
-                var full_src =  img_src + curr_img_4 + '.jpg'
-                var full_url = 'url(' + full_src + ')'
-                ImgItem.style.backgroundImage = full_url
+    document.querySelector('.left-slider-gl').addEventListener('click',function(){
+        if((document.body.clientWidth > 1920) && (curr_gl > 1)){ //проверить не вышел ли за пределы
+            console.log("CLICK")
+            curr_gl--
+            var iter = 1
+            document.querySelectorAll('.picture-item').forEach(function(Pis){
+                var curr_start = (curr_gl-1)*6+1
+                if(( iter >= curr_start)&&(iter <= curr_start+5)){
+                    Pis.style.display = "block"
+                }
+                else{
+                    Pis.style.display = "none"
+                }
+                iter++
             })
-            curr_block_4++
-            var text_content = curr_block_4 + '/14'
-            // console.log(curr_block_4)
-            document.querySelector('.num-slider-4').textContent = text_content
+            document.querySelector('.num-slider-gl').textContent = curr_gl + "/5"
+        }
+        if((document.body.clientWidth < 1920) && (curr_gl > 1)){ //проверить не вышел ли за пределы
+            console.log("CLICK")
+            curr_gl--
+            var iter = 1
+            document.querySelectorAll('.picture-item').forEach(function(Pis){
+                var curr_start = curr_gl*2-1
+                if(( iter >= curr_start)&&(iter <= curr_start+3)){
+                    Pis.style.display = "block"
+                }
+                else{
+                    Pis.style.display = "none"
+                }
+                iter++
+            })
+            document.querySelector('.num-slider-gl').textContent = curr_gl + "/14"
         }
     })
-    document.querySelector('.left-slider-4').addEventListener('click', function(){
-        if(curr_block_4 > 1 ){
-            curr_img_4 = curr_img_4 - 6
-            document.querySelectorAll('.picture-item-4').forEach(function(ImgItem){
-                curr_img_4++
-                var full_src =  img_src + curr_img_4 + '.jpg'
-                var full_url = 'url(' + full_src + ')'
-                ImgItem.style.backgroundImage = full_url
+    // Modal Window
+    document.querySelectorAll('.picture-item-slider').forEach(function(Pis){
+        if(document.body.clientWidth < 768){
+            Pis.addEventListener('dblclick',function(){
+                document.querySelector('.modal-painter-name').textContent = `${Pis.dataset.name}`
+                document.querySelector('.modal-art-name').textContent = `${Pis.dataset.title}`
+                document.querySelector('.modal-year').textContent = `${Pis.dataset.year}`
+                document.querySelector('.modal-description').textContent = `${Pis.dataset.description}`
+                document.querySelector('.modal-img').setAttribute("src",`${Pis.firstChild.getAttribute("src")}`)
+                document.querySelector('.modal-block').classList.add('is-active')   
+                document.querySelector('.shadow').classList.add('is-active')       
             })
-            curr_block_4--
-            var text_content = curr_block_4 + '/14'
-            console.log(curr_block_4)
-            document.querySelector('.num-slider-4').textContent = text_content
         }
     })
+
+    document.querySelectorAll('.picture-item').forEach(function(Pis){
+        Pis.addEventListener('click',function(event){
+            if(document.body.clientWidth > 768){
+                document.querySelector('.modal-painter-name').textContent = `${event.currentTarget.dataset.name}`
+                document.querySelector('.modal-art-name').textContent = `${event.currentTarget.dataset.title}`
+                document.querySelector('.modal-year').textContent = `${event.currentTarget.dataset.year}`
+                document.querySelector('.modal-description').textContent = `${event.currentTarget.dataset.description}`
+                document.querySelector('.modal-img').setAttribute("src",`${Pis.firstChild.getAttribute("src")}`)
+                document.querySelector('.modal-block').classList.add('is-active')    
+                document.querySelector('.shadow').classList.add('is-active')
+
+            }         
+        })
+    })
+    document.querySelector('.btn-close-modal').addEventListener('click',function(){
+        document.querySelector('.shadow').classList.remove('is-active')
+        document.querySelector('.modal-block').classList.remove('is-active')  
+    })
+
     // Accordion
     document.querySelectorAll('.accordion-heading').forEach(function(AcrdBtn){
         // console.log(AcrdBtn)
