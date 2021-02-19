@@ -425,4 +425,10 @@ window.addEventListener('DOMContentLoaded', function(){
             TltpBtn.classList.toggle('is-open')
         })
     })
+    // Chack
+    document.querySelectorAll('.input-check').forEach(function(ChBtn){
+        ChBtn.addEventListener('click',function(){
+            ChBtn.parentNode.classList.toggle("checked")
+        })
+    })
 })

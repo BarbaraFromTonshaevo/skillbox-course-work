@@ -74,7 +74,12 @@ html{
     background-color: var(--purple);
     color: white;
 }
-
+.left-slider:hover, .partner-slider-left:hover{
+    background-image: url(../img/slider-left-purple.svg);
+}
+.right-slider:hover, .partner-slider-right:hover{
+    background-image: url(../img/slider-right-purple.svg);
+}
 /* HEADER */
 .header{
     width: 100vw;
@@ -264,6 +269,9 @@ html{
 }
 .simplebar-scrollbar{
     background-color: white;
+}
+.painting-style-item:hover{
+    border: 1px solid var(--purple);
 }
 
 
@@ -774,7 +782,7 @@ html{
     font-weight: 600;
     font-size: 24px;
     line-height: 32px;
-    border-bottom: 1px solid var(--gray);
+    border-top: 1px solid var(--gray);
     padding-top: 38px;
     padding-bottom: 44px;
     margin: 0;
@@ -787,16 +795,24 @@ html{
 }
 .accordion-heading:hover{
     background-image: url(../img/downdown.svg);
+    border-color: var(--purple);
 }
-.accordion-heading:first-child{
-    border-top: 1px solid var(--gray);
+
+.accordion:last-child{
+    border-bottom: 1px solid var(--gray);
 }
 .is-open.accordion-heading{
     background-image: url(../img/upup.svg);
+    color: #7943A4;
+    border-color: #7943A4;
+    border-bottom: 1px solid #7943A4;
 }
 .accordion-heading:hover{
     border-color: var(--purple);
     color: var(--purple);
+}
+.accordion-heading:hover + .accordion-heading{
+    border-color: var(--purple);
 }
 .artists-info{
     transform: scale(1, 0);
@@ -809,7 +825,6 @@ html{
     height: 341px;
     transform: scale(1, 1);
     transition: all 1s linear;
-
 }
 .artists-list{
     width: 100%;
@@ -828,58 +843,14 @@ html{
     color: var(--black);
     cursor: pointer;
 }
+.artists-item:hover{
+    border-bottom: 1px solid var(--purple);
+    color: var(--purple);
+}
 .is-active.artists-item{
     color: var(--purple);
 }
-/* Accordion */
-.catalog-section{
-    padding-bottom: 80px;
-}
-.accordion-heading{
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 32px;
-    border-bottom: 1px solid var(--purple);
-    padding-top: 38px;
-    padding-bottom: 44px;
-    margin: 0;
 
-    background-image: url(../img/down.png);
-    background-repeat: no-repeat;
-    background-size: 50px 50px;
-    background-position: right center;
-}
-.ui-accordion-content-active{
-    border-bottom: 1px solid var(--purple);
-}
-.accordion-heading:first-child{
-    border-top: 1px solid var(--purple);
-}
-.artists-info{
-    padding-top: 25px;
-    padding-bottom: 25px;
-    height: 341px;
-}
-.artists-list{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: space-between;
-}
-.artists-item{
-    display: block;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 32px;
-    color: var(--black);
-}
- .ui-state-active{
-    background-image: url(../img/up.png);
-}
 /* EVENTS */
 .events-section{
     margin-bottom: 80px;
@@ -954,6 +925,9 @@ html{
     bottom: 48px;
     border-bottom: 1px solid var(--purple);
 }
+.more-details:hover{
+    font-weight: bolder;
+}
 #see-all-events{
     width: 188px;
     height: 59px;
@@ -1024,6 +998,12 @@ html{
 .input-check{
     display: none;
 }
+.category-item:hover label{
+    color: var(--purple);
+}
+.category-item:hover .input-check + span{
+    border-color: var(--purple);
+}
 .input-check + span{
     position: absolute;
     top: 9px;
@@ -1049,6 +1029,9 @@ html{
 }
 .input-check:checked + span{
     border-color:  var(--purple);
+}
+.check.checked{
+    color: var(--purple);
 }
 .price-heading{
     margin: 0px 0px 9px 0px;
