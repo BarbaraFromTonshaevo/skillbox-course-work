@@ -75,6 +75,9 @@ window.addEventListener('DOMContentLoaded', function(){
                     document.querySelectorAll('.customScroll').forEach(function(TabContent){
                         TabContent.classList.remove('is-open')
                     })
+                    document.querySelectorAll('.painting-heading').forEach(function(iterTab){
+                        iterTab.classList.remove('is-active')
+                    })
                     document.querySelector(`[data-target="${path}"]`).classList.add('is-open')
                     TabsBtn.classList.add('is-active')
                 }
@@ -313,6 +316,27 @@ window.addEventListener('DOMContentLoaded', function(){
     })
     
     // Edition
+    window.addEventListener('resize',function(){
+        if(document.body.clientWidth < 768){
+            document.querySelector('.editions-item-5').querySelector('.editions-title').textContent = "Модульные сетки..." 
+            document.querySelector('.editions-item-5').querySelector('.editions-author').textContent = "Мюллер-Брокманн..."
+            document.querySelector('.editions-item-6').querySelector('.editions-title').textContent = "Эволюция графич..." 
+            document.querySelector('.editions-item-7').querySelector('.editions-title').textContent = "Искусство и визуа..."   
+            document.querySelectorAll('.editions-item').forEach(function(EdItm){
+                EdItm.querySelector('.editions-book').style.order = "1"
+                EdItm.querySelector('.editions-title').style.order = "2"
+                EdItm.querySelector('.editions-author').style.order = "3"
+                EdItm.querySelector('.editions-price').style.order = "4"
+                EdItm.querySelector('.btn-order').style.order = "5"
+            })
+        }
+    })
+    if(document.body.clientWidth < 768){
+        document.querySelector('.editions-item-5').querySelector('.editions-title').textContent = "Модульные сетки..." 
+        document.querySelector('.editions-item-5').querySelector('.editions-author').textContent = "Мюллер-Брокманн..."
+        document.querySelector('.editions-item-6').querySelector('.editions-title').textContent = "Эволюция графич..." 
+        document.querySelector('.editions-item-7').querySelector('.editions-title').textContent = "Искусство и визуа..."   
+    }
     var curr_ed = 1
     document.querySelector('.right-slider-ed').addEventListener('click',function(){
         if((curr_ed < 5)&&(document.body.clientWidth > 1920)){
@@ -425,7 +449,7 @@ window.addEventListener('DOMContentLoaded', function(){
             TltpBtn.classList.toggle('is-open')
         })
     })
-    // Chack
+    // Check
     document.querySelectorAll('.input-check').forEach(function(ChBtn){
         ChBtn.addEventListener('click',function(){
             ChBtn.parentNode.classList.toggle("checked")

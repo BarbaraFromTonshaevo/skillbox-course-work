@@ -80,6 +80,9 @@ html{
 .right-slider:hover, .partner-slider-right:hover{
     background-image: url(../img/slider-right-purple.svg);
 }
+.left-slider, .right-slider{
+    cursor: pointer;
+}
 /* HEADER */
 .header{
     width: 100vw;
@@ -121,6 +124,7 @@ html{
     background-repeat: no-repeat;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 .close-burger{
     display: none;
@@ -174,9 +178,11 @@ html{
     background-repeat: no-repeat;
     background-position: 0 5px;
     align-self: center;
+    cursor: pointer;
 }
 .btn-enter:hover{
     color: var(--purple);
+    background-image: url(../img/Enter\ copy.svg);
 }
 .painting-item{
     position: relative;
@@ -361,6 +367,7 @@ html{
     background-repeat: no-repeat;
     background-size: contain;
     padding: 0;
+    cursor: pointer;
 }
 .nav-search-form:hover .nav-search-btn{
     background-image: url(../img/Search-hover.svg);
@@ -822,13 +829,14 @@ html{
     display: block;
     padding-top: 25px;
     padding-bottom: 25px;
-    height: 341px;
+    min-height: 100px;
+    max-height: 341px;
     transform: scale(1, 1);
     transition: all 1s linear;
 }
 .artists-list{
-    width: 100%;
-    height: 100%;
+    min-height: 100px;
+    max-height: 341px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -1144,6 +1152,7 @@ html{
     border-radius: 100px;
     background: none;
     color: white;
+    cursor: pointer;
 
 }
 /* Projects */
@@ -1208,8 +1217,11 @@ html{
 
 
 
-.link{
+.projects-link{
     color: var(--purple);
+}
+.projects-link:hover{
+    border-bottom: 1px solid var(--purple);
 }
 .partner-heading{
     font-style: normal;
@@ -1522,6 +1534,7 @@ html{
     .is-open .close-burger{
         display: block;
         margin-bottom: 30px;
+        cursor: pointer;
     }
     .is-open > nav{
         display: block;
@@ -1552,6 +1565,11 @@ html{
         border-radius: 100px;
         align-self: flex-start;
         background-position: 90px 21px;
+    }
+    .is-open > .btn-enter:hover{
+        background-color: var(--purple);
+        color: white;
+        background-image: url(../img/Enter.svg);
     }
     .customScroll{
         display: none;
@@ -1646,8 +1664,16 @@ html{
     .is-active.info-block, .info-accordion{
         width: 437px;
     }
-    .artists-info{
-        height: 436px;
+    .is-open.artists-info{
+        width: 437px;
+        max-height: 500px;
+        min-height: 100px;
+        margin-bottom: 25px;
+    }
+    .is-open .artists-list{
+        width: 437px;
+        min-height: 100px;
+        max-height: 500px;
     }
     .info-img{
         width: 437px;
@@ -1870,6 +1896,11 @@ html{
         align-self: flex-start;
         background-position: 90px 21px;
     }
+    .is-open > .btn-enter:hover{
+        background-color: var(--purple);
+        color: white;
+        background-image: url(../img/Enter.svg);
+    }
     .customScroll{
         display: none;
     }
@@ -1972,6 +2003,15 @@ html{
     .info-img{
         width: 668px;
         height: 419px;
+    }
+    .is-open.artists-info{
+        max-height: 340px;
+        min-height: 100px;
+        margin-bottom: 25px;
+    }
+    .is-open .artists-list{
+        min-height: 100px;
+        max-height: 340px;
     }
     /* Events */
     .events-item{
@@ -2195,6 +2235,11 @@ html{
         align-self: flex-start;
         background-position: 20px 12px;
     }
+    .is-open > .btn-enter:hover{
+        background-color: var(--purple);
+        color: white;
+        background-image: url(../img/Enter.svg);
+    }
     .customScroll{
         display: none;
     }
@@ -2353,6 +2398,12 @@ html{
     
     }
     /* Стрелка вправо */
+    .gallary-form{
+        width: 100%;
+    }
+    .gallary-block-slider{
+        width: 100%;
+    }
     .mobile-gallary-slider .slick-arrow.slick-next{
         position: absolute;
         bottom: 0;
@@ -2429,10 +2480,13 @@ html{
     .country-item:not(:last-child){
         margin-right: 32px;
     }
-    .artists-info{
-        height: auto !important;
+    .is-open.artists-info{
+        max-height: 900px;
         padding-top: 17px;
         padding-bottom: 17px;
+    }
+    .is-open .artists-list{
+        max-height: 900px;
     }
     .artists-list{
         flex-wrap: nowrap;
@@ -2533,6 +2587,7 @@ html{
     }
     .editions-slider{
         position: initial;
+        width: 100%;
     }
     .editions-list{
         width: 290px;
@@ -2550,7 +2605,7 @@ html{
     .editions-item:nth-child(7){
         display: block;
         height: 254px;
-        width: 130px;
+        max-width: 130px;
         display: flex;
         flex-direction: column;
         margin-bottom: 50px;
