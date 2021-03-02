@@ -1,23 +1,23 @@
 window.addEventListener('DOMContentLoaded', function(){
     // Бургер
     document.querySelector('#burger').addEventListener('click',function(){
-        document.querySelector('#burger-menu').classList.add('is-open')
+        document.querySelector('#burger-menu').classList.add('burger-menu_is_open')
     })
     document.querySelector('#burger-close').addEventListener('click',function(){
-        document.querySelector('#burger-menu').classList.remove('is-open')
+        document.querySelector('#burger-menu').classList.remove('burger-menu_is_open')
     })
     // Поиск
     document.querySelector('#search').addEventListener('click',function(){
-        document.querySelector('.nav-search-form').classList.add('is-open')
+        document.querySelector('.header-top__nav-search').classList.add('header-top__nav-search_is_open')
         if(document.body.clientWidth < 1920 ){
-            document.querySelector('.burger').classList.add('is-hidden')
-            document.querySelector('.logo-link').classList.add('is-hidden')
+            document.querySelector('.header-top__burger').classList.add('is-hidden')
+            document.querySelector('.header-top__link').classList.add('is-hidden')
         }
     })
-    document.querySelector('.close-search').addEventListener('click',function(){
-        document.querySelector('.nav-search-form').classList.remove('is-open')
-        document.querySelector('.burger').classList.remove('is-hidden')
-        document.querySelector('.logo-link').classList.remove('is-hidden')
+    document.querySelector('.nav-search__close').addEventListener('click',function(){
+        document.querySelector('.header-top__nav-search').classList.remove('header-top__nav-search_is_open')
+        document.querySelector('.header-top__burger').classList.remove('is-hidden')
+        document.querySelector('.header-top__link').classList.remove('is-hidden')
     })
     // Кнопка событий
     document.querySelector('#see-all-events').addEventListener('click',function(){
@@ -55,32 +55,20 @@ window.addEventListener('DOMContentLoaded', function(){
 
     })
     // Выплывающий список художников
-    document.querySelectorAll('.painting-heading').forEach(function(TabsBtn){
-        // console.log(TabsBtn)
-        TabsBtn.addEventListener('click',function(event){
-            var path = event.currentTarget.dataset.path
-            var element = document.querySelector('.is-open')
-            
-            if(!element){          
-                document.querySelector(`[data-target="${path}"]`).classList.add('is-open')
-                TabsBtn.classList.add('is-active')
-            } 
-            else {
-                if(path == element.dataset.target){
-                    console.log("Clickclick")
-                    document.querySelector(`[data-target="${path}"]`).classList.remove('is-open')
-                    TabsBtn.classList.remove('is-active')
-                }
-                else{
-                    document.querySelectorAll('.customScroll').forEach(function(TabContent){
-                        TabContent.classList.remove('is-open')
-                    })
-                    document.querySelectorAll('.painting-heading').forEach(function(iterTab){
-                        iterTab.classList.remove('is-active')
-                    })
-                    document.querySelector(`[data-target="${path}"]`).classList.add('is-open')
-                    TabsBtn.classList.add('is-active')
-                }
+    document.querySelectorAll('.painting-list__heading').forEach(function(paintingListHeading){
+        paintingListHeading.addEventListener('click',function(){
+            var element = document.querySelector('.painting-list__item_is_open')
+            if(!element){
+                paintingListHeading.parentElement.classList.add('painting-list__item_is_open')
+            }
+            else if(element == paintingListHeading.parentElement){
+                paintingListHeading.parentElement.classList.remove('painting-list__item_is_open')
+            }
+            else{
+                document.querySelectorAll('.painting-list__item').forEach(function(paintingListItem){
+                    paintingListItem.classList.remove('painting-list__item_is_open')
+                })
+                paintingListHeading.parentElement.classList.add('painting-list__item_is_open')
             }
         })
     })
