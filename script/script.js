@@ -71,23 +71,36 @@ window.addEventListener('DOMContentLoaded', function(){
                 paintingListHeading.parentElement.classList.add('painting-list__item_is_open')
             }
         })
+    })   
+    document.addEventListener('click',function(event){
+        var elem = document.querySelector('.painting-list__item_is_open')
+        if(elem){
+            console.log('exist')
+            console.log(event.target.classList)
+            var flag = 0
+            if((event.target.classList != 'style-list__item')&&(event.target.classList != 'painting-list__wrap')&&(event.target.classList != 'painting-list__heading')){
+                document.querySelectorAll('.painting-list__item').forEach(function(paintingListItem){
+                    paintingListItem.classList.remove('painting-list__item_is_open')
+                })
+            }
+        }
     })
-    // Gallary
+    // Gallery
     if((document.body.clientWidth < 1920)&&(document.body.clientWidth > 768)){
-        document.querySelector('.gallary__num-slider').textContent = 1 + "/14"
+        document.querySelector('.gallery__num-slider').textContent = 1 + "/ 14"
     }
     if(document.body.clientWidth < 768){
-        document.querySelector('.gallary__btn-block').style.display = "none"
+        document.querySelector('.gallery__btn-block').style.display = "none"
     }
     window.addEventListener('resize',function(){
         if(document.body.clientWidth > 1920 ){
-            document.querySelector('.gallary__btn-block').style.display = "flex"
-            document.querySelector('.gallary__mobile-slider').style.display = "none"
+            document.querySelector('.gallery__btn-block').style.display = "flex"
+            document.querySelector('.gallery__mobile-slider').style.display = "none"
             if(curr_gl > 5){
                 curr_gl = 5
             }
             var iter = 1
-            document.querySelectorAll('.gallary__item').forEach(function(Pis){
+            document.querySelectorAll('.gallery__item').forEach(function(Pis){
                 var curr_start = (curr_gl-1)*6+1
                 if(( iter >= curr_start)&&(iter <= curr_start+5)){
                     Pis.style.display = "block"
@@ -97,17 +110,17 @@ window.addEventListener('DOMContentLoaded', function(){
                 }
                 iter++
             })
-            document.querySelector('.gallary__num-slider').textContent = curr_gl + "/5"
+            document.querySelector('.gallery__num-slider').textContent = curr_gl + "/ 5"
         }
         else if(document.body.clientWidth < 768){
-            document.querySelector('.gallary__btn-block').style.display = "none"
-            document.querySelector('.gallary__mobile-slider').style.display = "block"
+            document.querySelector('.gallery__btn-block').style.display = "none"
+            document.querySelector('.gallery__mobile-slider').style.display = "block"
         }
         else{
-            document.querySelector('.gallary__btn-block').style.display = "flex"
-            document.querySelector('.gallary__mobile-slider').style.display = "none"
+            document.querySelector('.gallery__btn-block').style.display = "flex"
+            document.querySelector('.gallery__mobile-slider').style.display = "none"
             var iter = 1
-            document.querySelectorAll('.gallary__item').forEach(function(Pis){
+            document.querySelectorAll('.gallery__item').forEach(function(Pis){
                 var curr_start = curr_gl*2-1
                 if(( iter >= curr_start)&&(iter <= curr_start+3)){
                     Pis.style.display = "block"
@@ -117,16 +130,16 @@ window.addEventListener('DOMContentLoaded', function(){
                 }
                 iter++
             })
-            document.querySelector('.gallary__num-slider').textContent = curr_gl + "/14"
+            document.querySelector('.gallery__num-slider').textContent = curr_gl + "/ 14"
         }
     })
     var curr_gl = 1
-    document.querySelector('.gallary__right-slider').addEventListener('click',function(){
+    document.querySelector('.gallery__right-slider').addEventListener('click',function(){
         if((document.body.clientWidth > 1920) && (curr_gl < 5)){ //проверить не вышел ли за пределы
             console.log("CLICK")
             curr_gl++
             var iter = 1
-            document.querySelectorAll('.gallary__item').forEach(function(Pis){
+            document.querySelectorAll('.gallery__item').forEach(function(Pis){
                 var curr_start = (curr_gl-1)*6+1
                 if(( iter >= curr_start)&&(iter <= curr_start+5)){
                     Pis.style.display = "block"
@@ -136,13 +149,13 @@ window.addEventListener('DOMContentLoaded', function(){
                 }
                 iter++
             })
-            document.querySelector('.gallary__num-slider').textContent = curr_gl + "/5"
+            document.querySelector('.gallery__num-slider').textContent = curr_gl + "/ 5"
         }
         if((document.body.clientWidth < 1920) && (curr_gl < 14)){ //проверить не вышел ли за пределы
             console.log("CLICK")
             curr_gl++
             var iter = 1
-            document.querySelectorAll('.gallary__item').forEach(function(Pis){
+            document.querySelectorAll('.gallery__item').forEach(function(Pis){
                 var curr_start = curr_gl*2-1
                 if(( iter >= curr_start)&&(iter <= curr_start+3)){
                     Pis.style.display = "block"
@@ -152,15 +165,15 @@ window.addEventListener('DOMContentLoaded', function(){
                 }
                 iter++
             })
-            document.querySelector('.gallary__num-slider').textContent = curr_gl + "/14"
+            document.querySelector('.gallery__num-slider').textContent = curr_gl + "/ 14"
         }
     })
-    document.querySelector('.gallary__left-slider').addEventListener('click',function(){
+    document.querySelector('.gallery__left-slider').addEventListener('click',function(){
         if((document.body.clientWidth > 1920) && (curr_gl > 1)){ //проверить не вышел ли за пределы
             console.log("CLICK")
             curr_gl--
             var iter = 1
-            document.querySelectorAll('.gallary__item').forEach(function(Pis){
+            document.querySelectorAll('.gallery__item').forEach(function(Pis){
                 var curr_start = (curr_gl-1)*6+1
                 if(( iter >= curr_start)&&(iter <= curr_start+5)){
                     Pis.style.display = "block"
@@ -170,13 +183,13 @@ window.addEventListener('DOMContentLoaded', function(){
                 }
                 iter++
             })
-            document.querySelector('.gallary__num-slider').textContent = curr_gl + "/5"
+            document.querySelector('.gallery__num-slider').textContent = curr_gl + "/ 5"
         }
         if((document.body.clientWidth < 1920) && (curr_gl > 1)){ //проверить не вышел ли за пределы
             console.log("CLICK")
             curr_gl--
             var iter = 1
-            document.querySelectorAll('.gallary__item').forEach(function(Pis){
+            document.querySelectorAll('.gallery__item').forEach(function(Pis){
                 var curr_start = curr_gl*2-1
                 if(( iter >= curr_start)&&(iter <= curr_start+3)){
                     Pis.style.display = "block"
@@ -186,11 +199,11 @@ window.addEventListener('DOMContentLoaded', function(){
                 }
                 iter++
             })
-            document.querySelector('.gallary__num-slider').textContent = curr_gl + "/14"
+            document.querySelector('.gallery__num-slider').textContent = curr_gl + "/ 14"
         }
     })
     // Modal Window
-    document.querySelectorAll('.gallary__item-slider').forEach(function(Pis){
+    document.querySelectorAll('.gallery__item-slider').forEach(function(Pis){
         if(document.body.clientWidth < 768){
             Pis.addEventListener('dblclick',function(){
                 document.querySelector('.modal__painter-name').textContent = `${Pis.dataset.name}`
@@ -199,12 +212,12 @@ window.addEventListener('DOMContentLoaded', function(){
                 document.querySelector('.modal__description').textContent = `${Pis.dataset.description}`
                 document.querySelector('.modal__img').setAttribute("src",`${Pis.firstChild.getAttribute("src")}`)
                 document.querySelector('.modal-block').classList.add('is-active')   
-                document.querySelector('.gallary__shadow').classList.add('is-active')       
+                document.querySelector('.gallery__shadow').classList.add('is-active')       
             })
         }
     })
 
-    document.querySelectorAll('.gallary__item').forEach(function(Pis){
+    document.querySelectorAll('.gallery__item').forEach(function(Pis){
         Pis.addEventListener('click',function(event){
             if(document.body.clientWidth > 768){
                 document.querySelector('.modal__painter-name').textContent = `${event.currentTarget.dataset.name}`
@@ -213,13 +226,13 @@ window.addEventListener('DOMContentLoaded', function(){
                 document.querySelector('.modal__description').textContent = `${event.currentTarget.dataset.description}`
                 document.querySelector('.modal__img').setAttribute("src",`${Pis.firstChild.getAttribute("src")}`)
                 document.querySelector('.modal-block').classList.add('is-active')    
-                document.querySelector('.gallary__shadow').classList.add('is-active')
+                document.querySelector('.gallery__shadow').classList.add('is-active')
 
             }         
         })
     })
     document.querySelector('.modal__btn-close').addEventListener('click',function(){
-        document.querySelector('.gallary__shadow').classList.remove('is-active')
+        document.querySelector('.gallery__shadow').classList.remove('is-active')
         document.querySelector('.modal-block').classList.remove('is-active')  
     })
 
@@ -340,7 +353,7 @@ window.addEventListener('DOMContentLoaded', function(){
                     curr_ed_item++
                 }
             })
-            var txtcnt = curr_ed + "/5"
+            var txtcnt = curr_ed + "/ 5"
             document.querySelector('.editions__num-slider').textContent = txtcnt
         }
         if((curr_ed < 6)&&(document.body.clientWidth < 1920)){
@@ -356,7 +369,7 @@ window.addEventListener('DOMContentLoaded', function(){
                     curr_ed_item++
                 }
             })
-            var txtcnt = curr_ed + "/6"
+            var txtcnt = curr_ed + "/ 6"
             document.querySelector('.editions__num-slider').textContent = txtcnt
         }
     })
@@ -374,7 +387,7 @@ window.addEventListener('DOMContentLoaded', function(){
                     curr_ed_item++
                 }
             })
-            var txtcnt = curr_ed + "/5"
+            var txtcnt = curr_ed + "/ 5"
             document.querySelector('.editions__num-slider').textContent = txtcnt
         }
         if((curr_ed > 1)&&(document.body.clientWidth < 1920)){
@@ -390,7 +403,7 @@ window.addEventListener('DOMContentLoaded', function(){
                     curr_ed_item++
                 }
             })
-            var txtcnt = curr_ed + "/6"
+            var txtcnt = curr_ed + "/ 6"
             document.querySelector('.editions__num-slider').textContent = txtcnt
         }
     })
@@ -406,7 +419,7 @@ window.addEventListener('DOMContentLoaded', function(){
             document.querySelector(src_1).style.display = "block"
             document.querySelector(src_2).style.display = "block"
             document.querySelector(src_3).style.display = "block"
-            var txtcnt = curr_ed + "/5"
+            var txtcnt = curr_ed + "/ 5"
             document.querySelector('.editions__num-slider').textContent = txtcnt
 
         }
@@ -427,7 +440,7 @@ window.addEventListener('DOMContentLoaded', function(){
                     curr_ed_item++
                 }
             })
-            var txtcnt = curr_ed + "/6"
+            var txtcnt = curr_ed + "/ 6"
             document.querySelector('.editions__num-slider').textContent = txtcnt
         }
     })
