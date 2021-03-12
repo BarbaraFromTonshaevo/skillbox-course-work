@@ -23,7 +23,6 @@ window.addEventListener('DOMContentLoaded', function(){
     document.querySelector('#see-all-events').addEventListener('click',function(){
 
         if(!document.querySelector('.events__btn-hide')){
-            console.log('Не существует')
             document.querySelectorAll('.events__item').forEach(function(EventContent){
                 EventContent.classList.add('events__item_is_visible')
             })
@@ -34,7 +33,6 @@ window.addEventListener('DOMContentLoaded', function(){
             
         }
         else{
-            console.log("Существует")
             if(document.body.clientWidth > 1023 ){
                 document.querySelector('.event-5').classList.remove('events__item_is_visible')
                 document.querySelector('.event-4').classList.remove('events__item_is_visible')
@@ -75,8 +73,6 @@ window.addEventListener('DOMContentLoaded', function(){
     document.addEventListener('click',function(event){
         var elem = document.querySelector('.painting-list__item_is_open')
         if(elem){
-            console.log('exist')
-            console.log(event.target.classList)
             var flag = 0
             if((event.target.classList != 'style-list__item')&&(event.target.classList != 'painting-list__wrap')&&(event.target.classList != 'painting-list__heading')){
                 document.querySelectorAll('.painting-list__item').forEach(function(paintingListItem){
@@ -85,170 +81,35 @@ window.addEventListener('DOMContentLoaded', function(){
             }
         }
     })
-    // Gallery
-    if((document.body.clientWidth < 1920)&&(document.body.clientWidth > 768)){
-        document.querySelector('.gallery__num-slider').textContent = 1 + "/ 14"
-    }
-    if(document.body.clientWidth < 768){
-        document.querySelector('.gallery__btn-block').style.display = "none"
-    }
-    window.addEventListener('resize',function(){
-        if(document.body.clientWidth > 1920 ){
-            document.querySelector('.gallery__btn-block').style.display = "flex"
-            document.querySelector('.gallery__mobile-slider').style.display = "none"
-            if(curr_gl > 5){
-                curr_gl = 5
-            }
-            var iter = 1
-            document.querySelectorAll('.gallery__item').forEach(function(Pis){
-                var curr_start = (curr_gl-1)*6+1
-                if(( iter >= curr_start)&&(iter <= curr_start+5)){
-                    Pis.style.display = "block"
-                }
-                else{
-                    Pis.style.display = "none"
-                }
-                iter++
-            })
-            document.querySelector('.gallery__num-slider').textContent = curr_gl + "/ 5"
-        }
-        else if(document.body.clientWidth < 768){
-            document.querySelector('.gallery__btn-block').style.display = "none"
-            document.querySelector('.gallery__mobile-slider').style.display = "block"
-        }
-        else{
-            document.querySelector('.gallery__btn-block').style.display = "flex"
-            document.querySelector('.gallery__mobile-slider').style.display = "none"
-            var iter = 1
-            document.querySelectorAll('.gallery__item').forEach(function(Pis){
-                var curr_start = curr_gl*2-1
-                if(( iter >= curr_start)&&(iter <= curr_start+3)){
-                    Pis.style.display = "block"
-                }
-                else{
-                    Pis.style.display = "none"
-                }
-                iter++
-            })
-            document.querySelector('.gallery__num-slider').textContent = curr_gl + "/ 14"
-        }
-    })
-    var curr_gl = 1
-    document.querySelector('.gallery__right-slider').addEventListener('click',function(){
-        if((document.body.clientWidth > 1920) && (curr_gl < 5)){ //проверить не вышел ли за пределы
-            console.log("CLICK")
-            curr_gl++
-            var iter = 1
-            document.querySelectorAll('.gallery__item').forEach(function(Pis){
-                var curr_start = (curr_gl-1)*6+1
-                if(( iter >= curr_start)&&(iter <= curr_start+5)){
-                    Pis.style.display = "block"
-                }
-                else{
-                    Pis.style.display = "none"
-                }
-                iter++
-            })
-            document.querySelector('.gallery__num-slider').textContent = curr_gl + "/ 5"
-        }
-        if((document.body.clientWidth < 1920) && (curr_gl < 14)){ //проверить не вышел ли за пределы
-            console.log("CLICK")
-            curr_gl++
-            var iter = 1
-            document.querySelectorAll('.gallery__item').forEach(function(Pis){
-                var curr_start = curr_gl*2-1
-                if(( iter >= curr_start)&&(iter <= curr_start+3)){
-                    Pis.style.display = "block"
-                }
-                else{
-                    Pis.style.display = "none"
-                }
-                iter++
-            })
-            document.querySelector('.gallery__num-slider').textContent = curr_gl + "/ 14"
-        }
-    })
-    document.querySelector('.gallery__left-slider').addEventListener('click',function(){
-        if((document.body.clientWidth > 1920) && (curr_gl > 1)){ //проверить не вышел ли за пределы
-            console.log("CLICK")
-            curr_gl--
-            var iter = 1
-            document.querySelectorAll('.gallery__item').forEach(function(Pis){
-                var curr_start = (curr_gl-1)*6+1
-                if(( iter >= curr_start)&&(iter <= curr_start+5)){
-                    Pis.style.display = "block"
-                }
-                else{
-                    Pis.style.display = "none"
-                }
-                iter++
-            })
-            document.querySelector('.gallery__num-slider').textContent = curr_gl + "/ 5"
-        }
-        if((document.body.clientWidth < 1920) && (curr_gl > 1)){ //проверить не вышел ли за пределы
-            console.log("CLICK")
-            curr_gl--
-            var iter = 1
-            document.querySelectorAll('.gallery__item').forEach(function(Pis){
-                var curr_start = curr_gl*2-1
-                if(( iter >= curr_start)&&(iter <= curr_start+3)){
-                    Pis.style.display = "block"
-                }
-                else{
-                    Pis.style.display = "none"
-                }
-                iter++
-            })
-            document.querySelector('.gallery__num-slider').textContent = curr_gl + "/ 14"
-        }
-    })
+
     // Modal Window
-    document.querySelectorAll('.gallery__item-slider').forEach(function(Pis){
-        if(document.body.clientWidth < 768){
-            Pis.addEventListener('dblclick',function(){
+    document.querySelectorAll('.gallery-slider__image').forEach(function(Pis){
+        Pis.addEventListener('click',function(event){
                 document.querySelector('.modal__painter-name').textContent = `${Pis.dataset.name}`
                 document.querySelector('.modal__art-name').textContent = `${Pis.dataset.title}`
                 document.querySelector('.modal__year').textContent = `${Pis.dataset.year}`
                 document.querySelector('.modal__description').textContent = `${Pis.dataset.description}`
-                document.querySelector('.modal__img').setAttribute("src",`${Pis.firstChild.getAttribute("src")}`)
-                document.querySelector('.modal-block').classList.add('is-active')   
-                document.querySelector('.gallery__shadow').classList.add('is-active')       
-            })
-        }
-    })
+                document.querySelector('.modal__img').setAttribute("src",`${Pis.firstElementChild.getAttribute("src")}`)
 
-    document.querySelectorAll('.gallery__item').forEach(function(Pis){
-        Pis.addEventListener('click',function(event){
-            if(document.body.clientWidth > 768){
-                document.querySelector('.modal__painter-name').textContent = `${event.currentTarget.dataset.name}`
-                document.querySelector('.modal__art-name').textContent = `${event.currentTarget.dataset.title}`
-                document.querySelector('.modal__year').textContent = `${event.currentTarget.dataset.year}`
-                document.querySelector('.modal__description').textContent = `${event.currentTarget.dataset.description}`
-                document.querySelector('.modal__img').setAttribute("src",`${Pis.firstChild.getAttribute("src")}`)
-                document.querySelector('.modal-block').classList.add('is-active')    
-                document.querySelector('.gallery__shadow').classList.add('is-active')
-
-            }         
+                document.querySelector('.modal-block').classList.add('gallery__modal-block_is_active')    
+                document.querySelector('.gallery__shadow').classList.add('gallery__shadow_is_active')
         })
     })
     document.querySelector('.modal__btn-close').addEventListener('click',function(){
-        document.querySelector('.gallery__shadow').classList.remove('is-active')
-        document.querySelector('.modal-block').classList.remove('is-active')  
+        document.querySelector('.gallery__shadow').classList.remove('gallery__shadow_is_active')
+        document.querySelector('.modal-block').classList.remove('gallery__modal-block_is_active')  
     })
 
     // Accordion
     document.querySelectorAll('.accordion__heading').forEach(function(AcrdBtn){
-        // console.log(AcrdBtn)
         AcrdBtn.addEventListener('click',function(HeadBtn){
-            // console.log("CLICK")
             var head = HeadBtn.currentTarget.dataset.head
-            document.querySelector(`[data-info="${head}"]`).classList.toggle('is-open')
-            document.querySelector(`[data-head="${head}"]`).classList.toggle('is-open')
+            document.querySelector(`[data-info="${head}"]`).classList.toggle('accordion__artists-info_is_open')
+            document.querySelector(`[data-head="${head}"]`).classList.toggle('accordion__heading_is_open')
         })
     })
     document.querySelectorAll('.accordion__artists-item').forEach(function(PntrBtn){
         PntrBtn.addEventListener('click',function(NameBtn){
-            console.log("CLICK")
             var name = NameBtn.currentTarget.dataset.name
             document.querySelectorAll('.catalog__info-card').forEach(function(TabContent){
                 TabContent.classList.remove('catalog__info-card_is_active')
@@ -260,153 +121,22 @@ window.addEventListener('DOMContentLoaded', function(){
             document.querySelector(`[data-painter="${name}"]`).classList.add('catalog__info-card_is_active')
         })
     })
-
-    // Partner
-
-    var curr_part = 1
-    document.querySelector('.projects__slider-right').addEventListener('click',function(){
-        curr_part++
-        if(curr_part < 8){
-            var curr_part_img = 0
-            console.log("RIGHT")
-            document.querySelectorAll('.projects__partner').forEach(function(TabPtnr){
-                var ptnr_src = 'url('+'./img/Group-'+ (curr_part+curr_part_img)+'.png)'
-                console.log(ptnr_src)
-                TabPtnr.style.backgroundImage = ptnr_src
-                curr_part_img++
-            })
-        }
-        else if(curr_part == 8){
-            document.querySelector('.projects__partner-1').style.backgroundImage = 'url(./img/Group-8.png)'
-            document.querySelector('.projects__partner-2').style.backgroundImage = 'url(./img/Group-9.png)'
-            document.querySelector('.projects__partner-3').style.backgroundImage = 'url(./img/Group-1.png)'
-        }
-        else{
-            document.querySelector('.projects__partner-1').style.backgroundImage = 'url(./img/Group-9.png)'
-            document.querySelector('.projects__partner-2').style.backgroundImage = 'url(./img/Group-1.png)'
-            document.querySelector('.projects__partner-3').style.backgroundImage = 'url(./img/Group-2.png)'
-            curr_part = 0
-        }
-
-
-    })
-    document.querySelector('.projects__slider-left').addEventListener('click',function(){
-        curr_part--
-        if(curr_part > 0){
-            var curr_part_img = 0
-            console.log("LEFT")
-            document.querySelectorAll('.projects__partner').forEach(function(TabPtnr){
-                var ptnr_src = 'url('+'./img/Group-'+ (curr_part+curr_part_img)+'.png)'
-                console.log(ptnr_src)
-                TabPtnr.style.backgroundImage = ptnr_src
-                curr_part_img++
-            })
-        }
-        else if(curr_part == -1){
-
-            document.querySelector('.projects__partner-1').style.backgroundImage = 'url(./img/Group-8.png)'
-            document.querySelector('.projects__partner-2').style.backgroundImage = 'url(./img/Group-9.png)'
-            document.querySelector('.projects__partner-3').style.backgroundImage = 'url(./img/Group-1.png)'
-            curr_part = 8
-        }
-        else{
-            document.querySelector('.projects__partner-1').style.backgroundImage = 'url(./img/Group-9.png)'
-            document.querySelector('.projects__partner-2').style.backgroundImage = 'url(./img/Group-1.png)'
-            document.querySelector('.projects__partner-3').style.backgroundImage = 'url(./img/Group-2.png)'
-        }
-    })
-    
     // Edition
-    window.addEventListener('resize',function(){
-        if(document.body.clientWidth < 768){
-            document.querySelector('.editions-item-5').querySelector('.editions-title').textContent = "Модульные сетки..." 
-            document.querySelector('.editions-item-5').querySelector('.editions-author').textContent = "Мюллер-Брокманн..."
-            document.querySelector('.editions-item-6').querySelector('.editions-title').textContent = "Эволюция графич..." 
-            document.querySelector('.editions-item-7').querySelector('.editions-title').textContent = "Искусство и визуа..."   
-            document.querySelectorAll('.editions-item').forEach(function(EdItm){
-                EdItm.querySelector('.editions-book').style.order = "1"
-                EdItm.querySelector('.editions-title').style.order = "2"
-                EdItm.querySelector('.editions-author').style.order = "3"
-                EdItm.querySelector('.editions-price').style.order = "4"
-                EdItm.querySelector('.btn-order').style.order = "5"
-            })
-        }
-    })
-    if(document.body.clientWidth < 768){
-        document.querySelector('.editions-item-5').querySelector('.editions-title').textContent = "Модульные сетки..." 
-        document.querySelector('.editions-item-5').querySelector('.editions-author').textContent = "Мюллер-Брокманн..."
-        document.querySelector('.editions-item-6').querySelector('.editions-title').textContent = "Эволюция графич..." 
-        document.querySelector('.editions-item-7').querySelector('.editions-title').textContent = "Искусство и визуа..."   
-    }
-    var curr_ed = 1
-    document.querySelector('.editions__right-slider').addEventListener('click',function(){
-        if((curr_ed < 5)&&(document.body.clientWidth > 1920)){
-            curr_ed++
-            var curr_ed_item = 1
-            document.querySelectorAll('.editions__item').forEach(function(EdItem){
-                if((curr_ed == curr_ed_item)||(curr_ed+1 == curr_ed_item)||(curr_ed+2 == curr_ed_item)){
-                    EdItem.style.display = "block"
-                    curr_ed_item++
-                }
-                else{
-                    EdItem.style.display = "none"
-                    curr_ed_item++
-                }
-            })
-            var txtcnt = curr_ed + "/ 5"
-            document.querySelector('.editions__num-slider').textContent = txtcnt
-        }
-        if((curr_ed < 6)&&(document.body.clientWidth < 1920)){
-            curr_ed++
-            var curr_ed_item = 1
-            document.querySelectorAll('.editions__item').forEach(function(EdItem){
-                if((curr_ed == curr_ed_item)||(curr_ed+1 == curr_ed_item)){
-                    EdItem.style.display = "block"
-                    curr_ed_item++
-                }
-                else{
-                    EdItem.style.display = "none"
-                    curr_ed_item++
-                }
-            })
-            var txtcnt = curr_ed + "/ 6"
-            document.querySelector('.editions__num-slider').textContent = txtcnt
-        }
-    })
-    document.querySelector('.editions__left-slider').addEventListener('click',function(){
-        if((curr_ed > 1)&&(document.body.clientWidth > 1920)){
-            curr_ed--
-            var curr_ed_item = 1
-            document.querySelectorAll('.editions__item').forEach(function(EdItem){
-                if((curr_ed == curr_ed_item)||(curr_ed+1 == curr_ed_item)||(curr_ed+2 == curr_ed_item)){
-                    EdItem.style.display = "block"
-                    curr_ed_item++
-                }
-                else{
-                    EdItem.style.display = "none"
-                    curr_ed_item++
-                }
-            })
-            var txtcnt = curr_ed + "/ 5"
-            document.querySelector('.editions__num-slider').textContent = txtcnt
-        }
-        if((curr_ed > 1)&&(document.body.clientWidth < 1920)){
-            curr_ed--
-            var curr_ed_item = 1
-            document.querySelectorAll('.editions__item').forEach(function(EdItem){
-                if((curr_ed == curr_ed_item)||(curr_ed+1 == curr_ed_item)){
-                    EdItem.style.display = "block"
-                    curr_ed_item++
-                }
-                else{
-                    EdItem.style.display = "none"
-                    curr_ed_item++
-                }
-            })
-            var txtcnt = curr_ed + "/ 6"
-            document.querySelector('.editions__num-slider').textContent = txtcnt
-        }
-    })
+    // window.addEventListener('resize',function(){
+    //     if(document.body.clientWidth < 768){
+    //         document.querySelector('.editions-item-5').querySelector('.editions-title').textContent = "Модульные сетки..." 
+    //         document.querySelector('.editions-item-5').querySelector('.editions-author').textContent = "Мюллер-Брокманн..."
+    //         document.querySelector('.editions-item-6').querySelector('.editions-title').textContent = "Эволюция графич..." 
+    //         document.querySelector('.editions-item-7').querySelector('.editions-title').textContent = "Искусство и визуа..."   
+    //         document.querySelectorAll('.editions-item').forEach(function(EdItm){
+    //             EdItm.querySelector('.editions-book').style.order = "1"
+    //             EdItm.querySelector('.editions-title').style.order = "2"
+    //             EdItm.querySelector('.editions-author').style.order = "3"
+    //             EdItm.querySelector('.editions-price').style.order = "4"
+    //             EdItm.querySelector('.btn-order').style.order = "5"
+    //         })
+    //     }
+    // })
     // Здесь исправляется кол-во блоков при изменении ширины окна
     window.addEventListener('resize',function(){
         if(document.body.clientWidth > 1920 ){
@@ -454,6 +184,15 @@ window.addEventListener('DOMContentLoaded', function(){
     document.querySelectorAll('.input-check').forEach(function(ChBtn){
         ChBtn.addEventListener('click',function(){
             ChBtn.parentNode.classList.toggle("checked")
+        })
+    })
+    // Страны
+    document.querySelectorAll('.catalog__country-item').forEach(function(catalogCountryItem){
+        catalogCountryItem.addEventListener('click', function(){
+            document.querySelectorAll('.catalog__country-item').forEach(function(catalogCI){
+                catalogCI.classList.remove('catalog__country-item_is_active')
+            })
+            catalogCountryItem.classList.add('catalog__country-item_is_active')
         })
     })
 })
