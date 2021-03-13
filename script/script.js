@@ -1,10 +1,10 @@
 window.addEventListener('DOMContentLoaded', function(){
     // Бургер
     document.querySelector('#burger').addEventListener('click',function(){
-        document.querySelector('#burger-menu').classList.add('burger-menu_is_open')
+        document.querySelector('.header').classList.add('header_burger_is_open')
     })
     document.querySelector('#burger-close').addEventListener('click',function(){
-        document.querySelector('#burger-menu').classList.remove('burger-menu_is_open')
+        document.querySelector('.header').classList.remove('header_burger_is_open')
     })
     // Поиск
     document.querySelector('#search').addEventListener('click',function(){

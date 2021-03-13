@@ -141,6 +141,11 @@ html{
 .logo{
     width: 173px;
 }
+.header-menu{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 .nav__list{
     display: flex;
     justify-content: space-between;
@@ -268,11 +273,10 @@ html{
     font-size: 18px;
     transform: translateY(-5px);
 }
-.burger-menu{
-    display: none;
-}
+
 .header-top__burger:hover{
     background-image: url(../img/Burger\ copy.svg);
+    transition: background 0.5s;
 }
 
 .painting-list__item_is_open{
@@ -456,6 +460,7 @@ html{
     height: 70px;
 
     background-color: var(--purple);
+    border: 3px solid var(--purple);
     border-radius: 100px;
 
     color: white;
@@ -463,6 +468,8 @@ html{
     font-weight: 700;
     font-size: 18px;
     line-height: 25px;
+
+    transition: border 1s;
 }
 .hero__btn-sub:hover{
     border: 3px solid #D1A9F0;
@@ -785,7 +792,8 @@ html{
     padding: 10px;
     cursor: pointer;
     border: 1px solid transparent;
-
+    border-radius: 50%;
+    transition: border 1s;
 }
 .catalog__country-item:not(:last-child){
     margin-right: 28px;
@@ -796,7 +804,6 @@ html{
 }
 .catalog__country-item:hover{
     border: 1px solid var(--purple);
-    border-radius: 50%;
 }
 .catalog__country-item_is_active{
     border: 1px solid var(--dark_purple);
@@ -872,6 +879,7 @@ html{
     background-size: 50px 50px;
     background-position: right center;
     cursor: pointer;
+    transition: background 0.5s, border 0.5s;
 }
 .accordion__heading:hover:not(.accordion__heading_is_open){
     background-image: url(../img/downdown.svg);
@@ -1015,6 +1023,7 @@ html{
     bottom: 45px;
     border-bottom: 1px solid var(--purple);
     padding-bottom: 0;
+    transition: font-weight 0.5s;
 }
 .events__more-details:hover{
     font-weight: 800;
@@ -1035,6 +1044,7 @@ html{
     font-weight: 700;
     font-size: 18px;
     cursor: pointer;
+    transition: background 1s, color 1s;
 }
 .events__item_is_visible{
     display: block;
@@ -1089,6 +1099,7 @@ html{
 
     margin: 0;
     padding-left: 24px;
+    transition: color 0.5s;
 }
 .category-block__input{
     display: none;
@@ -1106,6 +1117,7 @@ html{
     width: 12px;
     height: 12px;
     border: 1px solid white;
+    transition: border 0.5s;
 }
 .category-block__input + span::before{
     content: '';
@@ -1313,6 +1325,10 @@ html{
 .partner-slider__slide{
     width: 450px;
     height: 150px;
+    transition: border 1s;
+}
+.partner-slider__slide:hover{
+    border: 1px solid var(--purple);
 }
 .partner-slider__image{
     width: 450px;
@@ -1424,6 +1440,7 @@ html{
     background-color: transparent;
     border: 2px solid var(--purple);
     border-radius: 100px;
+    transition: background 0.5s, color 0.5s;
 }
 .contacts__click{
     margin-top: 35px;
@@ -1534,7 +1551,7 @@ html{
         position: absolute;
     }
 }
-@media (min-width: 1024px) and (max-width: 1919px)
+@media (max-width: 1920px)
 {
     
     .container{
@@ -1547,15 +1564,12 @@ html{
     .header-bottom{
         display: none;
     }
+    .header-menu{
+        display: none;
+    }
     .header-top__container{
         display: flex;
         justify-content: center;
-    }
-    .header-top__btn-enter{
-        display: none;
-    }
-    .header-top__nav{
-        display: none;
     }
     .header-top__nav-search{
         display: flex;
@@ -1613,7 +1627,12 @@ html{
     .header-top__nav-search_is_open .nav-search__input::placeholder{
         color: transparent;
     }
-    .burger-menu_is_open{
+    .header_burger_is_open{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .header_burger_is_open .header-menu{
         display: block;
         position: absolute;
         z-index: 3;
@@ -1622,37 +1641,32 @@ html{
 
         width: 100vw;
         height: 768px;
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(0, 0, 0, 0.9);      
+        padding: 37px 0px 50px calc((100vw - 940px)/2);  
     }
-    .burger-menu__container{
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding-top: 37px;
-        padding-bottom: 51px;
-    }
-    .burger-menu__close{
+    .header-top__close{
+        display: block;
         width: 29px;
         height: 29px;
         background-image: url(../img/X.svg);
-        display: block;
         margin-bottom: 30px;
         cursor: pointer;
+        transition: background 0.5s;
     }
-    .burger-menu__close:hover{
+    .header-top__close:hover{
         background-image: url(../img/X\ copy.svg);
     }
-    .burger-menu__list{
+    .nav__list{
         display: flex;
         flex-direction: column;
+        margin-bottom: 120px;
     }
     .nav__item{
         line-height: 64px;
         font-weight: 300;
         margin: 0;
     }
-    .burger-menu__btn-enter{
+    .header-top__btn-enter{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1667,11 +1681,12 @@ html{
         margin: auto auto 0 0;
         background-position: 90px 21px;
     }
-    .burger-menu__btn-enter:hover{
+    .header-top__btn-enter:hover{
         background-color: var(--purple);
         color: white;
         background-image: url(../img/Enter.svg);
     }
+
 
 
     /* HERO */
@@ -1767,13 +1782,13 @@ html{
     .catalog__info-card_is_active, .catalog__info-accordion{
         width: 437px;
     }
-    .is-open.accordion__artists-info{
+    .accordion__artists-info_is_open{
         width: 437px;
         max-height: 500px;
         min-height: 100px;
         margin-bottom: 25px;
     }
-    .is-open .accordion__artists-list{
+    .accordion__artists-info_is_open .accordion__artists-list{
         width: 437px;
         min-height: 100px;
         max-height: 500px;
@@ -1893,7 +1908,7 @@ html{
 
     
 }
-@media (min-width: 768px) and (max-width: 1023px)
+@media (max-width: 1024px)
 {
     .container{
         width: 668px;
