@@ -1551,7 +1551,7 @@ html{
         position: absolute;
     }
 }
-@media (max-width: 1920px)
+@media (max-width: 1919px)
 {
     
     .container{
@@ -1908,7 +1908,7 @@ html{
 
     
 }
-@media (max-width: 1024px)
+@media (max-width: 1023px)
 {
     .container{
         width: 668px;
