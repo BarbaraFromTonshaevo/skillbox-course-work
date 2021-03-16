@@ -58,8 +58,8 @@
                     <button class="btn-enter header-top__btn-enter">Войти</button>   
                 </div>              
                 <form class="nav-search header-top__nav-search">
-                    <div class="btn-search nav-search__btn" id="search"></div>
-                    <input class="nav-search__input" placeholder="Поиск по сайту"/>
+                    <div class="btn-search nav-search__btn" id="search"   aria-label="Искать по сайту"></div>
+                    <input class="nav-search__input" placeholder="Поиск по сайту"  aria-label="Поиск по сайту"/>
                     <div class="btn-close nav-search__close"></div>
                 </form>  
             </div>
@@ -72,13 +72,13 @@
                         <div class="painting-list__wrap">
                             <div class="painting-list__scroll" data-simplebar data-target="one">
                                 <ul class="style-list style-list-1 painting-list__style-list">
-                                    <li class="style-list__item">Тинторетто</li>
-                                    <li class="style-list__item">Фридрих</li>
-                                    <li class="style-list__item">Леонардо</li>
-                                    <li class="style-list__item">Верроккьо</li>
-                                    <li class="style-list__item">Тинторетто</li>
-                                    <li class="style-list__item">Фридрих</li>
-                                    <li class="style-list__item">Леонардо</li>
+                                    <li class="style-list__item" tabindex="0" >Тинторетто</li>
+                                    <li class="style-list__item" tabindex="0" >Фридрих</li>
+                                    <li class="style-list__item" tabindex="0" >Леонардо</li>
+                                    <li class="style-list__item" tabindex="0" >Верроккьо</li>
+                                    <li class="style-list__item" tabindex="0" >Тинторетто</li>
+                                    <li class="style-list__item" tabindex="0" >Фридрих</li>
+                                    <li class="style-list__item" tabindex="0" >Леонардо</li>
                                 </ul>
                             </div>
                         </div>
@@ -88,10 +88,10 @@
                         <div class="painting-list__wrap">
                             <div class="painting-list__scroll" data-simplebar data-target="two">
                                 <ul class="style-list style-list-2 painting-list__style-list">
-                                    <li class="style-list__item">Моне</li>
-                                    <li class="style-list__item">Сислей</li>
-                                    <li class="style-list__item">Мане</li>
-                                    <li class="style-list__item">Ренуар</li>
+                                    <li class="style-list__item" tabindex="0" >Моне</li>
+                                    <li class="style-list__item" tabindex="0" >Сислей</li>
+                                    <li class="style-list__item" tabindex="0" >Мане</li>
+                                    <li class="style-list__item" tabindex="0" >Ренуар</li>
                                 </ul>
                             </div>
                         </div>
@@ -101,10 +101,10 @@
                         <div class="painting-list__wrap">
                             <div class="painting-list__scroll" data-simplebar data-target="three">
                                 <ul class="style-list style-list-3 painting-list__style-list">
-                                    <li class="style-list__item">Ван Гог</li>
-                                    <li class="style-list__item">Сезанн</li>
-                                    <li class="style-list__item">Гоген</li>
-                                    <li class="style-list__item">Сёра</li>
+                                    <li class="style-list__item" tabindex="0" >Ван Гог</li>
+                                    <li class="style-list__item" tabindex="0" >Сезанн</li>
+                                    <li class="style-list__item" tabindex="0" >Гоген</li>
+                                    <li class="style-list__item" tabindex="0" >Сёра</li>
                                 </ul>
                             </div>
                         </div>
@@ -114,10 +114,10 @@
                         <div class="painting-list__wrap">
                             <div class="painting-list__scroll" data-simplebar data-target="four">
                                 <ul class="style-list style-list-4  painting-list__style-list">
-                                    <li class="style-list__item">Кандинский</li>
-                                    <li class="style-list__item">Маринетти</li>
-                                    <li class="style-list__item">Малевич</li>
-                                    <li class="style-list__item">Пикассо</li>
+                                    <li class="style-list__item" tabindex="0" >Кандинский</li>
+                                    <li class="style-list__item" tabindex="0" >Маринетти</li>
+                                    <li class="style-list__item" tabindex="0" >Малевич</li>
+                                    <li class="style-list__item" tabindex="0" >Пикассо</li>
                                 </ul>
                             </div>
                         </div>
@@ -127,10 +127,10 @@
                         <div class="painting-list__wrap">
                             <div class="painting-list__scroll" data-simplebar data-target="five">
                                 <ul class="style-list style-list-5 painting-list__style-list">
-                                    <li class="style-list__item">Карра</li>
-                                    <li class="style-list__item">Прателла</li>
-                                    <li class="style-list__item">Северини</li>
-                                    <li class="style-list__item">Балла</li>
+                                    <li class="style-list__item" tabindex="0" >Карра</li>
+                                    <li class="style-list__item" tabindex="0" >Прателла</li>
+                                    <li class="style-list__item" tabindex="0" >Северини</li>
+                                    <li class="style-list__item" tabindex="0" >Балла</li>
                                 </ul>
                             </div>
                         </div>
@@ -147,6 +147,7 @@
         <section class="hero">
             <div class="container hero__container"><!-- 
             --><p class="hero__heading">Прикоснитесь к прекрасному</p>
+                <h1 class="main__heading">Художественная галерея Blanchard</h1>
                 <p class="hero__description">Мы вынуждены отталкиваться от того, что реализация намеченных плановых заданий создаёт предпосылки для новых предложений.</p>
                 <a href="#map" class="hero__btn-sub">Подписаться на рассылку</a>
             </div>
@@ -174,188 +175,186 @@
                 <div class="gallery__gallery-slider">
                     <div class="gallery-slider swiper-container">
                         <div class="gallery-slider__button-block button-block">
-                            <div class="gallery-slider__button-prev button-block-prev"></div>
+                            <div class="gallery-slider__button-prev button-block-prev"  aria-label="Предыдущий слайд"></div>
                             <div class="gallery-slider__wrap-pagination button-block-wrap">
                                 <div class="gallery-slider__pagination"></div>
                             </div>
-                            <div class="gallery-slider__button-next button-block-next"></div>
+                            <div class="gallery-slider__button-next button-block-next" aria-label="Следующий слайд"></div>
                         </div>
                         <div class="gallery-slider__wrapper swiper-wrapper">
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-1.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-2.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-3.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-4.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-5.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-6.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-7.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-8.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-9.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-10.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-11.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-12.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-13.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-14.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"data-name="Казимир Малевич" data-title="“Женщина с граблями”" data-year="1931-1932" data-description="Картина из второй серии крестьянского цикла работ Казимира Малевича. Художник принялся за её создание в 1930-1931 годах, после того, как первый цикл был утерян после Берлинской и Варшавской выставок в 1927 году.">
+                                <div class="gallery-slider__image"dtabindex="0"ata-name="Казимир Малевич" data-title="“Женщина с граблями”" data-year="1931-1932" data-description="Картина из второй серии крестьянского цикла работ Казимира Малевича. Художник принялся за её создание в 1930-1931 годах, после того, как первый цикл был утерян после Берлинской и Варшавской выставок в 1927 году.">
                                     <img src="./img/Gallery-15.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-16.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-17.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-18.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-19.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-20.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-21.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-22.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-23.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-24.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-25.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-26.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-27.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-28.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-29.jpg" alt="">
                                 </div>
                             </div>
                             <div class="gallery-slider__slide swiper-slide">
-                                <div class="gallery-slider__image"  data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
+                                <div class="gallery-slider__image" tabindex="0" data-name="Иван Иванович" data-title="Полет фантазии" data-year="2000-2020" data-description="Знаменитая картина Ивана Ивановича является лишь одной частью из целого цикла картин художника. Все эти работы принадлежат к периоду сюрреализма автора, которым одно время увлекся художник.">
                                     <img src="./img/Gallery-30.jpg" alt="">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div> 
-                <div class="gallery__shadow"></div>  
-                <div class="modal-block gallery__modal-block">
-                    <img class="modal__img" src="./img/gallery-15.jpg" alt="" class="modal__img">
-                    <span class="modal__painter-name">Казимир Малевич</span>
-                    <span class="modal__art-name">“Женщина с граблями”</span>
-                    <span class="modal__year">1931-1932</span>
-                    <p class="modal__description">Картина из второй серии крестьянского цикла работ Казимира Малевича. Художник принялся за её создание в 1930-1931 годах, после того, как первый цикл был утерян после Берлинской и Варшавской выставок в 1927 году.</p>
-                    <button class="modal__btn-close"></button>
-                </div> 
             </div>
         </section>
         <section class="catalog" id="catalog">
             <div class="container catalog__container">
-                <h2 class="section-heading catalog__heading">Каталог</h2>
+                <h2 class="section-heading catalog__heading" data-fr = "Catalogue" data-de = "Katalog" data-it = "Catalogare" data-ru = "Каталог" data-be="Catalogus">Каталог</h2>
                 <ul class="catalog__country-list">
-                    <li class="catalog__country-item"><img class="catalog__country-img" src="./img/fr.png" alt="fr"></li>
-                    <li class="catalog__country-item"><img class="catalog__country-img" src="./img/de.png" alt="de"></li>
-                    <li class="catalog__country-item"><img class="catalog__country-img" src="./img/it.png" alt="it"></li>
-                    <li class="catalog__country-item catalog__country-item_is_active"><img class="catalog__country-img" src="./img/ru.png" alt="ru"></li>
-                    <li class="catalog__country-item"><img class="catalog__country-img" src="./img/be.png" alt="be"></li>
+                    <li class="catalog__country-item"><button class="catalog__country-btn catalog__country-btn_fr" data-lang="fr"></button></li>
+                    <li class="catalog__country-item"><button class="catalog__country-btn catalog__country-btn_de" data-lang="de"></li>
+                    <li class="catalog__country-item"><button class="catalog__country-btn catalog__country-btn_it" data-lang="it"></li>
+                    <li class="catalog__country-item"><button class="catalog__country-btn catalog__country-btn_ru catalog__country-btn_is_active" data-lang="ru"></li>
+                    <li class="catalog__country-item"><button class="catalog__country-btn catalog__country-btn_be" data-lang="be"></li>
                 </ul>
-                <p class="catalog__description">Акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и морали. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии и по сей день остаются уделом либералов, которые жаждут быть функционально разнесены на независимые элементы. </p>
+                <p class="catalog__description" 
+                data-fr="Les actionnaires des plus grandes entreprises, qui représentent un exemple frappant du type de culture politique de l'Europe continentale, seront déclarés violant les normes universelles d'éthique et de moralité. N'étant qu'une partie de la situation dans son ensemble, cherchant à supplanter la production traditionnelle, la nanotechnologie reste encore aujourd'hui le lot des libéraux, désireux d'être fonctionnellement divisés en éléments indépendants." 
+                data-de="Die Aktionäre der größten Unternehmen, die ein anschauliches Beispiel für die kontinentaleuropäische politische Kultur darstellen, werden als Verstoß gegen die universellen Normen der Ethik und Moral erklärt. Die Nanotechnologie ist nur ein Teil des Gesamtbildes und versucht, die traditionelle Produktion zu verdrängen. Sie ist bis heute das Los der Liberalen, die darauf bedacht sind, funktional in unabhängige Elemente unterteilt zu werden." 
+                data-it="Gli azionisti delle maggiori società, che rappresentano un vivido esempio del tipo di cultura politica dell'Europa continentale, saranno dichiarati violatori delle norme universali di etica e moralità. Essendo solo una parte del quadro generale, che cerca di soppiantare la produzione tradizionale, la nanotecnologia rimane ancora oggi il destino dei liberali, che sono desiderosi di essere funzionalmente divisi in elementi indipendenti." 
+                data-ru="Акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и морали. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии и по сей день остаются уделом либералов, которые жаждут быть функционально разнесены на независимые элементы." 
+                data-be="De aandeelhouders van de grootste bedrijven, die een levendig voorbeeld zijn van de continentale Europese politieke cultuur, zullen worden verklaard in strijd met de universele normen van ethiek en moraliteit. Omdat nanotechnologie slechts deel uitmaakt van het grote geheel en de traditionele productie probeert te vervangen, blijft nanotechnologie tot op de dag van vandaag het lot van liberalen, die graag functioneel verdeeld willen worden in onafhankelijke elementen.">
+                    Акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и морали. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии и по сей день остаются уделом либералов, которые жаждут быть функционально разнесены на независимые элементы.
+                </p>
                 <div class="catalog__info-block">
                     <div class="catalog__info-card" data-painter="Бенедетто ди Биндо">
                         <img class="info-card__img" src="./img/Painter-work-1.jpg" alt="">
@@ -377,99 +376,99 @@
                     </div>
                     <div class="catalog__info-accordion">
                         <div class="accordion catalog__accordion">
-                            <h3 class="accordion__heading accordion__heading_is_open" data-head = "1400-1499">C 1400 по 1499 гг.</h3>
+                            <h3 tabindex="0" class="accordion__heading accordion__heading_is_open" data-head = "1400-1499">C 1400 по 1499 гг.</h3>
                             <div  class="accordion__artists-info accordion__artists-info_is_open" data-info = "1400-1499">
                                 <ul class="accordion__artists-list">
-                                    <li class="accordion__artists-item" data-name="Бенедетто ди Биндо">Бенедетто ди Биндо</li>
-                                    <li class="accordion__artists-item" data-name="Бергоньоне, Амброджо">Бергоньоне, Амброджо</li>
-                                    <li class="accordion__artists-item" data-name="Биссоло, Франческо">Биссоло, Франческо</li>
-                                    <li class="accordion__artists-item" data-name="Больтраффио, Джованни">Больтраффио, Джованни</li>
-                                    <li class="accordion__artists-item" data-name="Бонсиньори, Франческо">Бонсиньори, Франческо</li>
-                                    <li class="accordion__artists-item" data-name="Боттичини, Рафаэлло">Боттичини, Рафаэлло</li>
-                                    <li class="accordion__artists-item" data-name="Брамантино">Брамантино</li>
-                                    <li class="accordion__artists-item" data-name="Бреа, Людовико">Бреа, Людовико</li>
-                                    <li class="accordion__artists-item" data-name="Бьяджо д’Антонио Туччи">Бьяджо д’Антонио Туччи</li>
-                                    <li class="accordion__artists-item" data-name="Веккьетта">Веккьетта</li>
-                                    <li class="accordion__artists-item" data-name="Андреа Верроккьо">Андреа Верроккьо</li>
-                                    <li class="accordion__artists-item accordion__artists-item_is_active" data-name="Доменико Гирландайо">Доменико Гирландайо</li>
-                                    <li class="accordion__artists-item" data-name="Беноццо Гоццоли">Беноццо Гоццоли</li>
-                                    <li class="accordion__artists-item" data-name="Граначчи, Франческо">Граначчи, Франческо</li>
-                                    <li class="accordion__artists-item" data-name="Грегорио ди Чекко">Грегорио ди Чекко</li>
-                                    <li class="accordion__artists-item" data-name="Джованни да Удине">Джованни да Удине</li>
-                                    <li class="accordion__artists-item" data-name="Джованни ди Паоло">Джованни ди Паоло</li>
-                                    <li class="accordion__artists-item" data-name="Джорджоне">Джорджоне</li>
-                                    <li class="accordion__artists-item" data-name="Парентино, Бернардо">Парентино, Бернардо</li>
-                                    <li class="accordion__artists-item" data-name="Пезеллино">Пезеллино</li>
-                                    <li class="accordion__artists-item" data-name="Пьетро Перуджино">Пьетро Перуджино</li>
-                                    <li class="accordion__artists-item" data-name="Перуцци, Бальдассаре">Перуцци, Бальдассаре</li>
-                                    <li class="accordion__artists-item" data-name="Пизанелло">Пизанелло</li>
-                                    <li class="accordion__artists-item" data-name="Пинтуриккьо">Пинтуриккьо</li>            
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Бенедетто ди Биндо">Бенедетто ди Биндо</li>
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Бергоньоне, Амброджо">Бергоньоне, Амброджо</li>
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Биссоло, Франческо">Биссоло, Франческо</li>
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Больтраффио, Джованни">Больтраффио, Джованни</li>
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Бонсиньори, Франческо">Бонсиньори, Франческо</li>
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Боттичини, Рафаэлло">Боттичини, Рафаэлло</li>
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Брамантино">Брамантино</li>
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Бреа, Людовико">Бреа, Людовико</li>
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Бьяджо д’Антонио Туччи">Бьяджо д’Антонио Туччи</li>
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Веккьетта">Веккьетта</li>
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Андреа Верроккьо">Андреа Верроккьо</li>
+                                    <li tabindex="0" class="accordion__artists-item accordion__artists-item_is_active" data-name="Доменико Гирландайо">Доменико Гирландайо</li>
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Беноццо Гоццоли">Беноццо Гоццоли</li>
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Граначчи, Франческо">Граначчи, Франческо</li>
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Грегорио ди Чекко">Грегорио ди Чекко</li>
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Джованни да Удине">Джованни да Удине</li>
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Джованни ди Паоло">Джованни ди Паоло</li>
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Джорджоне">Джорджоне</li>
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Парентино, Бернардо">Парентино, Бернардо</li>
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Пезеллино">Пезеллино</li>
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Пьетро Перуджино">Пьетро Перуджино</li>
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Перуцци, Бальдассаре">Перуцци, Бальдассаре</li>
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Пизанелло">Пизанелло</li>
+                                    <li tabindex="0" class="accordion__artists-item" data-name="Пинтуриккьо">Пинтуриккьо</li>            
                                 </ul>
                             </div>
-                            <h3 class="accordion__heading" data-head="1500-1599">C 1500 по 1599 гг.</h3>
+                            <h3 tabindex="0" class="accordion__heading" data-head="1500-1599">C 1500 по 1599 гг.</h3>
                             <div class="accordion__artists-info" data-info="1500-1599">
                                 <ul class="accordion__artists-list">
-                                    <li class="accordion__artists-item">Бенедетто ди Биндо</li>
-                                    <li class="accordion__artists-item">Бергоньоне, Амброджо</li>
-                                    <li class="accordion__artists-item">Биссоло, Франческо</li>
-                                    <li class="accordion__artists-item">Больтраффио, Джованни</li>
-                                    <li class="accordion__artists-item">Бонсиньори, Франческо</li>
-                                    <li class="accordion__artists-item">Боттичини, Рафаэлло</li>              
+                                    <li tabindex="0" class="accordion__artists-item">Бенедетто ди Биндо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Бергоньоне, Амброджо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Биссоло, Франческо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Больтраффио, Джованни</li>
+                                    <li tabindex="0" class="accordion__artists-item">Бонсиньори, Франческо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Боттичини, Рафаэлло</li>              
                                 </ul>
                             </div>
-                            <h3 class="accordion__heading" data-head="1600-1699">C 1600 по 1699 гг.</h3>
+                            <h3 tabindex="0" class="accordion__heading" data-head="1600-1699">C 1600 по 1699 гг.</h3>
                             <div class="accordion__artists-info" data-info="1600-1699">
                                 <ul class="accordion__artists-list">
-                                    <li class="accordion__artists-item">Бенедетто ди Биндо</li>
-                                    <li class="accordion__artists-item">Бергоньоне, Амброджо</li>
-                                    <li class="accordion__artists-item">Биссоло, Франческо</li>
-                                    <li class="accordion__artists-item">Больтраффио, Джованни</li>
-                                    <li class="accordion__artists-item">Бонсиньори, Франческо</li>
-                                    <li class="accordion__artists-item">Боттичини, Рафаэлло</li>              
+                                    <li tabindex="0" class="accordion__artists-item">Бенедетто ди Биндо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Бергоньоне, Амброджо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Биссоло, Франческо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Больтраффио, Джованни</li>
+                                    <li tabindex="0" class="accordion__artists-item">Бонсиньори, Франческо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Боттичини, Рафаэлло</li>              
                                 </ul>
                             </div>
-                            <h3 class="accordion__heading" data-head="1700-1799">C 1700 по 1799 гг.</h3>
+                            <h3 tabindex="0" class="accordion__heading" data-head="1700-1799">C 1700 по 1799 гг.</h3>
                             <div class="accordion__artists-info" data-info="1700-1799">
                                 <ul class="accordion__artists-list">
-                                    <li class="accordion__artists-item">Бенедетто ди Биндо</li>
-                                    <li class="accordion__artists-item">Бергоньоне, Амброджо</li>
-                                    <li class="accordion__artists-item">Биссоло, Франческо</li>
-                                    <li class="accordion__artists-item">Больтраффио, Джованни</li>
-                                    <li class="accordion__artists-item">Бонсиньори, Франческо</li>
-                                    <li class="accordion__artists-item">Боттичини, Рафаэлло</li>              
+                                    <li tabindex="0" class="accordion__artists-item">Бенедетто ди Биндо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Бергоньоне, Амброджо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Биссоло, Франческо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Больтраффио, Джованни</li>
+                                    <li tabindex="0" class="accordion__artists-item">Бонсиньори, Франческо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Боттичини, Рафаэлло</li>              
                                 </ul>
                             </div>
-                            <h3 class="accordion__heading" data-head="1800-1899">C 1800 по 1899 гг.</h3>
+                            <h3 tabindex="0" class="accordion__heading" data-head="1800-1899">C 1800 по 1899 гг.</h3>
                             <div class="accordion__artists-info" data-info="1800-1899">
                                 <ul class="accordion__artists-list">
-                                    <li class="accordion__artists-item">Бенедетто ди Биндо</li>
-                                    <li class="accordion__artists-item">Бергоньоне, Амброджо</li>
-                                    <li class="accordion__artists-item">Биссоло, Франческо</li>
-                                    <li class="accordion__artists-item">Больтраффио, Джованни</li>
-                                    <li class="accordion__artists-item">Бонсиньори, Франческо</li>
-                                    <li class="accordion__artists-item">Боттичини, Рафаэлло</li>              
+                                    <li tabindex="0" class="accordion__artists-item">Бенедетто ди Биндо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Бергоньоне, Амброджо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Биссоло, Франческо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Больтраффио, Джованни</li>
+                                    <li tabindex="0" class="accordion__artists-item">Бонсиньори, Франческо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Боттичини, Рафаэлло</li>              
                                 </ul>
                             </div>
-                            <h3 class="accordion__heading" data-head="1900-1999">C 1900 по 1999 гг.</h3>
+                            <h3 tabindex="0" class="accordion__heading" data-head="1900-1999">C 1900 по 1999 гг.</h3>
                             <div class="accordion__artists-info" data-info="1900-1999">
                                 <ul class="accordion__artists-list">
-                                    <li class="accordion__artists-item">Бенедетто ди Биндо</li>
-                                    <li class="accordion__artists-item">Бергоньоне, Амброджо</li>
-                                    <li class="accordion__artists-item">Биссоло, Франческо</li>
-                                    <li class="accordion__artists-item">Больтраффио, Джованни</li>
-                                    <li class="accordion__artists-item">Бонсиньори, Франческо</li>
-                                    <li class="accordion__artists-item">Боттичини, Рафаэлло</li>              
+                                    <li tabindex="0" class="accordion__artists-item">Бенедетто ди Биндо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Бергоньоне, Амброджо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Биссоло, Франческо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Больтраффио, Джованни</li>
+                                    <li tabindex="0" class="accordion__artists-item">Бонсиньори, Франческо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Боттичини, Рафаэлло</li>              
                                 </ul>
                             </div>
-                            <h3 class="accordion__heading" data-head="2000">C 2000 г.</h3>
+                            <h3 tabindex="0" class="accordion__heading" data-head="2000">C 2000 г.</h3>
                             <div class="accordion__artists-info" data-info="2000">
                                 <ul class="accordion__artists-list">
-                                    <li class="accordion__artists-item">Бенедетто ди Биндо</li>
-                                    <li class="accordion__artists-item">Бергоньоне, Амброджо</li>
-                                    <li class="accordion__artists-item">Биссоло, Франческо</li>
-                                    <li class="accordion__artists-item">Больтраффио, Джованни</li>
-                                    <li class="accordion__artists-item">Бонсиньори, Франческо</li>
-                                    <li class="accordion__artists-item">Боттичини, Рафаэлло</li>              
+                                    <li tabindex="0" class="accordion__artists-item">Бенедетто ди Биндо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Бергоньоне, Амброджо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Биссоло, Франческо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Больтраффио, Джованни</li>
+                                    <li tabindex="0" class="accordion__artists-item">Бонсиньори, Франческо</li>
+                                    <li tabindex="0" class="accordion__artists-item">Боттичини, Рафаэлло</li>              
                                 </ul>
                             </div>
                           </div>
@@ -669,20 +668,20 @@
                     <h3 class="editions__price-heading">Цена</h3>
                     <form class="editions__price-form price-form">
                         <span class="price-form__span price-form__from">От</span><!-- 
-                        --><input type="text" class="price-form__input price-form__from-input" placeholder="50"><!-- 
+                        --><input type="text" class="price-form__input price-form__from-input" placeholder="50"  aria-label="Цена от"><!-- 
                         --><span class="price-form__span price-form__to">до</span><!-- 
-                        --><input type="text" class="price-form__input price-form__to-input" placeholder="25 000"><!-- 
+                        --><input type="text" class="price-form__input price-form__to-input" placeholder="25 000"  aria-label="Цена до"><!-- 
                         --><span class="price-form__span price-form__rub">руб.</span>
                     </form>
                 </div>
                 <div class="editions__slider">
                     <div class="editions-slider swiper-container">
                         <div class="editions-slider__button-block button-block">
-                            <div class="editions-slider__button-prev button-block-prev"></div>
+                            <div class="editions-slider__button-prev button-block-prev"  aria-label="Предыдущийслайд"></div>
                             <div class="editions-slider__wrap-pagination button-block-wrap">
                                 <div class="editions-slider__pagination"></div>
                             </div>
-                            <div class="editions-slider__button-next button-block-next"></div>
+                            <div class="editions-slider__button-next button-block-next"  aria-label="Следующий слайд"></div>
                         </div>
                         <div class="editions-slider__wrapper swiper-wrapper">
                             <div class="editions-slider__slide swiper-slide">
@@ -761,7 +760,7 @@
                 <h3 class="projects__partner-heading">Партнеры проектов:</h3>
                 <div class="projects__partner-slider">
                     <div class="partner-slider swiper-container">
-                        <div class="partner-slider__button-prev"></div>
+                        <div class="partner-slider__button-prev"  aria-label="Предыдущий слайд"></div>
                         <div class="partner-slider__wrapper swiper-wrapper">
                             <div class="partner-slider__slide swiper-slide">
                                 <img src="./img/Group-1.png" alt=""  class="partner-slider__image">
@@ -791,7 +790,7 @@
                                 <img src="./img/Group-9.png" alt=""  class="partner-slider__image">
                             </div>  
                         </div>
-                        <div class="partner-slider__button-next"></div>
+                        <div class="partner-slider__button-next"  aria-label="Следующий слайд"></div>
                     </div>
                 </div>
             </div>
@@ -814,8 +813,8 @@
                     </div>
                     <div class="contacts__social">
                         <h3 class="contacts__click contacts--heading">Связаться в один клик</h3>
-                        <a href="" class="contacts__social-link social-wu"></a>
-                        <a href="" class="contacts__social-link social-tg"></a>
+                        <a href="" class="contacts__social-link social-wu"  aria-label="Ватсап"></a>
+                        <a href="" class="contacts__social-link social-tg"  aria-label="Телеграмм"></a>
                     </div>
                 </div>
                 <div class="map contacts__map" id="map"></div>
@@ -826,12 +825,22 @@
         <div class="container footer__container">
             <a href="" class="footer__logo-link"><img src="./img/logo.svg" alt="" class="footer__logo"></a>
             <div class="footer__social">
-                <a href="" class="footer__social-link social-vk"></a>
-                <a href="" class="footer__social-link social-ig"></a>
-                <a href="" class="footer__social-link social-fb"></a>
+                <a href="" class="footer__social-link social-vk"  aria-label="Вконтакте"></a>
+                <a href="" class="footer__social-link social-ig"  aria-label="Инстаграм"></a>
+                <a href="" class="footer__social-link social-fb"  aria-label="Фейсбук"></a>
             </div>
         </div>
     </footer>
+    <div class="modal">
+        <div class="modal__container">
+            <img class="modal__img" src="./img/gallery-15.jpg" alt="" class="modal__img">
+            <span class="modal__painter-name">Казимир Малевич</span>
+            <span class="modal__art-name">“Женщина с граблями”</span>
+            <span class="modal__year">1931-1932</span>
+            <p class="modal__description">Картина из второй серии крестьянского цикла работ Казимира Малевича. Художник принялся за её создание в 1930-1931 годах, после того, как первый цикл был утерян после Берлинской и Варшавской выставок в 1927 году.</p>
+            <button class="modal__btn-close"></button>
+        </div>
+    </div> 
 
     <script src="./script/choices.min.js"></script>
     <script>

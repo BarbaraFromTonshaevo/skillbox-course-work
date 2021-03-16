@@ -90,14 +90,14 @@ window.addEventListener('DOMContentLoaded', function(){
                 document.querySelector('.modal__year').textContent = `${Pis.dataset.year}`
                 document.querySelector('.modal__description').textContent = `${Pis.dataset.description}`
                 document.querySelector('.modal__img').setAttribute("src",`${Pis.firstElementChild.getAttribute("src")}`)
+                document.querySelector('body').classList.add('body_hidden')
+                document.querySelector('.modal').classList.add('modal_is_active')    
 
-                document.querySelector('.modal-block').classList.add('gallery__modal-block_is_active')    
-                document.querySelector('.gallery__shadow').classList.add('gallery__shadow_is_active')
         })
     })
     document.querySelector('.modal__btn-close').addEventListener('click',function(){
-        document.querySelector('.gallery__shadow').classList.remove('gallery__shadow_is_active')
-        document.querySelector('.modal-block').classList.remove('gallery__modal-block_is_active')  
+        document.querySelector('body').classList.remove('body_hidden')
+        document.querySelector('.modal').classList.remove('modal_is_active')  
     })
 
     // Accordion
@@ -121,59 +121,6 @@ window.addEventListener('DOMContentLoaded', function(){
             document.querySelector(`[data-painter="${name}"]`).classList.add('catalog__info-card_is_active')
         })
     })
-    // Edition
-    // window.addEventListener('resize',function(){
-    //     if(document.body.clientWidth < 768){
-    //         document.querySelector('.editions-item-5').querySelector('.editions-title').textContent = "Модульные сетки..." 
-    //         document.querySelector('.editions-item-5').querySelector('.editions-author').textContent = "Мюллер-Брокманн..."
-    //         document.querySelector('.editions-item-6').querySelector('.editions-title').textContent = "Эволюция графич..." 
-    //         document.querySelector('.editions-item-7').querySelector('.editions-title').textContent = "Искусство и визуа..."   
-    //         document.querySelectorAll('.editions-item').forEach(function(EdItm){
-    //             EdItm.querySelector('.editions-book').style.order = "1"
-    //             EdItm.querySelector('.editions-title').style.order = "2"
-    //             EdItm.querySelector('.editions-author').style.order = "3"
-    //             EdItm.querySelector('.editions-price').style.order = "4"
-    //             EdItm.querySelector('.btn-order').style.order = "5"
-    //         })
-    //     }
-    // })
-    // Здесь исправляется кол-во блоков при изменении ширины окна
-    window.addEventListener('resize',function(){
-        if(document.body.clientWidth > 1920 ){
-            if(curr_ed == 6){
-                curr_ed = 5
-            }
-            var src_1 = '.editions__item-'+(curr_ed)
-            var src_2 = '.editions__item-'+(curr_ed+1)
-            var src_3 = '.editions__item-'+(curr_ed+2)
-            document.querySelector(src_1).style.display = "block"
-            document.querySelector(src_2).style.display = "block"
-            document.querySelector(src_3).style.display = "block"
-            var txtcnt = curr_ed + "/ 5"
-            document.querySelector('.editions__num-slider').textContent = txtcnt
-
-        }
-        else if(document.body.clientWidth < 768){
-            document.querySelectorAll('.editions__item').forEach(function(EdItem){
-                EdItem.style.display = "block"
-            })
-        }
-        else{
-            var curr_ed_item = 1
-            document.querySelectorAll('.editions__item').forEach(function(EdItem){
-                if((curr_ed == curr_ed_item)||(curr_ed+1 == curr_ed_item)){
-                    EdItem.style.display = "block"
-                    curr_ed_item++
-                }
-                else{
-                    EdItem.style.display = "none"
-                    curr_ed_item++
-                }
-            })
-            var txtcnt = curr_ed + "/ 6"
-            document.querySelector('.editions__num-slider').textContent = txtcnt
-        }
-    })
     // Tooltip
     document.querySelectorAll('.tooltip').forEach(function(TltpBtn){
         TltpBtn.addEventListener('click',function(){
@@ -187,12 +134,15 @@ window.addEventListener('DOMContentLoaded', function(){
         })
     })
     // Страны
-    document.querySelectorAll('.catalog__country-item').forEach(function(catalogCountryItem){
+    document.querySelectorAll('.catalog__country-btn').forEach(function(catalogCountryItem){
         catalogCountryItem.addEventListener('click', function(){
-            document.querySelectorAll('.catalog__country-item').forEach(function(catalogCI){
-                catalogCI.classList.remove('catalog__country-item_is_active')
+            document.querySelectorAll('.catalog__country-btn').forEach(function(catalogCI){
+                catalogCI.classList.remove('catalog__country-btn_is_active')
             })
-            catalogCountryItem.classList.add('catalog__country-item_is_active')
+            catalogCountryItem.classList.add('catalog__country-btn_is_active')
+            var lang = 'data-' + catalogCountryItem.dataset.lang
+            document.querySelector('.catalog__heading').textContent = document.querySelector('.catalog__heading').getAttribute(lang)
+            document.querySelector('.catalog__description').textContent = document.querySelector('.catalog__description').getAttribute(lang)
         })
     })
 })
