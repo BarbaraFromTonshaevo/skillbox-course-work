@@ -134,15 +134,24 @@ window.addEventListener('DOMContentLoaded', function(){
         })
     })
     // Страны
-    document.querySelectorAll('.catalog__country-btn').forEach(function(catalogCountryItem){
+    document.querySelectorAll('.catalog__country-item').forEach(function(catalogCountryItem){
         catalogCountryItem.addEventListener('click', function(){
-            document.querySelectorAll('.catalog__country-btn').forEach(function(catalogCI){
-                catalogCI.classList.remove('catalog__country-btn_is_active')
+            document.querySelectorAll('.catalog__country-item').forEach(function(catalogCI){
+                catalogCI.classList.remove('catalog__country-item_is_active')
             })
-            catalogCountryItem.classList.add('catalog__country-btn_is_active')
-            var lang = 'data-' + catalogCountryItem.dataset.lang
-            document.querySelector('.catalog__heading').textContent = document.querySelector('.catalog__heading').getAttribute(lang)
-            document.querySelector('.catalog__description').textContent = document.querySelector('.catalog__description').getAttribute(lang)
+            catalogCountryItem.classList.add('catalog__country-item_is_active')
+            document.querySelectorAll('.catalog__info-accordion').forEach(function(catinfo){
+                catinfo.classList.remove('catalog__info-accordion_is_active')
+            })
+            var lang = 'info-' + catalogCountryItem.dataset.lang
+            console.log(lang)
+            document.getElementById(lang).classList.add('catalog__info-accordion_is_active')
+            var name = document.getElementById(lang).querySelector('.accordion__artists-item_is_active').dataset.name
+            document.querySelectorAll('.catalog__info-card').forEach(function(catcard){
+                catcard.classList.remove('catalog__info-card_is_active')
+            })
+            document.querySelector(`[data-painter="${name}"]`).classList.add('catalog__info-card_is_active')
+
         })
     })
 })
