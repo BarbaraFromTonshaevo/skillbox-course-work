@@ -1,4 +1,7 @@
 window.addEventListener('DOMContentLoaded', function(){
+    // if(document.body.clientWidth < 768){
+    //     document.querySelector('.events__list').classList.add('slider')
+    // }
     // Бургер
     document.querySelector('#burger').addEventListener('click',function(){
         document.querySelector('.header').classList.add('header_burger_is_open')
@@ -48,9 +51,7 @@ window.addEventListener('DOMContentLoaded', function(){
             tempBtn.textContent = "Все события"
             tempBtn.classList.add('.events__btn-all-events')
             tempBtn.classList.remove('events__btn-hide')
-              
         }
-
     })
     // Выплывающий список художников
     document.querySelectorAll('.painting-list__heading').forEach(function(paintingListHeading){

@@ -96,7 +96,7 @@ html{
     color: var(--black);
     margin-top: 0;
 }
-.btn-hover:hover, #see-all-events:hover{
+.btn-hover:hover, .events__btn:hover{
     background-color: var(--purple);
     color: white;
 }
@@ -830,6 +830,7 @@ html{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 46px 46px;
+    transition: box-shadow 0.5s;
 }
 .catalog__country-btn:focus{
     outline: none;
@@ -905,7 +906,6 @@ html{
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
-    line-height: 0px;
     margin-bottom: 15px;
 }
 .info-card__description{
@@ -943,6 +943,9 @@ html{
 }
 .accordion__heading:hover:not(.accordion__heading_is_open){
     background-image: url(../img/downdown.svg);
+    border-color: var(--purple);
+}
+.accordion__heading:hover + .accordion__heading{
     border-color: var(--purple);
 }
 .accordion__heading:focus{
@@ -1000,19 +1003,26 @@ html{
 }
 .accordion__artists-item{
     display: block;
+    height: 28px;
+    width: fit-content;
+    margin-bottom: 4px;
+
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 31px;
+    line-height: 28px;
+
     color: var(--black);
-    cursor: pointer;
     border-bottom: 1px solid transparent;
+    transition: border 0.5s, color 0.5s;
+    cursor: pointer;
 }
 .accordion__artists-item:hover{
     border-bottom: 1px solid var(--purple);
     color: var(--purple);
 }
 .accordion__artists-item:focus{
+    height: 28px;
     outline: 2px solid var(--dark_purple);
 }
 .is-active.accordion__artists-item{
@@ -1029,7 +1039,7 @@ html{
 .events__heading{
     margin: 0 0 20px 0;
 }
-.events__list-desctop{
+.events__list{
     display: flex;
     flex-wrap: wrap;
     /* justify-content: space-between; */
@@ -1040,29 +1050,13 @@ html{
     height: 700px;
     border: 1px solid #CACACA;
     padding: 309px 17px 43px 50px;
-    background-repeat: no-repeat;
-    background-size: contain;
     margin-bottom: 50px;
     position: relative;
 }
 .events__item:not(:nth-child(3n)){
     margin-right: 50px;
 }
-.event-1{
-    background-image: url(../img/Events-1.jpg);
-}
-.event-2{
-    background-image: url(../img/Events-2.jpg);
-}
-.event-3{
-    background-image: url(../img/Events-3.jpg);
-}
-.event-4{
-    background-image: url(../img/Events-4.jpg);
-}
-.event-5{
-    background-image: url(../img/Events-5.jpg);
-}
+
 .events__location-data{
     font-style: normal;
     font-weight: 600;
@@ -1070,15 +1064,17 @@ html{
     line-height: 16px;
     text-align: right;
     color: var(--gray);
+    margin-bottom: 5px;
 }
 .events__info-heading{
+    margin-top: 0;
+    margin-bottom: 3px;
+
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
     line-height: 33px;
     color: var(--black);
-    margin-top: 5px;
-    margin-bottom: 1px;
 }
 .events__info-description{
     width: 400px;
@@ -1087,6 +1083,11 @@ html{
     font-size: 16px;
     line-height: 32px;
     color: var(--black);
+}
+.events__image{
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .events__more-details{
     position: absolute;
@@ -2762,65 +2763,32 @@ html{
         height: 181px;
     }
     /* Events */
-    .events__list-desctop, #see-all-events{
+    .events__btn{
         display: none;
     }
-    .events__mobile-slider{
+    .events__list{
         display: block;
         width: 292px;
         height: 760px;
     }
-    /* Слайдер */
-    .events .slick-slider{
-        display: block;
-        width: 290px;
-        height: 683px;
-    }
-    /* Ограничивающая оболочка */
-    .events .slick-list{overflow: hidden;}
-    /* Лента слайдов */
-    .events .slick-track{display: flex;}
-    /* Слайд */
-    .events .slick-slide{
-        width: 290px;
-        height: 683px;
-        background-color: #fff;
-    }
-    /* Стрелка */
-    .events .slick-arrow{display: none !important;}
-
     .events__item{
-        display: block;
-        border: 1px solid #CACACA;
-        background-repeat: no-repeat;
-        background-size: contain;
-        position: relative;
-        padding: 214px 18px 56px 35px; 
+        width: 290px;
+        height: 683px;
+        padding: 214px 10px 56px 28px;
     }
-    .events__location-data{
-        font-size: 12px;
-        line-height: 16px;
+    .events__image{
+        width: 290px;
+        height: 200px;
     }
     .events__info-heading{
-        font-size: 24px;
-        line-height: 33px;
-        margin-bottom: 10px;
-        margin-top: 5px;
+        
     }
-    .events__info-description{
-        width: 230px;
-        font-size: 16px;
-        line-height: 32px;
-    }
-    .events__more-details{
-        font-size: 16px;
-        line-height: 32px;
-        bottom: 48px;
-    }
-    .events__item:not(:nth-child(3n)) {
-        margin-right: 0px;
-    }
+
+
     /* Editions */
+    .editions__category-block{
+        display: none;
+    }
     .editions{
         height: initial;
         background-size: cover;
