@@ -1,7 +1,4 @@
 window.addEventListener('DOMContentLoaded', function(){
-    // if(document.body.clientWidth < 768){
-    //     document.querySelector('.events__list').classList.add('slider')
-    // }
     // Бургер
     document.querySelector('#burger').addEventListener('click',function(){
         document.querySelector('.header').classList.add('header_burger_is_open')
@@ -23,11 +20,14 @@ window.addEventListener('DOMContentLoaded', function(){
         document.querySelector('.header-top__link').classList.remove('is-hidden')
     })
     // Кнопка событий
+    if(window.innerWidth < 1024){
+        document.querySelector('.events-slider__slide-3').classList.remove('events-slider__slide_is_visible')
+    }
     document.querySelector('#see-all-events').addEventListener('click',function(){
 
         if(!document.querySelector('.events__btn-hide')){
-            document.querySelectorAll('.events__item').forEach(function(EventContent){
-                EventContent.classList.add('events__item_is_visible')
+            document.querySelectorAll('.events-slider__slide').forEach(function(eventsSliderSlide){
+                eventsSliderSlide.classList.add('events-slider__slide_is_visible')
             })
             tempBtn = document.querySelector('#see-all-events')
             tempBtn.textContent = "Скрыть"
@@ -36,21 +36,37 @@ window.addEventListener('DOMContentLoaded', function(){
             
         }
         else{
-            if(document.body.clientWidth > 1023 ){
-                document.querySelector('.event-5').classList.remove('events__item_is_visible')
-                document.querySelector('.event-4').classList.remove('events__item_is_visible')
+            document.querySelectorAll('.events-slider__slide').forEach(function(eventsSliderSlide){
+                eventsSliderSlide.classList.remove('events-slider__slide_is_visible')
+            })
+            document.querySelector('.events-slider__slide-1').classList.add('events-slider__slide_is_visible')
+            document.querySelector('.events-slider__slide-2').classList.add('events-slider__slide_is_visible')
+            if(window.innerWidth >= 1024){
+                document.querySelector('.events-slider__slide-3').classList.add('events-slider__slide_is_visible')
             }
-            if(document.body.clientWidth < 1024 && document.body.clientWidth > 767){
-                document.querySelector('.event-5').classList.remove('events__item_is_visible')
-                document.querySelector('.event-4').classList.remove('events__item_is_visible')
-                document.querySelector('.event-3').classList.remove('events__item_is_visible')
-
-            }
-
             tempBtn = document.querySelector('#see-all-events')
             tempBtn.textContent = "Все события"
             tempBtn.classList.add('.events__btn-all-events')
             tempBtn.classList.remove('events__btn-hide')
+        }
+    })
+    window.addEventListener('resize',function(){
+        if(window.innerWidth >= 1024){
+            document.querySelector('.events-slider__slide-3').classList.add('events-slider__slide_is_visible')
+        }
+        else{
+            document.querySelector('.events-slider__slide-3').classList.remove('events-slider__slide_is_visible')
+        }
+    })
+    document.addEventListener('click',function(event){
+        var elem = document.querySelector('.painting-list__item_is_open')
+        if(elem){
+            var flag = 0
+            if((event.target.classList != 'style-list__item')&&(event.target.classList != 'painting-list__wrap')&&(event.target.classList != 'painting-list__heading')){
+                document.querySelectorAll('.painting-list__item').forEach(function(paintingListItem){
+                    paintingListItem.classList.remove('painting-list__item_is_open')
+                })
+            }
         }
     })
     // Выплывающий список художников
@@ -71,18 +87,6 @@ window.addEventListener('DOMContentLoaded', function(){
             }
         })
     })   
-    document.addEventListener('click',function(event){
-        var elem = document.querySelector('.painting-list__item_is_open')
-        if(elem){
-            var flag = 0
-            if((event.target.classList != 'style-list__item')&&(event.target.classList != 'painting-list__wrap')&&(event.target.classList != 'painting-list__heading')){
-                document.querySelectorAll('.painting-list__item').forEach(function(paintingListItem){
-                    paintingListItem.classList.remove('painting-list__item_is_open')
-                })
-            }
-        }
-    })
-
     // Modal Window
     document.querySelectorAll('.gallery-slider__image').forEach(function(Pis){
         Pis.addEventListener('click',function(event){
