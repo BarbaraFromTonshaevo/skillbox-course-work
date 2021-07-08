@@ -89,11 +89,14 @@ new Swiper('.gallery-slider',{
 
     }
 });
+// Events
 const slider = document.querySelector('.events-slider');
-let eventsSwiper;
+let mySwiper;
 function mobileSlider(){
     if(window.innerWidth <= 768 && slider.dataset.mobile == 'false'){
-        eventsSwiper = new Swiper(slider,{
+        console.log('resize')
+        mySwiper = new Swiper(slider,{
+            slideClass: 'events-slider__slide',
             slidesPerView: 1,
             spaceBetween: 10,
             loop: true,
@@ -107,26 +110,31 @@ function mobileSlider(){
     if(window.innerWidth > 768){
         slider.dataset.mobile = 'false';
         if(slider.classList.contains('swiper-container-initialized')){
-            eventsSwiper.destroy();
+            mySwiper.destroy();
         }
     }
 }
 mobileSlider();
 window.addEventListener('resize', () => {
     mobileSlider();
-})
 
-const slider_ed = document.querySelector('.editions-slider');
+})
+// Editions
+const sliderEd = document.querySelector('.editions-slider');
+
 let editionsSwiper;
-function desctopSlider(){
-    if(window.innerWidth <= 768 && slider_ed.dataset.mobile == 'false'){
-        slider_ed.dataset.mobile = 'true';
-        if(slider_ed.classList.contains('swiper-container-initialized')){
-            editionsSwiper.destroy();
-        }
-    }
-    if(window.innerWidth > 768){
-        editionsSwiper = new Swiper(slider_ed,{
+
+function editionsSlider() {
+	if (window.innerWidth <= 767) {
+		if (sliderEd.classList.contains('swiper-container-initialized')) {
+			editionsSwiper.destroy();
+		}
+		sliderEd.dataset.mobile = 'false';
+	}
+
+	if (window.innerWidth > 767 && slider.dataset.mobile == 'false') {
+		sliderEd.dataset.mobile = 'true';
+		editionsSwiper = new Swiper('.editions-slider',{
             navigation:{
                 nextEl: '.editions-slider__button-next',
                 prevEl: '.editions-slider__button-prev'
@@ -135,7 +143,7 @@ function desctopSlider(){
                 el:'.editions-slider__pagination',
                 type: 'fraction',
             },
-                // Управление клавиатурой
+            // Управление клавиатурой
             keyboard:{
                 // Выключить/Включить
                 enabled: true,
@@ -145,7 +153,6 @@ function desctopSlider(){
                 onlyInViewport: true,
             },
             breakpoints: {
-                320: {},
                 768: {
                     slidesPerView: 2,
                     spaceBetween: 34,
@@ -162,13 +169,16 @@ function desctopSlider(){
                 },
             },
         });
-        slider.dataset.mobile = 'false';
-    }
+	}
 }
-desctopSlider();
+
+editionsSlider();
+
 window.addEventListener('resize', () => {
-    desctopSlider();
-})
+	editionsSlider();
+});
+
+// Partner
 new Swiper('.partner-slider',{
     navigation:{
         nextEl: '.partner-slider__button-next',

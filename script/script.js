@@ -1,3 +1,16 @@
+function changeText(){
+    document.querySelectorAll('[data-mobiletext]').forEach(function(textNew){
+        if(window.innerWidth > 767 && window.innerWidth < 1920){
+            textNew.textContent = textNew.dataset.notetext;
+        }
+        if(window.innerWidth <= 767 ){
+            textNew.textContent = textNew.dataset.mobiletext;
+        }
+        if(window.innerWidth >= 1920){
+            textNew.textContent = textNew.dataset.desctoptext;
+        }
+    })
+}
 window.addEventListener('DOMContentLoaded', function(){
     // Бургер
     document.querySelector('#burger').addEventListener('click',function(){
@@ -106,11 +119,13 @@ window.addEventListener('DOMContentLoaded', function(){
     })
 
     // Accordion
-    document.querySelectorAll('.accordion__heading').forEach(function(AcrdBtn){
-        AcrdBtn.addEventListener('click',function(HeadBtn){
-            var head = HeadBtn.currentTarget.dataset.head
-            document.querySelector(`[data-info="${head}"]`).classList.toggle('accordion__artists-info_is_open')
-            document.querySelector(`[data-head="${head}"]`).classList.toggle('accordion__heading_is_open')
+    document.querySelectorAll(".accordion__heading").forEach((item)=>{
+        item.addEventListener('click', ()=>{
+            if(document.querySelector('.accordion__item_open') !== null && document.querySelector('.accordion__item_open') !== item.parentElement){
+                document.querySelector('.accordion__item_open').classList.remove('accordion__item_open');
+            }
+            console.log('here');
+            item.parentElement.classList.toggle('accordion__item_open');
         })
     })
     document.querySelectorAll('.accordion__artists-item').forEach(function(PntrBtn){
@@ -126,6 +141,11 @@ window.addEventListener('DOMContentLoaded', function(){
             document.querySelector(`[data-painter="${name}"]`).classList.add('catalog__info-card_is_active')
         })
     })
+    // Editions
+    changeText();
+    window.addEventListener('resize', () => {
+        changeText();
+    });
     // Tooltip
     document.querySelectorAll('.tooltip').forEach(function(TltpBtn){
         TltpBtn.addEventListener('click',function(){
