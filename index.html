@@ -37,6 +37,14 @@
     <title>Document</title>
 </head>
 <body>
+    <svg display="none">
+        <symbol id="arrow" width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg"> 
+            <path d="M5 11L10 6L5 0.999998" stroke="white"/>
+        </symbol>
+        <symbol id="arrow-black" width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg"> 
+            <path d="M5 11L10 6L5 0.999998" stroke="black"/>
+        </symbol>
+    </svg>
     <header class="header">
         <div class="header-top">
             <div class="container header-top__container">
@@ -58,7 +66,7 @@
                     <button class="btn-enter header-top__btn-enter">Войти</button>   
                 </div>              
                 <form class="nav-search header-top__nav-search">
-                    <div class="btn-search nav-search__btn" id="search"   aria-label="Искать по сайту"></div>
+                    <div class="btn-search nav-search__btn" id="search-top"   aria-label="Искать по сайту"></div>
                     <input class="nav-search__input" placeholder="Поиск по сайту"  aria-label="Поиск по сайту"/>
                     <div class="btn-close nav-search__close"></div>
                 </form>  
@@ -175,11 +183,19 @@
                 <div class="gallery__gallery-slider">
                     <div class="gallery-slider swiper-container">
                         <div class="gallery-slider__button-block button-block">
-                            <div class="gallery-slider__button-prev button-block-prev"  aria-label="Предыдущий слайд"></div>
+                            <div class="gallery-slider__button-prev button-block-prev button-slider"  aria-label="Предыдущий слайд">
+                                <svg class="slider-svg">
+                                    <use xlink:href="#arrow"></use>
+                                </svg>
+                            </div>
                             <div class="gallery-slider__wrap-pagination button-block-wrap">
                                 <div class="gallery-slider__pagination"></div>
                             </div>
-                            <div class="gallery-slider__button-next button-block-next" aria-label="Следующий слайд"></div>
+                            <div class="gallery-slider__button-next button-block-next button-slider" aria-label="Следующий слайд">
+                                <svg class="slider-svg">
+                                    <use xlink:href="#arrow"></use>
+                                </svg>
+                            </div>
                         </div>
                         <div class="gallery-slider__wrapper swiper-wrapper">
                             <div class="gallery-slider__slide swiper-slide">
@@ -402,9 +418,9 @@
                     <div class="catalog__info-accordion catalog__info-accordion_is_active" id="info-it">
                         <ul class="catalog__acc accordion__list">
                             <li class="accordion__item accordion__item_open">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1400 по 1499 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1400 по 1499 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Бенедетто ди Биндо">Бенедетто ди Биндо</li>
@@ -435,9 +451,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1500 по 1599 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1500 по 1599 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Шаблон Шаблоныч">Бенедетто ди Биндо</li>
@@ -450,9 +466,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1600 по 1699 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1600 по 1699 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Шаблон Шаблоныч">Бенедетто ди Биндо</li>
@@ -465,9 +481,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1700 по 1799 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1700 по 1799 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Шаблон Шаблоныч">Бенедетто ди Биндо</li>
@@ -480,9 +496,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1800 по 1899 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1800 по 1899 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Шаблон Шаблоныч">Бенедетто ди Биндо</li>
@@ -495,9 +511,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                                <div class="accordion__heading" tabindex="0">
-                                    <h3 class="accordion__heading-text">C 1900 по 1999 гг.</h3>
-                                </div>
+                                <button class="accordion__heading" >
+                                    <span class="accordion__heading-text">C 1900 по 1999 гг.</span>
+                                </button>
                                 <div class="accordion__info">
                                     <ul class="accordion__artists-list">
                                         <li tabindex="0" class="accordion__artists-item" data-name="Шаблон Шаблоныч">Бенедетто ди Биндо</li>
@@ -510,9 +526,9 @@
                                   </div>
                               </li>
                               <li class="accordion__item">
-                                <div class="accordion__heading" tabindex="0">
-                                    <h3 class="accordion__heading-text">C 2000 г.</h3>
-                                </div>
+                                <button class="accordion__heading" >
+                                    <span class="accordion__heading-text">C 2000 г.</span>
+                                </button>
                                 <div class="accordion__info">
                                     <ul class="accordion__artists-list">
                                         <li tabindex="0" class="accordion__artists-item" data-name="Шаблон Шаблоныч">Бенедетто ди Биндо</li>
@@ -530,9 +546,9 @@
                     <div class="catalog__info-accordion" id="info-ru">
                         <ul class="catalog__acc accordion__list">
                             <li class="accordion__item accordion__item_open">
-                                <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1400 по 1499 гг.</h3>
-                                </div>
+                                <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1400 по 1499 гг.</span>
+                                </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item " data-name="Андрей Рублёв">Андрей Рублёв</li>
@@ -543,9 +559,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1500 по 1599 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1500 по 1599 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Андрей Рублёв">Андрей Рублёв</li>
@@ -556,9 +572,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1600 по 1699 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1600 по 1699 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Андрей Рублёв">Андрей Рублёв</li>
@@ -569,9 +585,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1700 по 1799 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1700 по 1799 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Андрей Рублёв">Андрей Рублёв</li>
@@ -582,9 +598,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1800 по 1899 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1800 по 1899 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Андрей Рублёв">Андрей Рублёв</li>
@@ -595,9 +611,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                                <div class="accordion__heading" tabindex="0">
-                                    <h3 class="accordion__heading-text">C 1900 по 1999 гг.</h3>
-                                </div>
+                                <button class="accordion__heading" >
+                                    <span class="accordion__heading-text">C 1900 по 1999 гг.</span>
+                                </button>
                                 <div class="accordion__info">
                                     <ul class="accordion__artists-list">
                                         <li tabindex="0" class="accordion__artists-item" data-name="Андрей Рублёв">Андрей Рублёв</li>
@@ -608,9 +624,9 @@
                                   </div>
                               </li>
                               <li class="accordion__item">
-                                <div class="accordion__heading" tabindex="0">
-                                    <h3 class="accordion__heading-text">C 2000 г.</h3>
-                                </div>
+                                <button class="accordion__heading" >
+                                    <span class="accordion__heading-text">C 2000 г.</span>
+                                </button>
                                 <div class="accordion__info">
                                     <ul class="accordion__artists-list">
                                         <li tabindex="0" class="accordion__artists-item" data-name="Андрей Рублёв">Андрей Рублёв</li>
@@ -626,9 +642,9 @@
                     <div class="catalog__info-accordion" id="info-be">
                         <ul class="catalog__acc accordion__list">
                             <li class="accordion__item accordion__item_open">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1400 по 1499 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1400 по 1499 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Ян ван Эйк">Ян ван Эйк</li>
@@ -639,9 +655,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1500 по 1599 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1500 по 1599 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Ян ван Эйк">Ян ван Эйк</li>
@@ -652,9 +668,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1600 по 1699 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1600 по 1699 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Ян ван Эйк">Ян ван Эйк</li>
@@ -665,9 +681,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1700 по 1799 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1700 по 1799 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Ян ван Эйк">Ян ван Эйк</li>
@@ -678,9 +694,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1800 по 1899 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1800 по 1899 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Ян ван Эйк">Ян ван Эйк</li>
@@ -691,9 +707,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                                <div class="accordion__heading" tabindex="0">
-                                    <h3 class="accordion__heading-text">C 1900 по 1999 гг.</h3>
-                                </div>
+                                <button class="accordion__heading" >
+                                    <span class="accordion__heading-text">C 1900 по 1999 гг.</span>
+                                </button>
                                 <div class="accordion__info">
                                     <ul class="accordion__artists-list">
                                         <li tabindex="0" class="accordion__artists-item" data-name="Ян ван Эйк">Ян ван Эйк</li>
@@ -704,9 +720,9 @@
                                   </div>
                               </li>
                               <li class="accordion__item">
-                                <div class="accordion__heading" tabindex="0">
-                                    <h3 class="accordion__heading-text">C 2000 г.</h3>
-                                </div>
+                                <button class="accordion__heading" >
+                                    <span class="accordion__heading-text">C 2000 г.</span>
+                                </button>
                                 <div class="accordion__info">
                                     <ul class="accordion__artists-list">
                                         <li tabindex="0" class="accordion__artists-item" data-name="Ян ван Эйк">Ян ван Эйк</li>
@@ -722,9 +738,9 @@
                     <div class="catalog__info-accordion" id="info-de">
                         <ul class="catalog__acc accordion__list">
                             <li class="accordion__item accordion__item_open">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1400 по 1499 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1400 по 1499 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Бургкмайр, Ханс">Бургкмайр, Ханс</li>
@@ -735,9 +751,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1500 по 1599 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1500 по 1599 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Бургкмайр, Ханс">Бургкмайр, Ханс</li>
@@ -748,9 +764,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1600 по 1699 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1600 по 1699 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Бургкмайр, Ханс">Бургкмайр, Ханс</li>
@@ -761,9 +777,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1700 по 1799 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1700 по 1799 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Бургкмайр, Ханс">Бургкмайр, Ханс</li>
@@ -774,9 +790,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1800 по 1899 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1800 по 1899 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Бургкмайр, Ханс">Бургкмайр, Ханс</li>
@@ -787,9 +803,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                                <div class="accordion__heading" tabindex="0">
-                                    <h3 class="accordion__heading-text">C 1900 по 1999 гг.</h3>
-                                </div>
+                                <button class="accordion__heading" >
+                                    <span class="accordion__heading-text">C 1900 по 1999 гг.</span>
+                                </button>
                                 <div class="accordion__info">
                                     <ul class="accordion__artists-list">
                                         <li tabindex="0" class="accordion__artists-item" data-name="Бургкмайр, Ханс">Бургкмайр, Ханс</li>
@@ -800,9 +816,9 @@
                                   </div>
                               </li>
                               <li class="accordion__item">
-                                <div class="accordion__heading" tabindex="0">
-                                    <h3 class="accordion__heading-text">C 2000 г.</h3>
-                                </div>
+                                <button class="accordion__heading" >
+                                    <span class="accordion__heading-text">C 2000 г.</span>
+                                </button>
                                 <div class="accordion__info">
                                     <ul class="accordion__artists-list">
                                         <li tabindex="0" class="accordion__artists-item" data-name="Бургкмайр, Ханс">Бургкмайр, Ханс</li>
@@ -818,9 +834,9 @@
                     <div class="catalog__info-accordion" id="info-fr">
                         <ul class="catalog__acc accordion__list">
                             <li class="accordion__item accordion__item_open">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1400 по 1499 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1400 по 1499 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Бартелеми д’Эйк">Бартелеми д’Эйк</li>
@@ -831,9 +847,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1500 по 1599 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1500 по 1599 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Бартелеми д’Эйк">Бартелеми д’Эйк</li>
@@ -844,9 +860,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1600 по 1699 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1600 по 1699 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Бартелеми д’Эйк">Бартелеми д’Эйк</li>
@@ -857,9 +873,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1700 по 1799 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1700 по 1799 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Бартелеми д’Эйк">Бартелеми д’Эйк</li>
@@ -870,9 +886,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                              <div class="accordion__heading" tabindex="0">
-                                  <h3 class="accordion__heading-text">C 1800 по 1899 гг.</h3>
-                              </div>
+                              <button class="accordion__heading" >
+                                  <span class="accordion__heading-text">C 1800 по 1899 гг.</span>
+                              </button>
                               <div class="accordion__info">
                                 <ul class="accordion__artists-list">
                                     <li tabindex="0" class="accordion__artists-item" data-name="Бартелеми д’Эйк">Бартелеми д’Эйк</li>
@@ -883,9 +899,9 @@
                               </div>
                             </li>
                             <li class="accordion__item">
-                                <div class="accordion__heading" tabindex="0">
-                                    <h3 class="accordion__heading-text">C 1900 по 1999 гг.</h3>
-                                </div>
+                                <button class="accordion__heading" >
+                                    <span class="accordion__heading-text">C 1900 по 1999 гг.</span>
+                                </button>
                                 <div class="accordion__info">
                                     <ul class="accordion__artists-list">
                                         <li tabindex="0" class="accordion__artists-item" data-name="Бартелеми д’Эйк">Бартелеми д’Эйк</li>
@@ -896,9 +912,9 @@
                                   </div>
                               </li>
                               <li class="accordion__item">
-                                <div class="accordion__heading" tabindex="0">
-                                    <h3 class="accordion__heading-text">C 2000 г.</h3>
-                                </div>
+                                <button class="accordion__heading" >
+                                    <span class="accordion__heading-text">C 2000 г.</span>
+                                </button>
                                 <div class="accordion__info">
                                     <ul class="accordion__artists-list">
                                         <li tabindex="0" class="accordion__artists-item" data-name="Бартелеми д’Эйк">Бартелеми д’Эйк</li>
@@ -935,7 +951,7 @@
                                 <p class="events-slider__location-data">ММОМА <br>
                                     24 марта 19:00</p>
                                 <h3 class="events-slider__info-heading">«Открытая дискуссия». Дмитрий Петров и Сергей Ильин.</h3>
-                                <p class="events-slider__info-description">Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта. Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта. Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта.</p>
+                                <p class="events-slider__info-description">Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта. Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта.</p>
                                 <a href="" class="events-slider__more-details"><span class="events-slider__more-details-span">Подробнее</span></a>
                             </div>
                         </li>  
@@ -983,98 +999,88 @@
                 <div class="editions__category-block">
                     <h3 class="category-block__heading">Категории:</h3>
                     <ul class="category-block__list">
-                        <li class="category-block__item" tabindex="0">
-                            <label for="check-1" class="category-block__check">
-                                <input type="checkbox" name="check-1" id="check-1" class="category-block__input">
+                        <li class="category-block__item">
+                            <label class="category-block__check check option">
+                                <input class="check__input" type="checkbox">
+                                <span class="check__box"></span>
                                 Бестселлеры
-                                <span></span>
                             </label>
                         </li>
-                        <li class="category-block__item" tabindex="0">
-                            <label for="check-2" class="category-block__check">
-                                <input type="checkbox" name="check-2" id="check-2" class="category-block__input">
+                        <li class="category-block__item">
+                            <label class="category-block__check check option">
+                                <input class="check__input" type="checkbox">
+                                <span class="check__box"></span>
                                 Искусство
-                                <span></span>
-        
                             </label>
                         </li>
-                        <li class="category-block__item" tabindex="0">
-                            <label for="check-3" class="category-block__check">
-                                <input type="checkbox" name="check-3" id="check-3" class="category-block__input">
+                        <li class="category-block__item">
+                            <label class="category-block__check check option">
+                                <input class="check__input" type="checkbox">
+                                <span class="check__box"></span>
                                 Архитектура
-                                <span></span>
-        
                             </label>
                         </li>
-                        <li class="category-block__item" tabindex="0">
-                            <label for="check-4" class="category-block__check">
-                                <input type="checkbox" name="check-4" id="check-4" class="category-block__input">
+                        <li class="category-block__item">
+                            <label class="category-block__check check option">
+                                <input class="check__input" type="checkbox">
+                                <span class="check__box"></span>
                                 Дизайн
-                                <span></span>
-        
                             </label>
                         </li>
-                        <li class="category-block__item" tabindex="0">
-                            <label for="check-5" class="category-block__check">
-                                <input type="checkbox" name="check-5" id="check-5" class="category-block__input">
+                        <li class="category-block__item">
+                            <label class="category-block__check check option">
+                                <input class="check__input" type="checkbox">
+                                <span class="check__box"></span>
                                 Мода
-                                <span></span>
-        
                             </label>
                         </li>
-                        <li class="category-block__item" tabindex="0">
-                            <label for="check-6" class="category-block__check">
-                                <input type="checkbox" name="check-6" id="check-6" class="category-block__input">
+                        <li class="category-block__item">
+                            <label class="category-block__check check option">
+                                <input class="check__input" type="checkbox">
+                                <span class="check__box"></span>
                                 Детям
-                                <span></span>
-        
                             </label>
                         </li>
-                        <li class="category-block__item" tabindex="0">
-                            <label for="check-7" class="category-block__check">
-                                <input type="checkbox" name="check-7" id="check-7" class="category-block__input">
+                        <li class="category-block__item">
+                            <label class="category-block__check check option">
+                                <input class="check__input" type="checkbox">
+                                <span class="check__box"></span>
                                 Художественная литература
-                                <span></span>
-        
                             </label>
                         </li>
-                        <li class="category-block__item" tabindex="0">
-                            <label for="check-8" class="category-block__check">
-                                <input type="checkbox" name="check-8" id="check-8" class="category-block__input">
+                        <li class="category-block__item">
+                            <label class="category-block__check check option">
+                                <input class="check__input" type="checkbox">
+                                <span class="check__box"></span>
                                 Публицистика
-                                <span></span>
-        
                             </label>
                         </li>
-                        <li class="category-block__item" tabindex="0">
-                            <label for="check-9" class="category-block__check">
-                                <input type="checkbox" name="check-9" id="check-9" class="category-block__input">
+                        <li class="category-block__item">
+                            <label class="category-block__check check option">
+                                <input class="check__input" type="checkbox">
+                                <span class="check__box"></span>
                                 Путеводители
-                                <span></span>
-        
                             </label>
                         </li>
-                        <li class="category-block__item" tabindex="0">
-                            <label for="check-10" class="category-block__check">
-                                <input type="checkbox" name="check-10" id="check-10" class="category-block__input">
+                        <li class="category-block__item">
+                            <label class="category-block__check check option">
+                                <input class="check__input" type="checkbox">
+                                <span class="check__box"></span>
                                 Философия
-                                <span></span>
-        
                             </label>
                         </li>
-                        <li class="category-block__item" tabindex="0">
-                            <label for="check-11" class="category-block__check">
-                                <input type="checkbox" name="check-11" id="check-11" class="category-block__input">
+                        <li class="category-block__item">
+                            <label class="category-block__check check option">
+                                <input class="check__input" type="checkbox">
+                                <span class="check__box"></span>
                                 Учебная литература
-                                <span></span>
-        
                             </label>
                         </li>
-                        <li class="category-block__item" tabindex="0">
-                            <label for="check-12" class="category-block__check">
-                                <input type="checkbox" name="check-12" id="check-12" class="category-block__input">
+                        <li class="category-block__item">
+                            <label class="category-block__check check option">
+                                <input class="check__input" type="checkbox">
+                                <span class="check__box"></span>
                                 Журналы и газеты
-                                <span></span>
                             </label>
                         </li>
                     </ul>
@@ -1092,11 +1098,19 @@
                 <div class="editions__slider">
                     <div class="editions-slider swiper-container" data-mobile="false">
                         <div class="editions-slider__button-block button-block">
-                            <div class="editions-slider__button-prev button-block-prev"></div>
+                            <div class="editions-slider__button-prev button-block-prev button-slider">
+                                <svg class="slider-svg">
+                                    <use xlink:href="#arrow"></use>
+                                </svg>
+                            </div>
                             <div class="editions-slider__wrap-pagination button-block-wrap">
                                 <div class="editions-slider__pagination"></div>
                             </div>
-                            <div class="editions-slider__button-next button-block-next"></div>
+                            <div class="editions-slider__button-next button-block-next button-slider">
+                                <svg class="slider-svg">
+                                    <use xlink:href="#arrow"></use>
+                                </svg>
+                            </div>
                         </div>
                         <div class="editions-slider__wrapper swiper-wrapper">
                             <div class="editions-slider__slide swiper-slide">
@@ -1171,11 +1185,15 @@
         <section class="projects" id="projects">
             <div class="container projects__container">
                 <h2 class="section-heading projects__heading">Проекты</h2>
-                <p class="projects__description">Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А ещё независимые государства смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Прежде всего, постоянное информационно-пропагандистское <span title="Пример современных тенденций - современная методология разработки" class="tooltip tlt-1"></span> обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И нет сомнений, что действия представителей оппозиции могут быть рассмотрены <span title="Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции" class="tooltip tlt-2"></span> исключительно в разрезе маркетинговых и финансовых <span title="В стремлении повысить качество " class="tooltip tlt-3"></span> предпосылок. Банальные, но неопровержимые выводы, а также представители современных социальных резервов призывают нас к новым свершениям, которые, в свою очередь, должны быть смешаны с не уникальными данными до степени совершенной неузнаваемости. Подробнее: <a href="blanchard-art.ru/projects/about" class="projects__link">blanchard-art.ru/projects/about</a> </p>
+                <p class="projects__description">Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А ещё независимые государства смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. Прежде всего, постоянное<br>информационно-пропагандистское <span title="Пример современных тенденций - современная методология разработки" class="tooltip tlt-1"></span> обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И нет сомнений, что действия представителей оппозиции могут быть рассмотрены <span title="Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции" class="tooltip tlt-2"></span> исключительно в разрезе маркетинговых и финансовых <span title="В стремлении повысить качество " class="tooltip tlt-3"></span> предпосылок. Банальные, но неопровержимые выводы, а также представители современных социальных резервов призывают нас к новым свершениям, которые, в свою очередь, должны быть смешаны с не уникальными данными до степени совершенной неузнаваемости. Подробнее: <a href="blanchard-art.ru/projects/about" class="projects__link">blanchard-art.ru/projects/about</a> </p>
                 <h3 class="projects__partner-heading">Партнеры проектов:</h3>
                 <div class="projects__partner-slider">
                     <div class="partner-slider swiper-container">
-                        <div class="partner-slider__button-prev"  aria-label="Предыдущий слайд"></div>
+                        <div class="partner-slider__button-prev"  aria-label="Предыдущий слайд">
+                            <svg class="slider-svg">
+                                <use xlink:href="#arrow-black"></use>
+                            </svg>
+                        </div>
                         <div class="partner-slider__wrapper swiper-wrapper">
                             <div class="partner-slider__slide swiper-slide">
                                 <img src="./img/Group-1.png" alt=""  class="partner-slider__image">
@@ -1205,7 +1223,11 @@
                                 <img src="./img/Group-9.png" alt=""  class="partner-slider__image">
                             </div>  
                         </div>
-                        <div class="partner-slider__button-next"  aria-label="Следующий слайд"></div>
+                        <div class="partner-slider__button-next"  aria-label="Следующий слайд">
+                            <svg class="slider-svg">
+                                <use xlink:href="#arrow-black"></use>
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>

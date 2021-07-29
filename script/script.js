@@ -178,4 +178,12 @@ window.addEventListener('DOMContentLoaded', function(){
 
         })
     })
+    // Чекбоксы
+    // document.querySelectorAll('.check__input').parentElement.style.color = "#9D5CD0";
+    document.querySelectorAll('.check__input').forEach((checkInput)=>{
+        checkInput.addEventListener('click',()=>{
+            console.log('checked');
+            checkInput.parentElement.classList.toggle('checked-text');
+        })
+    })
 })
