@@ -128,13 +128,13 @@ window.addEventListener('DOMContentLoaded', function(){
             item.parentElement.classList.toggle('accordion__item_open');
         })
     })
-    document.querySelectorAll('.accordion__artists-item').forEach(function(PntrBtn){
+    document.querySelectorAll('.accordion__artists-btn').forEach(function(PntrBtn){
         PntrBtn.addEventListener('click',function(){
             var name = PntrBtn.dataset.name;
             document.querySelectorAll('.catalog__info-card').forEach(function(TabContent){
                 TabContent.classList.remove('catalog__info-card_is_active');
             });
-            document.querySelector('.accordion__artists-item_is_active').classList.remove('accordion__artists-item_is_active');
+            document.querySelector('.accordion__artists-btn_is_active').classList.remove('accordion__artists-item_is_active');
             document.querySelector(`[data-name="${name}"]`).classList.add('accordion__artists-item_is_active')
             document.querySelector(`[data-painter="${name}"]`).classList.add('catalog__info-card_is_active')
         })
@@ -147,13 +147,13 @@ window.addEventListener('DOMContentLoaded', function(){
     // Tooltip
     document.querySelectorAll('.tooltip').forEach(function(TltpBtn){
         TltpBtn.addEventListener('click',function(){
-            TltpBtn.classList.toggle('is-open')
+            TltpBtn.classList.toggle('is-open');
         })
     })
     // Check
     document.querySelectorAll('.input-check').forEach(function(ChBtn){
         ChBtn.addEventListener('click',function(){
-            ChBtn.parentNode.classList.toggle("checked")
+            ChBtn.parentNode.classList.toggle("checked");
         })
     })
     // Страны
@@ -168,9 +168,9 @@ window.addEventListener('DOMContentLoaded', function(){
             })
             var lang = 'info-' + catalogCountryItem.dataset.lang;
             document.getElementById(lang).classList.add('catalog__info-accordion_is_active');
-            document.querySelector('.accordion__artists-item_is_active').classList.remove('accordion__artists-item_is_active');
-            document.getElementById(lang).querySelector('.accordion__artists-item').classList.add('accordion__artists-item_is_active');
-            var name = document.getElementById(lang).querySelector('.accordion__artists-item_is_active').dataset.name;
+            document.querySelector('.accordion__artists-btn_is_active').classList.remove('accordion__artists-item_is_active');
+            document.getElementById(lang).querySelector('.accordion__artists-btn').classList.add('accordion__artists-item_is_active');
+            var name = document.getElementById(lang).querySelector('.accordion__artists-btn_is_active').dataset.name;
             document.querySelectorAll('.catalog__info-card').forEach(function(catcard){
                 catcard.classList.remove('catalog__info-card_is_active');
             })

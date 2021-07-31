@@ -115,13 +115,16 @@ html{
 .btn:focus{
     outline: none;
 }
-.btn:focus::after{
+.btn::after{
     position: absolute;
     top: -7px;
     left: -7px;
     content: '';
     width: calc(100% + 10px);
     height: calc(100% + 10px);
+    transition: border 0.5s;
+}
+.btn:focus::after{
     border: 2px solid var(--purple);
     border-radius: 100px;
 }
@@ -186,7 +189,7 @@ html{
     font-style: normal;
     font-size: 18px;
     line-height: 25px;
-    transition: color 0.5s;
+    transition: color 0.5s, background 0.5s;
 }
 .nav__link:hover{
     color: var(--purple);
@@ -244,8 +247,8 @@ html{
 
     background: none;
     border: none;
-    transition: color 0.5s;
     padding: 2px 13px 5px 5px;
+    transition: color 0.5s, border 0.5s, background 0.5s;
 }
 .painting-list__down{
     position: relative;
@@ -563,7 +566,7 @@ html{
 /* ABOUT US */
 .about-us{
     padding-top: 80px;
-    padding-bottom: 70px;
+    padding-bottom: 73px;
 }
 .about-us__heading{
     margin-bottom: 17px;
@@ -582,7 +585,7 @@ html{
     background-size: cover;
     background-repeat: no-repeat;
 
-    padding: 80px 0px 72px 0px;
+    padding: 80px 0px 69px 0px;
 }
 .gallery__container{
     width: 100%;
@@ -908,7 +911,7 @@ html{
 .catalog__heading{
     display: inline-block;
     margin-right: 27px;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 .catalog__country-list{
     display: inline-flex;
@@ -1127,7 +1130,7 @@ html{
     flex-wrap: wrap;
     align-content: space-between;
 }
-.accordion__artists-item{
+.accordion__artists-btn{
     display: block;
     height: 28px;
     width: fit-content;
@@ -1143,25 +1146,25 @@ html{
     transition: border 0.5s, color 0.5s, background 0.5s;
     cursor: pointer;
 }
-.accordion__artists-item:hover{
+.accordion__artists-btn:hover{
     border-bottom: 1px solid var(--purple);
     color: var(--purple);
 }
-.accordion__artists-item:focus{
+.accordion__artists-btn:focus{
     background-color: var(--purple);
     color: white;
     outline: none;
 }
-.accordion__artists-item_is_active{
+.accordion__artists-btn_is_active{
     color: var(--purple)
 }
 
 /* EVENTS */
 .events{
-    padding-bottom: 76px;
+    padding-bottom: 80px;
 }
 .events__heading{
-    margin: 0 0 20px 0;
+    margin: 0 0 15px 0;
 }
 .events-slider{
     width: 100%;
@@ -1170,13 +1173,13 @@ html{
     display: flex;
     flex-wrap: wrap;
     height: fit-content;
-    margin-bottom: 50px;
 }
 .events-slider__slide{
     display: none;
     min-height: 700px;
     width: 500px;
     margin-right: 50px;
+    margin-bottom: 50px;
     align-self: stretch;
 }
 .events-slider__slide_is_visible{
@@ -1188,7 +1191,7 @@ html{
     display: flex;
     flex-direction: column;
     border: 1px solid #CACACA;
-    padding-bottom: 50px;
+    padding-bottom: 35px;
     background-color: white;
     align-self: stretch;
 }
@@ -1230,16 +1233,18 @@ html{
 }
 .events-slider__more-details{
     width: fit-content;
-    padding: 5px 5px 14px 5px;
-    margin-left: 48px;
+    padding: 5px 5px 14px 48px;
     margin-top: auto;
     transition: color 0.5s, border 0.5s;
+    position: relative;
 }
 .events-slider__more-details-span{
     color: var(--purple);
     padding-bottom: 5px;
     border-bottom: 1px solid var(--purple);
     transition: background 0.5s;
+    position: relative;
+    z-index: 1;
 }
 .events-slider__more-details:hover .events-slider__more-details-span{
     color: var(--dark_purple);
@@ -1247,6 +1252,17 @@ html{
 }
 .events-slider__more-details:focus{
     outline: none;
+}
+.events-slider__more-details::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 43px;
+    bottom: 0;
+    right: 0;
+    transition: background 0.5s;
+}
+.events-slider__more-details:focus::before{
     background-color: var(--purple);
 }
 .events-slider__more-details:focus .events-slider__more-details-span{
@@ -1281,18 +1297,19 @@ html{
     background-size: cover;
     background-position: 0px -900px;
     padding-top: 83px;
-    padding-bottom: 80px;
+    padding-bottom: 75px;
 }
 .editions__container{
     height: 100%;
-    position: relative;
+    display: flex;
+    justify-content: space-between;
 }
 .editions__heading{
     color: white;
     margin: 0 0 16px 0;
 }
 .editions__category-block{
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 .category-block__heading{
     margin: 0px 0px 2px 0px;
@@ -1397,6 +1414,7 @@ html{
     border: none;
     padding-right: 10px;
     padding-left: 10px;
+    transition: background 0.5s, border 0.5s;
 }
 .price-form__input:hover{
     background-color: var(--purple);
@@ -1422,12 +1440,10 @@ html{
     padding-right: 9.5px;
     padding-left: 9.5px;
 }
+
 .editions__slider{
-    position: absolute;
-    top: 30px;
-    right: 0;
+    padding-top: 30px;
     width: 1150px;
-    
 }
 .editions-slider__slide{
     width: 350px;
@@ -1499,12 +1515,18 @@ html{
 }
 .tooltip{
   display: inline-block;
-  width: 12px;
-  height: 12px;
-  background-image: url(../img/i.svg);
-  background-size: cover;
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/i_tooltip.svg);
+  background-size: 16px;
   position: relative;
   cursor: pointer;
+  transition: background 0.5s;
+  transform: translateY(-5px);
+}
+.tooltip:focus{
+    outline: none;
+    background-image: url(../img/i_hover.svg);
 }
 .tooltip::after{
     opacity: 0;
@@ -1642,22 +1664,20 @@ html{
     font-size: 24px;
     line-height: 32px;
     color: var(--black);
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 .contacts__adress{
     font-weight: 600;
     margin: 0;
 }
 .contacts__adress-description{
-    margin-bottom: 46px;
+    display: block;
+    margin-bottom: 30px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 16px;
     line-height: 30px;
     color: var(--black);
-}
-.contacts__call{
-    margin-top: 33px;
 }
 .contacts__form-list{
     display: flex;
@@ -1761,6 +1781,8 @@ html{
     background-color: black;
     padding-top: 47px;
     padding-bottom: 47px;
+    position: relative;
+    z-index: 1;
 }
 .footer__container{
     display: flex;
@@ -1810,6 +1832,10 @@ html{
     .events-slider__slide:nth-child(3n){
         margin-right: 0;
     }
+    .tooltip:hover{
+        background-image: url(../img/i_hover.svg);
+    }
+    .tooltip:focus:after,
     .tooltip:hover:after{
         opacity: 1;
         visibility: visible;
@@ -1819,13 +1845,14 @@ html{
         border-color: var(--purple) transparent;
         border-width: 12px 6px 0 6px;
         content: "";
-        bottom: 15px;
+        bottom: 16px;
+        left: 1px;
         position: absolute;
         opacity: 0;
         visibility: hidden;
         transition: all 0.5s;
     }
-    
+    .tooltip:focus::before,
     .tooltip:hover:before{
         opacity: 1;
         visibility: visible;
