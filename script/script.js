@@ -145,9 +145,10 @@ window.addEventListener('DOMContentLoaded', function(){
         changeText();
     });
     // Tooltip
-    document.querySelectorAll('.tooltip').forEach(function(TltpBtn){
-        TltpBtn.addEventListener('click',function(){
-            TltpBtn.classList.toggle('is-open');
+    document.querySelectorAll('.tooltip').forEach(function(tooltip){
+        tooltip.addEventListener('click',function(){
+            console.log('tooltip')
+            tooltip.classList.toggle('is-open');
         })
     })
     // Check

@@ -61,7 +61,7 @@ button{
 *{
     box-sizing: border-box;
 }
-h1{
+h1,h2,h3,h4,h5,h6{
     padding: 0;
     margin: 0;
 }
@@ -489,7 +489,7 @@ html{
   }
 .hero{
     padding-top: 241px;
-    padding-bottom: 122px;
+    padding-bottom: 121px;
     background-size: cover;
     background-repeat: no-repeat;
     animation: anim-background 10s ease infinite;
@@ -584,8 +584,7 @@ html{
     background-image: url(../img/gallery.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-
-    padding: 80px 0px 69px 0px;
+    padding: 80px 0px 9px 0px;
 }
 .gallery__container{
     width: 100%;
@@ -599,6 +598,7 @@ html{
     display: flex;
     flex-direction: column;
     position: relative;
+    padding-bottom: 62px;
 }
 .gallery__heading{
     color: white;
@@ -611,15 +611,16 @@ html{
     line-height: 32px;
     margin-bottom: 13px;
 }
+.gallery__description-wrap{
+    display: flex;
+    margin-top: auto;
+}
 .gallery__description{
     color: white;
     font-size: 16px;
     line-height: 32px;
     font-weight: 600;
     width: 350px;
-    display: block;
-    position: absolute;
-    bottom: 0;
 }
 .gallery__log-up{
     color: var(--dark_purple);
@@ -905,13 +906,13 @@ html{
 
 /* Catalog */
 .catalog{
-    padding-top: 75px;
+    padding-top: 77px;
     padding-bottom: 80px;
 }
 .catalog__heading{
     display: inline-block;
     margin-right: 27px;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 }
 .catalog__country-list{
     display: inline-flex;
@@ -988,7 +989,7 @@ html{
     font-size: 16px;
     line-height: 32px;
     color: var(--black);
-    margin-bottom: 40px;
+    margin-bottom: 43px;
 }
 .catalog__info-block{
     display: flex;
@@ -1058,7 +1059,7 @@ html{
     cursor: pointer;
     display: block;
     width: 100%;
-    padding: 40.5px 0px;
+    padding: 40.4px 0px;
 
     background-image:url(../img/down.svg);
     background-repeat: no-repeat;
@@ -1130,11 +1131,13 @@ html{
     flex-wrap: wrap;
     align-content: space-between;
 }
+.accordion__artists-item:not(:last-child){
+    margin-bottom: 4px;
+}
 .accordion__artists-btn{
     display: block;
     height: 28px;
     width: fit-content;
-    margin-bottom: 4px;
 
     font-style: normal;
     font-weight: 400;
@@ -1161,10 +1164,10 @@ html{
 
 /* EVENTS */
 .events{
-    padding-bottom: 80px;
+    padding-bottom: 78px;
 }
 .events__heading{
-    margin: 0 0 15px 0;
+    margin: 0 0 18px 0;
 }
 .events-slider{
     width: 100%;
@@ -1191,13 +1194,20 @@ html{
     display: flex;
     flex-direction: column;
     border: 1px solid #CACACA;
-    padding-bottom: 35px;
+    padding-bottom: 34px;
     background-color: white;
     align-self: stretch;
 }
 .events-slider__image{
     width: 100%;
-    margin-bottom: 13px;
+    margin-bottom: 14px;
+}
+.events-slider__text-wrap{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-left: 48px;
+    padding-right: 19px;
 }
 .events-slider__location-data{
     font-style: normal;
@@ -1207,13 +1217,11 @@ html{
     text-align: right;
     color: var(--grey);
     margin-bottom: 5px;
-    padding-right: 19px;
 }
 .events-slider__info-heading{
     margin-top: 0;
     margin-bottom: 3px;
-    padding-left: 50px;
-    padding-right: 30px;
+    padding-right: 10px;
 
     font-style: normal;
     font-weight: 600;
@@ -1227,13 +1235,12 @@ html{
     font-size: 16px;
     line-height: 32px;
     color: var(--black);
-    padding-right: 50px;
-    padding-left: 48px;
+    padding-right: 30px;
     margin-bottom: 10px;
 }
 .events-slider__more-details{
     width: fit-content;
-    padding: 5px 5px 14px 48px;
+    padding: 5px 5px 14px;
     margin-top: auto;
     transition: color 0.5s, border 0.5s;
     position: relative;
@@ -1252,17 +1259,6 @@ html{
 }
 .events-slider__more-details:focus{
     outline: none;
-}
-.events-slider__more-details::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 43px;
-    bottom: 0;
-    right: 0;
-    transition: background 0.5s;
-}
-.events-slider__more-details:focus::before{
     background-color: var(--purple);
 }
 .events-slider__more-details:focus .events-slider__more-details-span{
@@ -1297,7 +1293,7 @@ html{
     background-size: cover;
     background-position: 0px -900px;
     padding-top: 83px;
-    padding-bottom: 75px;
+    padding-bottom: 73px;
 }
 .editions__container{
     height: 100%;
@@ -1309,7 +1305,7 @@ html{
     margin: 0 0 16px 0;
 }
 .editions__category-block{
-    margin-bottom: 30px;
+    margin-bottom: 23px;
 }
 .category-block__heading{
     margin: 0px 0px 2px 0px;
@@ -1389,11 +1385,8 @@ html{
     color: var(--purple);
 }
 
-
-
-
 .editions__price-heading{
-    margin: 0px 0px 9px 0px;
+    margin: 0px 0px 7px 0px;
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
@@ -1500,7 +1493,7 @@ html{
     padding-bottom: 80px;
 }
 .projects__heading{
-    margin: 0 0 20px 0;
+    margin: 0 0 17px 0;
 }
 .projects__container{
     position: relative;
@@ -1512,6 +1505,7 @@ html{
     font-size: 16px;
     line-height: 32px;
     color: var(--black);
+    margin-bottom: 25px;
 }
 .tooltip{
   display: inline-block;
@@ -1565,6 +1559,18 @@ html{
     height: 48px;
     left: -110px;
 }
+.tooltip::before{
+    border: solid;
+    border-color: var(--purple) transparent;
+    border-width: 12px 6px 0 6px;
+    content: "";
+    bottom: 16px;
+    left: 1px;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.65s;
+}
 .projects__link{
     color: var(--purple);
     padding: 2px 5px;
@@ -1584,7 +1590,7 @@ html{
     font-size: 24px;
     line-height: 32px;
     color: var(--black);
-    margin-top: 20px;
+    margin-bottom: 22px;
 }
 .projects__partner-slider{
     width: 1600px;
@@ -1604,7 +1610,7 @@ html{
     height: 150px;
     object-fit: cover;
     filter: grayscale(100%);
-    filter: grey; 
+    filter: gray; 
     opacity: 0.4;
     transition: filter 0.5s, opacity 0.5s;
 }
@@ -1618,7 +1624,7 @@ html{
     height: 30px;
     position: absolute;
     transition: background 0.5s;
-    background-color: var(--grey);
+    background-color: #ececec;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1646,7 +1652,7 @@ html{
 
 /* Contacts */
 .contacts__heading{
-    margin: 0 0 16px 0;
+    margin: 0 0 15px 0;
 }
 .contacts__block{
     position: relative;
@@ -1664,11 +1670,10 @@ html{
     font-size: 24px;
     line-height: 32px;
     color: var(--black);
-    margin-bottom: 18px;
 }
 .contacts__adress{
     font-weight: 600;
-    margin: 0;
+    margin-bottom: 5px;
 }
 .contacts__adress-description{
     display: block;
@@ -1679,9 +1684,13 @@ html{
     line-height: 30px;
     color: var(--black);
 }
+.contacts__call {
+    margin-bottom: 15px;
+}
 .contacts__form-list{
     display: flex;
     flex-direction: column;
+    margin-bottom: 38px;
 }
 .contacts__input{
     width: 400px;
@@ -1728,8 +1737,8 @@ html{
     border-radius: 100px;
     transition: background 0.5s, color 0.5s;
 }
-.contacts__click{
-    margin-top: 35px;
+.contacts__click {
+    margin-bottom: 15px;
 }
 .contacts__social-list{
     display: flex;
@@ -1840,18 +1849,6 @@ html{
         opacity: 1;
         visibility: visible;
     }
-    .tooltip::before{
-        border: solid;
-        border-color: var(--purple) transparent;
-        border-width: 12px 6px 0 6px;
-        content: "";
-        bottom: 16px;
-        left: 1px;
-        position: absolute;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.5s;
-    }
     .tooltip:focus::before,
     .tooltip:hover:before{
         opacity: 1;
@@ -1860,7 +1857,6 @@ html{
 }
 @media (max-width: 1919px)
 {
-    
     .container{
         width: 924px;
     }
@@ -2010,12 +2006,13 @@ html{
         font-size: 72px;
         line-height: 84px;
         margin-bottom: 10px;
+        padding-left: 5px;
     }
     .hero__description{
         width: 661px;
         font-size: 18px;
         line-height: 30px;
-        margin-bottom: 135px;
+        margin-bottom: 132px;
     }
     @keyframes anim-background{
         0%{
@@ -2033,7 +2030,7 @@ html{
     }
     /* About-us */
     .about-us{
-        margin-bottom: 0px;
+        padding-bottom: 70px;
     }
     .about-us__heading{
         margin-bottom: 16px;
@@ -2065,11 +2062,7 @@ html{
         height: 230px;
     }
 
-    .modal__container{
-        /* position: absolute;
-        top: 165px;
-        left: 330px; */
-    
+    .modal__container{    
         width: 594px;
         height: 594px;
         padding: 121px 50px 90px 313px;
@@ -2082,59 +2075,78 @@ html{
     
     /* Catalog */
     .catalog__heading{
-        margin-right: 35px;
+        margin-right: 28px;
     }
     .catalog__country-list{
-        transform: translateY(14px);
+        transform: translateY(10px);
     }
     .catalog__description{
         width: 100%;
+        margin-bottom: 38px;
     }
     .catalog__info-card_is_active, .catalog__info-accordion{
         width: 437px;
     }
-    .accordion__artists-info_is_open{
-        width: 437px;
-        max-height: 500px;
-        min-height: 100px;
-        margin-bottom: 25px;
+    .accordion__artists-list{
+        min-height: fit-content;
+        height: fit-content;
+        max-height: 440px;
     }
-    .accordion__artists-info_is_open .accordion__artists-list{
-        width: 437px;
-        min-height: 100px;
-        max-height: 500px;
+    .accordion__heading{
+        padding: 40.5px 0px;
     }
     .info-card__img{
         width: 437px;
         height: 274px;
-        margin-bottom: 30px;
+        margin-bottom: 27px;
     }
     /* Events */
+    .events{
+        padding-bottom: 80px;
+    }
     .events-slider{
         width: 100%;
     }
     .events-slider__slide{
         width: 290px;
-        height: 683px;
+        min-height: 683px;
         margin-right: 27px;
     }
     .events-slider__slide:nth-child(3n){
         margin-right: 0;
     }
     .events-slider__block{
-        padding: 214px 17px 56px 35px;
+        padding-bottom: 42px;
     }
     .events-slider__image{
-        height: 200px;
-    }      
+        min-height: 200px;
+        object-fit: cover;
+    }   
+    .events-slider__location-data{
+        margin-bottom: 2px;
+    }   
+    .events-slider__text-wrap{
+        padding: 0px 18px 0px 35px;
+    }
+    .events-slider__info-heading{
+        padding: 0;
+    }
+    .events-slider__info-description{
+        padding-right: 15px;
+    }
+    .events-slider__more-details{
+        transform: translateX(-5px);
+    }
     /* Editions */
     .editions{
-        /* height: 763px; */
         background-position: 0 -300px;
         background-size: cover;
+        padding-top: 80px;
+        padding-bottom: 82px;
     }
     .editions__slider{
         width: 630px;
+        padding-top: 35px;
     }
     .editions-slider__slide{
         width: 290px;
@@ -2142,7 +2154,10 @@ html{
     }
     .editions-slider__image{
         height: 320px;
-        margin-bottom: 13px;
+        margin-bottom: 10px;
+    }
+    .editions-slider__author{
+        margin-bottom: 15px;
     }
     /* Projects */
     .projects{
@@ -2151,16 +2166,15 @@ html{
     .projects__description{
         width: 928px;
         font-weight: 400;
-    }
-    .tooltip{
-        background-image: url(../img/ii.svg);
+        padding: 0;
+        margin-bottom: 19px;
     }
     .is-open.tooltip{
-        background-image: url(../img/ix.svg);
+        background-image: url(../img/i_close.svg);
     }
     .is-open.tooltip::after{
-        display: -webkit-flex;
-        display: flex;
+        opacity: 1;
+        visibility: visible;
     }
     .projects__partner-slider{
         width: 100%;
@@ -2183,17 +2197,32 @@ html{
         object-position: center;
     }
     /* Contacts */
+    .contacts__heading{
+        margin-bottom: 17px;
+    }
+    .contacts__adress{
+        margin-bottom: 0px;
+    }
+    .contacts__adress-description{
+        margin-bottom: 31px;
+    }
     .contacts__input{
         width: 335px;
     }
     .contacts__map{
         width: calc( 1024px * 0.52 + (100vw - 1024px) / 2);
     }
+    .contacts__social-item{
+        width: fit-content;
+    }
     .contacts__social-link{
         width: 60px;
         height: 60px;
-        background-size: cover;
-        margin-right: 30px;
+        margin-right: 10px;
+    }
+    .contacts__social-svg{
+        width: 60px;
+        height: 60px;
     }
     .contacts__container{
         padding-bottom: 100px;
@@ -2202,17 +2231,16 @@ html{
     .footer{
         padding: 40px 0;
     }
-    .footer__social-link{
-        width: 60px;
-        height: 60px;
-        background-size: cover;
-    }
-    .social-vk, .social-ig{
+    .footer__social-item:not(:last-child){
         margin-right: 30px;
     }
-
-
-    
+    .footer__social-link{
+        width: fit-content;
+    }
+    .footer__social-svg{
+        width: 60px;
+        height: 60px;
+    }  
 }
 @media (max-width: 1023px)
 {
