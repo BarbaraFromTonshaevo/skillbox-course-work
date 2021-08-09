@@ -1508,12 +1508,12 @@ html{
     margin-bottom: 20px;
 }
 .tooltip{
+  position: relative;
   display: inline-block;
   width: 16px;
   height: 16px;
   background-image: url(../img/i_tooltip.svg);
   background-size: 16px;
-  position: relative;
   cursor: pointer;
   transition: background 0.5s;
   transform: translateY(-5px);
@@ -1522,7 +1522,7 @@ html{
     outline: none;
     background-image: url(../img/i_hover.svg);
 }
-.tooltip::after{
+.tooltip-wrap{
     opacity: 0;
     visibility: hidden;
     display: flex;
@@ -1532,7 +1532,6 @@ html{
     align-items: center;
     text-align: center;
     background: var(--purple);
-    content: attr(title);
     font-size: 16px;
     width: 220px;
     position: absolute;
@@ -1542,34 +1541,32 @@ html{
     font-weight: 600;
     font-size: 12px;
     line-height: 16px;
-    transition: all 0.5s;
+    transition: opacity 0.5s;
 }
-.tlt-1::after{
+.tlt-1{
     width: 264px;
     height: 55px;
     left: -126px;
 }
-.tlt-2::after{
+.tlt-2{
     width: 264px;
     height: 70px;
     left: -126px;
 }
-.tlt-3::after{
+.tlt-3{
     width: 232px;
     height: 48px;
     left: -110px;
 }
-.tooltip::before{
+.tooltip-wrap::before{
     border: solid;
     border-color: var(--purple) transparent;
     border-width: 12px 6px 0 6px;
     content: "";
-    bottom: 16px;
-    left: 1px;
+    top: calc(100% - 2px);
+    left: calc(50% - 6px);
     position: absolute;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.65s;
+    transition: opacity 0.5s;
 }
 .projects__link{
     color: var(--purple);
@@ -1657,7 +1654,6 @@ html{
 .contacts__block{
     position: relative;
     width: 100%;
-    /* height: 700px; */
     border-top: 1px solid #CACACA;
 }
 .contacts__container{
@@ -1763,7 +1759,6 @@ html{
     top: 0;
     right: 0;
     width: calc(1920px * 0.64 + (100vw - 1920px) / 2);
-    /* width: 64vw; */
     height: 100%;
     border-left: 1px solid #CACACA;
 }
@@ -1841,16 +1836,16 @@ html{
     .tooltip:hover{
         background-image: url(../img/i_hover.svg);
     }
-    .tooltip:focus:after,
-    .tooltip:hover:after{
+    .tooltip:focus .tooltip-wrap,
+    .tooltip:hover .tooltip-wrap{
         opacity: 1;
         visibility: visible;
     }
-    .tooltip:focus::before,
-    .tooltip:hover:before{
+    /* .tooltip:focus .tooltip-wrap::before,
+    .tooltip:hover .tooltip-wrap::before{
         opacity: 1;
         visibility: visible;
-    }
+    } */
 }
 @media (max-width: 1919px)
 {
