@@ -488,8 +488,8 @@ html{
     clip: rect(0 0 0 0)
   }
 .hero{
-    padding-top: 241px;
-    padding-bottom: 121px;
+    padding-top: 240px;
+    padding-bottom: 120px;
     background-size: cover;
     background-repeat: no-repeat;
     animation: anim-background 10s ease infinite;
@@ -533,7 +533,7 @@ html{
     justify-content: center;
     align-items: center;
     width: fit-content;
-    padding: 20.5px 34px;
+    padding: 20px 33px;
 
     background-color: var(--purple);
     border: 3px solid var(--purple);
@@ -566,10 +566,10 @@ html{
 /* ABOUT US */
 .about-us{
     padding-top: 80px;
-    padding-bottom: 73px;
+    padding-bottom: 71px;
 }
 .about-us__heading{
-    margin-bottom: 17px;
+    margin-bottom: 15px;
 }
 .about-us__description{
     font-style: normal;
@@ -609,7 +609,7 @@ html{
     color: white;
     font-size: 16px;
     line-height: 32px;
-    margin-bottom: 13px;
+    margin-bottom: 11px;
 }
 .gallery__description-wrap{
     display: flex;
@@ -907,16 +907,16 @@ html{
 /* Catalog */
 .catalog{
     padding-top: 77px;
-    padding-bottom: 80px;
+    padding-bottom: 83px;
 }
 .catalog__heading{
     display: inline-block;
-    margin-right: 27px;
+    margin-right: 25px;
     margin-bottom: 15px;
 }
 .catalog__country-list{
     display: inline-flex;
-    transform: translateY(2px);
+    transform: translateY(5px);
 }
 .catalog__country-item{
     display: flex;
@@ -989,7 +989,7 @@ html{
     font-size: 16px;
     line-height: 32px;
     color: var(--black);
-    margin-bottom: 43px;
+    margin-bottom: 40px;
 }
 .catalog__info-block{
     display: flex;
@@ -1006,6 +1006,8 @@ html{
     display: none;
     width: 800px;
     margin-left: auto;
+    transform: translateY(2px);
+    
 }
 .catalog__info-accordion_is_active{
     display: block;
@@ -1035,7 +1037,7 @@ html{
 }
 .info-card__img{
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
 /* Accordion */
 .accordion__item {
@@ -1164,7 +1166,7 @@ html{
 
 /* EVENTS */
 .events{
-    padding-bottom: 78px;
+    padding-bottom: 80px;
 }
 .events__heading{
     margin: 0 0 18px 0;
@@ -1182,7 +1184,7 @@ html{
     min-height: 700px;
     width: 500px;
     margin-right: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 48px;
     align-self: stretch;
 }
 .events-slider__slide_is_visible{
@@ -1194,7 +1196,7 @@ html{
     display: flex;
     flex-direction: column;
     border: 1px solid #CACACA;
-    padding-bottom: 34px;
+    padding-bottom: 38px;
     background-color: white;
     align-self: stretch;
 }
@@ -1216,7 +1218,6 @@ html{
     line-height: 16px;
     text-align: right;
     color: var(--grey);
-    margin-bottom: 5px;
 }
 .events-slider__info-heading{
     margin-top: 0;
@@ -1292,7 +1293,7 @@ html{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0px -900px;
-    padding-top: 83px;
+    padding-top: 80px;
     padding-bottom: 73px;
 }
 .editions__container{
@@ -1433,9 +1434,8 @@ html{
     padding-right: 9.5px;
     padding-left: 9.5px;
 }
-
 .editions__slider{
-    padding-top: 30px;
+    padding-top: 35px;
     width: 1150px;
 }
 .editions-slider__slide{
@@ -1451,7 +1451,7 @@ html{
 .editions-slider__image{
     width: inherit;
     height: 390px;
-    margin-bottom: 23px;
+    margin-bottom: 20px;
 }
 .editions-slider__title{
     font-style: normal;
@@ -1505,7 +1505,7 @@ html{
     font-size: 16px;
     line-height: 32px;
     color: var(--black);
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 .tooltip{
   display: inline-block;
@@ -1677,7 +1677,7 @@ html{
 }
 .contacts__adress-description{
     display: block;
-    margin-bottom: 30px;
+    margin-bottom: 26px;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -1781,9 +1781,6 @@ html{
 }
 [class*="ground-pane"]{
     filter:greyscale(1);
-}
-.adress-heading{
-    margin-top: 124px;
 }
 /* Footer */
 .footer{
