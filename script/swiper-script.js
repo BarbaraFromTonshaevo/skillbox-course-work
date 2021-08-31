@@ -69,13 +69,13 @@ new Swiper('.gallery-slider',{
             slidesPerGroup: 2,
             spaceBetween: 34,
         },
-        1024: {
+        1200: {
             slidesPerView: 2,
             slidesPerColumn: 2,
             slidesPerGroup: 2,
-            spaceBetween: 34,
+            spaceBetween: 50,
         },
-        1920: {
+        1600: {
             // Количество слайдов для показа
             slidesPerView: 3,
             // Отступ между слайдами
@@ -107,7 +107,7 @@ function mobileSlider(){
 
         slider.dataset.mobile = 'true';
     }
-    if(window.innerWidth > 768){
+    if(window.innerWidth >= 768){
         slider.dataset.mobile = 'false';
         if(slider.classList.contains('swiper-container-initialized')){
             mySwiper.destroy();
@@ -155,13 +155,13 @@ function editionsSlider() {
             breakpoints: {
                 768: {
                     slidesPerView: 2,
-                    spaceBetween: 34,
+                    spaceBetween: 30,
                 },
                 1024: {
                     slidesPerView: 2,
                     spaceBetween: 50,
                 },
-                1920: {
+                1600: {
                     // Количество слайдов для показа
                     slidesPerView: 3,
                     // Отступ между слайдами
@@ -211,7 +211,7 @@ new Swiper('.partner-slider',{
             slidesPerView: 2,
             spaceBetween: 50,
         },
-        1920: {
+        1600: {
             // Количество слайдов для показа
             slidesPerView: 3,
             // Отступ между слайдами
