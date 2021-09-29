@@ -52,28 +52,36 @@ new Swiper('.gallery-slider',{
         // больше чем указанное значение
         320: {
             slidesPerView: 1,
-            slidesPerColumn: 1,
             slidesPerGroup: 1,
             spaceBetween: 0,
+            grid: {
+                rows:2,
+            }
         },
         768: {
             slidesPerView: 2,
-            slidesPerColumn: 2,
             slidesPerGroup: 2,
             spaceBetween: 34,
+            grid: {
+                rows:2,
+            }
 
         },
         1024: {
             slidesPerView: 2,
-            slidesPerColumn: 2,
             slidesPerGroup: 2,
             spaceBetween: 34,
+            grid: {
+                rows:2,
+            }
         },
         1200: {
             slidesPerView: 2,
-            slidesPerColumn: 2,
             slidesPerGroup: 2,
             spaceBetween: 50,
+            grid: {
+                rows:2,
+            }
         },
         1600: {
             // Количество слайдов для показа
@@ -83,10 +91,10 @@ new Swiper('.gallery-slider',{
             // Количество пролистываемых слайдов
             slidesPerGroup: 3,
             // Мультирядность
-            slidesPerColumn: 2,
+            grid: {
+                rows:2,
+            }
         }
-
-
     }
 });
 // Events
