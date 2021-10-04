@@ -83,7 +83,7 @@ new Swiper('.gallery-slider',{
                 rows:2,
             }
         },
-        1600: {
+        1500: {
             // Количество слайдов для показа
             slidesPerView: 3,
             // Отступ между слайдами
@@ -169,7 +169,7 @@ function editionsSlider() {
                     slidesPerView: 2,
                     spaceBetween: 50,
                 },
-                1600: {
+                1500: {
                     // Количество слайдов для показа
                     slidesPerView: 3,
                     // Отступ между слайдами
@@ -219,7 +219,7 @@ new Swiper('.partner-slider',{
             slidesPerView: 2,
             spaceBetween: 50,
         },
-        1600: {
+        1630: {
             // Количество слайдов для показа
             slidesPerView: 3,
             // Отступ между слайдами
